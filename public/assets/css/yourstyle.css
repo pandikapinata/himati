@@ -1,0 +1,40 @@
+/*
+Template Name: Wrapkit
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*==============================================================
+ You can write your style here and overwrite our style
+ ============================================================== */
+ .form6 {
+    overflow: hidden;
+    position: relative;
+    .right-image {
+        background-position: center bottom;
+        background-size: cover;
+        background-repeat: none;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+    }
+}
+
+@media (max-width: 1023px) {
+    .form6 {
+        .contact-form {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .form6 {
+        .contact-form {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
