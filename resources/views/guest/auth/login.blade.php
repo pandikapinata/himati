@@ -6,7 +6,7 @@
             <div class="row">
                 <!-- Column -->
                 <div class="col-lg-6 p-r-40" data-aos="fade-right" data-aos-duration="1200">
-                    <img src="{{asset('assets/images/form.png')}}" class="img-responsive" alt="HMTI" />
+                    <img src="{{asset('assets/images/logo.png')}}" class="img-responsive" alt="HMTI" />
                 </div>
                 <div class="col-lg-6">
                     <div class="text-box" data-aos="fade-left" data-aos-duration="1200">
