@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.dashboard');
 });
 
 Route::group(['prefix' => 'guest'], function () {
@@ -41,4 +41,9 @@ Route::group(['prefix' => 'admin'], function () {
   Route::post('/password/reset', 'AdminAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
+
+  //Route::get('/dashboard', 'AdminAuth\LoginController@index')->name('dashboard')->middleware('auth:admin');
+  Route::get('dashboard', function () {
+    return view('admin.dashboard');
+  })->middleware('auth:admin');
 });

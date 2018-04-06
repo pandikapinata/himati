@@ -1,68 +1,54 @@
-@extends('admin.layout.auth')
+@extends('layouts.auth')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
-                        {{ csrf_field() }}
+    <div class="spacer form2">
+        <div class="container">
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-6 p-r-40" data-aos="fade-right" data-aos-duration="1200">
+                    <img src="{{asset('assets/images/logo.png')}}" class="img-responsive" alt="HMTI" />
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-box" data-aos="fade-left" data-aos-duration="1200">
+                        <h1 class="font-light">Masuk HMTI.</h1>
+                        <p>Login Page Admin</p>
 
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">Username</label>
+                        <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200" method="POST" action="{{ url('/admin/login') }}">
+                            @csrf
+                            <div class="row">
 
-                            <div class="col-md-6">
-                                <input id="username" type="username" class="form-control" name="username" value="{{ old('usernamee') }}" autofocus>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input id="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" type="username" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
+                                        @if ($errors->has('username'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('username') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
 
-                                @if ($errors->has('username'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Password" required>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                                        @if ($errors->has('password'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                        @endif
+                                    </div>
+                                </div>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
+                                <div class="col-lg-12 d-flex">
+                                    <button type="submit" class="btn btn-md1 btn-outline-style"><span> Masuk </span></button>
+                                    <div class="have-ac ml-auto align-self-center">Lupa Password? <a href="{{url('admin/password/reset')}}" class="text-primary"> Klik Disini</a></div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/admin/password/reset') }}">
-                                    Forgot Your Password?
-                                </a>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

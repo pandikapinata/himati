@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public $redirectTo = '/admin/home';
+    public $redirectTo = '/admin/dashboard';
 
     /**
      * Create a new controller instance.
@@ -60,4 +60,10 @@ class LoginController extends Controller
     {
         return Auth::guard('admin');
     }
+
+    public function index()
+    {
+        return view('admin.home');
+    }
+
 }
