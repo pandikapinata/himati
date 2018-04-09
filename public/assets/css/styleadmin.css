@@ -1343,18 +1343,6 @@ File: scss
    transition-property: transform, -webkit-transform;
    -o-transition-duration: 1s;
    transition-duration: 1s;
-   -webkit-animation-name: rotate;
-   -webkit-animation-duration: 2s;
-   -webkit-animation-iteration-count: infinite;
-   -webkit-animation-timing-function: linear;
-   -moz-animation-name: rotate;
-   -moz-animation-duration: 2s;
-   -moz-animation-iteration-count: infinite;
-   -moz-animation-timing-function: linear;
-   animation-name: rotate;
-   animation-duration: 2s;
-   animation-iteration-count: infinite;
-   animation-timing-function: linear;
    position: absolute;
    top: 18px;
    left: 18px; }
@@ -1913,8 +1901,7 @@ File: scss
  .btn-circle {
    border-radius: 100%;
    width: 40px;
-   height: 40px;
-   padding: 10px; }
+   height: 40px; }
 
  .btn-circle.btn-sm {
    width: 35px;
@@ -5746,6 +5733,52 @@ File: scss
      flex-wrap: nowrap !important;
      -webkit-flex-wrap: nowrap !important; } }
 
+/*******************
+custom modals
+******************/
+
+.custom-modal .close-btn {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  color: #8d97ad;
+  font-size: 25px;
+  background: #ffffff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  display: block;
+  border-radius: 100%;
+  line-height: 19px; }
+
+
+.custom-modal .modal-body {
+  overflow: hidden; }
+
+.custom-modal .modal-bg-img {
+  background-size: cover;
+  background-position: center center;
+  min-height: 300px; }
+
+.modal1 .modal-bg {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+  padding: 40px; }
+
+.modal1 .input-group {
+  margin-top: -45px; }
+
+.modal2 .modal-bg {
+  padding: 30px 30px 30px 30px; }
+
+.modal3 .modal-bg {
+  padding: 50px 40px 60px 25px; }
+
+.modal4 .modal-bg {
+  padding: 55px 55px 55px 40px; }
+
+
  /*-- ==============================================================
   Phone and below ipad(767px)
   ============================================================== */
@@ -5875,4 +5908,81 @@ File: scss
      display: block;
      text-align: center;
      margin-top: 10px;
-     overflow: hidden; } }
+     overflow: hidden; }
+     }
+
+/*==============================================================
+File upload
+ ============================================================== */
+.btn-file {
+  overflow: hidden;
+  position: relative;
+  vertical-align: middle; }
+  .btn-file > input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    font-size: 23px;
+    height: 100%;
+    width: 100%;
+    direction: ltr;
+    cursor: pointer;
+    border-radius: 0px; }
+
+.fileinput .input-group-addon {
+  border: none;
+  border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+  background: #ffffff;
+  margin-bottom: 1px; }
+
+.fileinput .form-control {
+  padding-top: 7px;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-bottom: 0px;
+  vertical-align: middle;
+  cursor: text; }
+
+.fileinput .thumbnail {
+  overflow: hidden;
+  display: inline-block;
+  margin-bottom: 5px;
+  vertical-align: middle;
+  text-align: center; }
+
+.fileinput .thumbnail > img {
+  max-height: 100%; }
+
+.fileinput .btn {
+  vertical-align: middle; }
+
+.fileinput-exists .fileinput-new,
+.fileinput-new .fileinput-exists {
+  display: none; }
+
+.fileinput-inline .fileinput-controls {
+  display: inline; }
+
+.fileinput-filename {
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden; }
+
+.form-control .fileinput-filename {
+  vertical-align: bottom; }
+
+.fileinput.input-group > * {
+  position: relative;
+  z-index: 2; }
+
+.fileinput.input-group > .btn-file {
+  z-index: 1; }
+
+/*==============================================================
+  Inline Block Div
+ ============================================================== */
+.inblock{
+  display: inline-block; }

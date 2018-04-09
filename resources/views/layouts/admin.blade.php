@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from www.wrappixel.com/demos/admin-templates/admin-pro/main/table-basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Apr 2018 14:00:02 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <title>Admin HMTI</title>
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
+    <!--alerts CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/sweetalert.css')}}"  type="text/css">
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleadmin.css')}}">
     <!-- You can change the theme colors from here -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/default-dark.css')}}">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+
     <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
+
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
                 <!-- ============================================================== -->
@@ -57,6 +46,7 @@
                 <!-- ============================================================== -->
                 <!-- End Logo -->
                 <!-- ============================================================== -->
+
                 <div class="navbar-collapse">
                     <!-- ============================================================== -->
                     <!-- toggle and nav items -->
@@ -82,13 +72,20 @@
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <span><i class="ti-user"></i> Pandika</span>
+                                            <span><i class="ti-user"></i> {{ Auth::guard('admin')->user()->name }}</span>
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                        <i class="fa fa-power-off"></i> Logout</a>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -96,12 +93,7 @@
                 </div>
             </nav>
         </header>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
+
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
@@ -110,8 +102,13 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
                         <li>
-                            <a class="waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Dashboard</span>
+                            <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Kegiatan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Fungsionaris</span>
                             </a>
                         </li>
                     </ul>
@@ -120,42 +117,23 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
             <div class="container-fluid">
                     @yield('content')
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+
             <footer class="footer">
                 © 2018 HMTI
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
+
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    @section('script')
     <script src="{{asset('assets/node_modules/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{asset('assets/node_modules/popper/dist/popper.min.js')}}"></script>
@@ -168,6 +146,17 @@
     <script src="{{asset('assets/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('assets/js/customadmin.min.js')}}"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <script src="{{asset('assets/js/jasny-bootstrap.js')}}"></script>
+    <!-- This is data table -->
+    <script src="{{asset('assets/js/dataTables.bootstrap.js')}}"></script>
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <!-- Sweet-Alert  -->
+    <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.sweet-alert.custom.js')}}"></script>
+    @show
 </body>
 
 </html>

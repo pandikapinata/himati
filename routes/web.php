@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('welcome');
 });
 
 Route::group(['prefix' => 'guest'], function () {
@@ -43,7 +43,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/password/reset/{token}', 'AdminAuth\ResetPasswordController@showResetForm');
 
   //Route::get('/dashboard', 'AdminAuth\LoginController@index')->name('dashboard')->middleware('auth:admin');
-  Route::get('dashboard', function () {
+  /*Route::get('dashboard', function () {
     return view('admin.dashboard');
   })->middleware('auth:admin');
+  */
+
+  Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
 });
