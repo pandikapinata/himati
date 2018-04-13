@@ -49,4 +49,5 @@ Route::group(['prefix' => 'admin'], function () {
   */
 
   Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
+  Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
 });

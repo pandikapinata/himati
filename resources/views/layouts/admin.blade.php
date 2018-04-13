@@ -107,7 +107,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Fungsionaris</span>
                             </a>
                         </li>
