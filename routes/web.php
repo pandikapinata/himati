@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/login', 'GuestAuth\LoginController@showLoginForm')->name('login');

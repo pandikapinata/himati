@@ -644,12 +644,12 @@ Text Colors
   text-fill-color: transparent; }
 
 .text-danger-gradiant {
-  background: #ff4d7e;
-  background: -webkit-linear-gradient(legacy-direction(to right), #ff4d7e 0%, #ff6a5b 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#ff4d7e), to(#ff6a5b));
-  background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
-  background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
-  background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+  background: #7f5126;
+  background: -webkit-linear-gradient(legacy-direction(to right), #7f5126 0%, #FFBF00 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7f5126), to(#FFBF00));
+  background: -webkit-linear-gradient(left, #7f5126 0%, #FFBF00 100%);
+  background: -o-linear-gradient(left, #7f5126 0%, #FFBF00 100%);
+  background: linear-gradient(to right, #7f5126 0%, #FFBF00 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1390,7 +1390,7 @@ Buttons
 /*BUTTON STYLE HMTI*/
 .btn-outline-style {
   color: #bf843e;
-  background-color: #ffffff;
+  background-color: transparent;
   border-color: #bf843e;
   -webkit-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
@@ -1401,6 +1401,37 @@ Buttons
     border-color: #bf843e; }
   .btn-outline-style.active, .btn-outline-style:active, .btn-outline-style:focus {
     background: #5b3111; }
+
+.btn-outline-style1 {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #bf843e;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  .btn-outline-style1:hover, .btn-outline-style1:focus, .btn-outline-style1.focus {
+    background: #FFBF00;
+    color: #ffffff;
+    border-color: #FFBF00; }
+  .btn-outline-style1.active, .btn-outline-style1:active, .btn-outline-style1:focus {
+    background: #7f5126; }
+
+.btn-style,
+.btn-style.disabled {
+  background: #7f5126;
+  border: 1px solid #7f5126;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  .btn-style:hover,
+  .btn-style.disabled:hover {
+    background: #bf843e;
+    border: 1px solid #bf843e; }
+  .btn-style.active, .btn-info:active, .btn-info:focus,
+  .btn-style.disabled.active,
+  .btn-style.disabled:active,
+  .btn-style.disabled:focus {
+    background: #bf843e; }
 
 .btn-primary.active.focus,
 .btn-primary.active:focus,
@@ -1640,18 +1671,38 @@ Topbar
   transition: 0.2s ease-in;
   width: 100%;
   position: fixed;
-  z-index: 20;
-  background: #ffffff; }
+  z-index: 20;}
   .topbar.fixed-header {
     -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
-    transition: 0.2s ease-in; }
+    transition: 0.2s ease-in;
+    background: #7f5126; }
     .topbar.fixed-header .navbar .navbar-brand img {
       height: 50px;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateZ(0) scale(1, 1); }
+
+.topbar1 {
+  padding: 0px;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  width: 100%;
+  position: fixed;
+  z-index: 20; }
+  .topbar1.fixed-header {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+    background: #ffffff; }
+    .topbar1.fixed-header .navbar .navbar-brand img {
+      height: 50px;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate(0) scale(1, 1); }
 
 /*******************
 Header 6
@@ -2900,3 +2951,24 @@ File: scss
     padding: 15px 15px; }
   .slider1 a {
     font-size: 14px; } }
+
+/*******************
+Footer 1
+*******************/
+.footer1 .f1-topbar {
+  border-bottom: 1px dashed rgba(120, 130, 140, 0.13); }
+  .footer1 .f1-topbar .navbar {
+    padding: 0px; }
+    .footer1 .f1-topbar .navbar .navbar-nav .nav-item .nav-link {
+      color: #8d97ad;
+      display: block;
+      padding: 15px 13px; }
+    .footer1 .f1-topbar .navbar .navbar-nav .nav-item:hover .nav-link, .footer1 .f1-topbar .navbar .navbar-nav .nav-item.active .nav-link {
+      color: #316ce8; }
+
+.footer1 .f1-middle {
+  padding: 40px  0; }
+
+.footer1 .f1-bottom-bar {
+  padding: 20px 0;
+  border-top: 1px solid rgba(120, 130, 140, 0.13); }

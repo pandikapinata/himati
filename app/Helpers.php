@@ -9,7 +9,7 @@ if (! function_exists('words')) {
      * @param  string  $end
      * @return string
      */
-    function words($value, $words = 10, $end = '...')
+    function words($value, $words = 10, $end = '')
     {
         return \Illuminate\Support\Str::words($value, $words, $end);
     }
