@@ -48,4 +48,7 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
+  Route::resource('guest','GuestController')->middleware('auth:admin');
+  Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
+  Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
 });

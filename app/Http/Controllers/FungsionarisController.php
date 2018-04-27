@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Fungsionaris;
 use Illuminate\Http\Request;
 use Storage;
+use App\Jabatan;
 
 class FungsionarisController extends Controller
 {
@@ -15,9 +16,10 @@ class FungsionarisController extends Controller
      */
     public function index()
     {
-        $funct = Fungsionaris::all();
+        $jabatan = Jabatan::all();
+        $funct = Fungsionaris::with('jabatan')->get();
 
-        return view('admin.fungsionaris.index',compact('funct'));
+        return view('admin.fungsionaris.index',compact('funct','jabatan'));
     }
 
     /**
@@ -47,7 +49,7 @@ class FungsionarisController extends Controller
 
         $funct = new Fungsionaris();
         $funct -> nama_fungsionaris = $request->nama;
-        $funct -> jabatan = $request->jabatan;
+        $funct -> jabatan_id = $request->jabatan;
         $funct -> periode_awal = $request->period_awal;
         $funct -> periode_akhir = $request->period_akhir;
 
@@ -83,9 +85,10 @@ class FungsionarisController extends Controller
      */
     public function edit($id)
     {
+        $jabatan = Jabatan::all();
         $funct = Fungsionaris::find($id);
 
-        return view('admin.fungsionaris.update',compact('funct'));
+        return view('admin.fungsionaris.update',compact('funct','jabatan'));
     }
 
     /**
@@ -106,7 +109,7 @@ class FungsionarisController extends Controller
 
         $funct = Fungsionaris::find($id);
         $funct -> nama_fungsionaris = $request->input('nama');
-        $funct -> jabatan = $request->input('jabatan');
+        $funct -> jabatan_id = $request->input('jabatan');
         $funct -> periode_awal = $request->input('period_awal');
         $funct -> periode_akhir = $request->input('period_akhir');
 
@@ -138,6 +141,6 @@ class FungsionarisController extends Controller
         $funct->delete();
 
         session()->flash('delete', 'Sukses Menghapus Data Kegiatan');
-        return redirect('/admin/kegiatan');
+        return redirect('/admin/fungsionaris');
     }
 }

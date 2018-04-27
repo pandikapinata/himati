@@ -39,7 +39,7 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="hmti" class="dark-logo" />
+                         <img src="{{asset('assets/images/hmti2.png')}}" alt="hmti" class="dark-logo" />
                          <!-- Light Logo text -->
                          </span> </a>
                 </div>
@@ -76,8 +76,6 @@
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                    <li role="separator" class="divider"></li>
                                     <li><a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -102,6 +100,11 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
                         <li>
+                            <a class="waves-effect waves-dark" href="{{ route('guest.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Guest</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Kegiatan</span>
                             </a>
@@ -109,6 +112,16 @@
                         <li>
                             <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Fungsionaris</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('guest.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">NewsFeeds</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('period.edit') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Setup Periode</span>
                             </a>
                         </li>
                     </ul>

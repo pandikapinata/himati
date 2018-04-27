@@ -76,6 +76,52 @@
             <div class="container-fluid">
                     @yield('content')
             </div>
+            <!-- Row  -->
+            <div class="f1-middle">
+                <div class="container">
+                    <div class="row">
+                        <!-- Column -->
+                        <div class="col-lg-3 col-md-6">
+                            <a href="#"><img src="assets/images/logo-300.png" alt="TI" /></a>
+                            <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience.</p>
+                            <p>our amazing features list and also our customer services is great.</p>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="col-lg-3 col-md-6">
+                           <div class="d-flex no-block m-b-10 m-t-20">
+                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
+                                <div class="info">
+                                    <span class="font-medium text-dark db m-t-5">Alamat</span><br/>
+                                    <p>Jl. Kampus Udayana Bukit Jimbaran, Jimbaran,<br/>
+                                        Kuta Sel., Kabupaten Badung,<br/>
+                                        Bali 80361</p>
+                               </div>
+                           </div>
+                        </div>
+                        <!-- Column -->
+                        <!-- Column -->
+                        <div class="col-lg-3 col-md-12 ">
+                            <div class="d-flex no-block m-b-10 m-t-20">
+                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
+                                <div class="info">
+                                    <span class="font-medium text-dark db m-t-5">Telepon</span><br/>
+                                    <p>(0361) 701806 </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 ">
+                            <div class="d-flex no-block m-b-10 m-t-20">
+                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Mail"></i></div>
+                                <div class="info">
+                                    <span class="font-medium text-dark db m-t-5">Email</span><br/>
+                                    <p><a href="mailto:it@unud.ac.id">it@unud.ac.id</a> </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="f1-bottom-bar">
                 <div class="container">
                 <div class="d-flex font-14">

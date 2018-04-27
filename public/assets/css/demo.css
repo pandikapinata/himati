@@ -38,7 +38,7 @@ This is for Header
   .header13 .h13-nav .navbar-nav .nav-item.active .nav-link {
     color: #FFBF00; }
   .header13 .h13-nav .navbar-nav .nav-item:last-child {
-    margin-left: 10px; }
+    margin-right: 10px; }
 
 .header13 .h13-topbar {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13); }

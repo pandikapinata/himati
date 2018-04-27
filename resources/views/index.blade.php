@@ -12,7 +12,7 @@
                         <div class="row justify-content-center">
                             <!-- Column -->
                             <div class="col-lg-7 col-md-6 align-self-center text-center" data-aos="fade-up" data-aos-duration="1200">
-                                <h1 class="title typewrite" data-type='["HMTI","TEKNIK", "Udayana"]'>&nbsp;</h1>
+                            <h1 class="title typewrite" data-type='["HMTI","Kabinet","{{$kabinet}}"]'>&nbsp;</h1>
                                 <h4 class="subtitle font-light">Himpunan Mahasiswa Teknologi Informasi<br/>Universitas Udayana</h4>
                             </div>
                             <!-- Column -->
@@ -134,255 +134,149 @@
                     <nav class="nav f45-tab" id="myTab4">
                         <!-- Tabs -->
                         <a class="nav-item nav-link active" id="ketuawakil-tab" data-toggle="tab" href="#ketuawakil" aria-expanded="true">
-                            <i class="hidden-sm-up icon-Monitor-4"></i> <span class="hidden-sm-down">Ketua dan Wakil</span>
+                            <i class="hidden-sm-up icon-Monitor-4"></i> <span class="hidden-sm-down">Ketua dan Wakil Ketua</span>
                         </a>
                         <!-- Tabs -->
-                        <a class="nav-item nav-link" id="sekretarisbendahara-tab" data-toggle="tab" href="#sekretarisbendahara">
+                        <a class="nav-item nav-link" id="sekretarisbendahara-tab" data-toggle="tab" href="#sekben">
                             <i class="hidden-sm-up icon-Share-onCloud"></i> <span class="hidden-sm-down">Sekretaris dan Bendahara</span>
                         </a>
-                        <!-- Tabs -->
-                        <a class="nav-item nav-link" id="kabidkadiv-tab" data-toggle="tab" href="#kabidkadiv">
-                            <i class="hidden-sm-up icon-Big-Data"></i> <span class="hidden-sm-down">Kabid dan Kadiv</span>
-                        </a>
-                        <!-- Tabs -->
+
+
                     </nav>
                     <!-- Tabs content -->
                     <div class="tab-content" id="nav-tabContent">
+                        <!-- KETUAWAKIL  -->
                         <div class="tab-pane fade show active" id="ketuawakil" role="tabpanel" aria-labelledby="ketuawakil-tab">
                             <div class="row">
-                                <!-- column  -->
+
+                                @foreach($ketuawakil as $number => $kw)
+
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
                                     <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                                                <h5 class="title font-medium">{{$kw->nama_fungsionaris}}</h5>
+                                                <h6 class="subtitle">{{$kw->periode_awal}}-{{$kw->periode_akhir}}</h6>
+                                                <p>{{$kw->nama_jabatan}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Row -->
                                 </div>
-                                <!-- column  -->
-                                <!-- column  -->
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                <!-- column  -->
-                                <!-- column  -->
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                <!-- column  -->
+
+                                @endforeach
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="sekretarisbendahara" role="tabpanel" aria-labelledby="sekretarisbendahara-tab">
+
+                        <!-- SEKBEN  -->
+                        <div class="tab-pane fade" id="sekben" role="tabpanel" aria-labelledby="sekretarisbendahara-tab">
                             <div class="row">
-                                <!-- column  -->
+
+                                @foreach($sekben as $number => $sb)
+
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
                                     <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$sb->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                                                <h5 class="title font-medium">{{$sb->nama_fungsionaris}}</h5>
+                                                <h6 class="subtitle">{{$sb->periode_awal}}-{{$sb->periode_akhir}}</h6>
+                                                <p>{{$sb->nama_jabatan}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Row -->
                                 </div>
-                                <!-- column  -->
-                                <!-- column  -->
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                <!-- column  -->
-                                <!-- column  -->
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                <!-- column  -->
+
+                                @endforeach
+
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="kabidkadiv" role="tabpanel" aria-labelledby="kabidkadiv-tab">
+
+                        <!-- KABID  -->
+                        <div class="tab-pane fade" id="kabid" role="tabpanel" aria-labelledby="kabidkadiv-tab">
                             <div class="row">
-                                <!-- column  -->
+
+                                @foreach($ketuawakil as $number => $kw)
+
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
                                     <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                                                <h5 class="title font-medium">{{$kw->nama_fungsionaris}}</h5>
+                                                <h6 class="subtitle">{{$kw->periode_awal}}-{{$kw->periode_akhir}}</h6>
+                                                <p>{{$kw->nama_jabatan}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Row -->
                                 </div>
-                                <!-- column  -->
-                                <!-- column  -->
+                                @endforeach
+                            </div>
+                        </div>
+
+                        <!-- KADIV  -->
+                        <div class="tab-pane fade" id="kadiv" role="tabpanel" aria-labelledby="kabidkadiv-tab">
+                            <div class="row">
+
+                                @foreach($ketuawakil as $number => $kw)
+
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
+                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
+                                                <h5 class="title font-medium">{{$kw->nama_fungsionaris}}</h5>
+                                                <h6 class="subtitle">{{$kw->periode_awal}}-{{$kw->periode_akhir}}</h6>
+                                                <p>{{$kw->nama_jabatan}}</p>
                                             </div>
                                         </div>
                                     </div>
                                     <!-- Row -->
                                 </div>
-                                <!-- column  -->
-                                <!-- column  -->
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-left" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url(assets/images/2x3.jpg) center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fa fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">Yudi Pratistha</h5>
-                                                <h6 class="subtitle">Property Specialist</h6>
-                                                <p>You can relay on our amazing features list and also our customer services will be great experience.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                <!-- column  -->
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -403,75 +297,5 @@
 
 <div class="map" id="kontak">
     <div id="map"></div>
-</div>
-
-<!--contact form-->
-<div class="kontak-container">
-    <div class="container">
-        <div class="row kontak">
-            <div class="col-lg-12">
-                <div class="card card-shadow" data-aos="fade-up" data-aos-duration="1200">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="contact-box p-40">
-                                <h3 class="title font-bold">Contact Us</h3>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group m-t-20">
-                                                <input class="form-control" type="text" placeholder="name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group m-t-20">
-                                                <input class="form-control" type="text" placeholder="email">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group m-t-20">
-                                                <input class="form-control" type="text" placeholder="phone">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group m-t-20">
-                                                <input class="form-control" type="text" placeholder="location">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="form-group m-t-20">
-                                                <input class="form-control" type="text" placeholder="message">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <button type="submit" class="btn btn-danger-gradiant btn-md m-t-20 btn-arrow"><span> SUBMIT NOW <i class="ti-arrow-right"></i></span></button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 bg-image" style="background-image:url(assets/images/footer-bg.jpg)">
-
-                            <div class="detail-box">
-                                <h5 class="text-white font-light ">Alamat</h5>
-                                <p class="text-white op-0">
-                                    Jl. kampus Udayana Bukit Jimbaran, Jimbaran, Kuta Sel., Kabupaten Badung, Bali 80361.
-                                </p>
-                                <h5 class="text-white font-light">Telepon</h5>
-                                <p class="text-white op-7">
-                                        (0361) 701806
-                                </p>
-                                <div class="round-social light">
-                                    <a href="#" class="m-l-0"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#" class=""><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class=""><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class=""><i class="fab fa-line"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 @endsection
