@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/login', 'GuestAuth\LoginController@showLoginForm')->name('login');
@@ -48,6 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
+  Route::resource('newsfeed','NewsfeedController')->middleware('auth:admin');
   Route::resource('guest','GuestController')->middleware('auth:admin');
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');

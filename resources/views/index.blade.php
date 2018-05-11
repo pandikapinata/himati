@@ -48,14 +48,16 @@
             </div>
             <div class="row m-t-40">
                 <!-- Column -->
+                @foreach($news as $number => $new)
                 <div class="col-lg-3 col-md-4">
                     <div class="card" data-aos="flip-left" data-aos-duration="1200">
-                        <a href="#"><div class="col-md-12 pro-pic" style="background: url(assets/images/img1a.jpg) center center no-repeat; background-size: 100%; border-top-left-radius: calc(.25rem - 1px); border-top-right-radius: calc(.25rem - 1px);"></div> </a>
-                        <h5 class="font-medium m-t-30"><a href="#" class="link">Tirta Yatra HMTI</a></h5>
-                        <p class="m-t-20">Business Park, Opp. Corns Sam Restaurant, New Yoark, US</p>
+                        <a href="#"><div class="col-md-12 pro-pic" style="background: url('assets/images/berita/{{$new->foto_berita}}')  center center no-repeat; background-size: 100%; border-top-left-radius: calc(.25rem - 1px); border-top-right-radius: calc(.25rem - 1px);"></div> </a>
+                        <h5 class="font-medium m-t-30"><a href="{{ route('berita.show', $new ) }}" class="link">{{$new->judul_berita}}</a></h5>
+                        <p class="m-t-20">{{ words(strip_tags(preg_replace("/&#?[a-z0-9]+;/i","",($new->isi_berita))), 5,' ...') }}</p>
                         <a data-toggle="collapse" href="#" class="linking text-danger-gradiant m-t-10">Selengkapnya <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>

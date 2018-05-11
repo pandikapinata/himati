@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleadmin.css')}}">
     <!-- You can change the theme colors from here -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/default-dark.css')}}">
+
+    <script src="https://cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
@@ -115,7 +117,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('guest.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('newsfeed.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">NewsFeeds</span>
                             </a>
                         </li>

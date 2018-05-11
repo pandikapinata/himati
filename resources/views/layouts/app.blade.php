@@ -49,7 +49,7 @@
                             <div class="container">
                                 <!-- Header 13 navabar -->
                                 <nav class="navbar navbar-expand-lg hover-dropdown h13-nav">
-                            <a class="navbar-brand" href="#"><img src="assets/images/header1.png" alt="HMTI" /></a>
+                            <a class="navbar-brand" href="#"><img src="{{ URL::asset('assets/images/header1.png') }}" alt="HMTI" /></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header13" aria-controls="header13" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="ti-menu"></span>
                             </button>
@@ -82,7 +82,7 @@
                     <div class="row">
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
-                            <a href="#"><img src="assets/images/logo-300.png" alt="TI" /></a>
+                            <a href="#"><img src="{{ URL::asset('assets/images/logo-300.png') }}" alt="TI" /></a>
                             <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience.</p>
                             <p>our amazing features list and also our customer services is great.</p>
                         </div>
