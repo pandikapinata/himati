@@ -102,8 +102,13 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('guest.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('guests.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Guest</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('barang.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Barang</span>
                             </a>
                         </li>
                         <li>
@@ -171,6 +176,8 @@
     <!-- Sweet-Alert  -->
     <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.sweet-alert.custom.js')}}"></script>
+
+    <script src="{{asset('assets/js/jquery.bootstrap-touchspin.js')}}"></script>
     @show
 </body>
 

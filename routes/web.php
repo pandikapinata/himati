@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
+Route::get('/penyewaan', 'HomeController@show')->name('berita.show');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/login', 'GuestAuth\LoginController@showLoginForm')->name('login');
@@ -26,6 +27,9 @@ Route::group(['prefix' => 'guest'], function () {
   Route::post('/password/reset', 'GuestAuth\ResetPasswordController@reset')->name('password.email');
   Route::get('/password/reset', 'GuestAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'GuestAuth\ResetPasswordController@showResetForm');
+
+  Route::get('/setting/{id}/edit', 'GuestController@edit')->middleware('auth:guest')->name('setting.edit');
+  Route::patch('/setting/{id}', 'GuestController@update')->middleware('auth:guest')->name('setting.update');
 });
 
 Route::group(['prefix' => 'admin'], function () {
@@ -48,9 +52,10 @@ Route::group(['prefix' => 'admin'], function () {
   */
 
   Route::resource('kegiatan','KegiatanController')->middleware('auth:admin');
+  Route::resource('barang','BarangController')->middleware('auth:admin');
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
   Route::resource('newsfeed','NewsfeedController')->middleware('auth:admin');
-  Route::resource('guest','GuestController')->middleware('auth:admin');
+  Route::resource('guests','GuestController')->middleware('auth:admin');
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
 });

@@ -61,9 +61,35 @@
                                     <li class="nav-item"><a class="nav-link" href="#fungsionaris">Fungsionaris</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                                 </ul>
+                                @auth('guest')
+                                <div class="nav-item dropdown" id="header13">
+                                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            {{ Auth::guard('guest')->user()->name }}
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="{{ route('setting.edit', Auth::guard('guest')->user()->id) }}">
+                                                {{ __('Setting') }}
+                                            </a>
+
+                                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                               onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+
+                                            <form id="logout-form" action="{{ url('guest/logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+                                @else
                                 <div class="act-buttons">
-                                    <button class="btn btn-outline-style1">Login</button>
+                                    <a href="{{ url('guest/login' ) }}" class="btn btn-outline-style1" >{{ __('Login') }}</a>
                                 </div>
+                                @endauth
                             </div>
                         </nav>
                         <!-- End Header 13 navabar -->

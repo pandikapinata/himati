@@ -8,7 +8,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Tabel Mahasiswa TI </h4>
+                    <h4 class="card-title">Tabel Barang Sewa HMTI </h4>
 
                     @if(session()->has('message'))
 					<div class="alert alert-success" role="alert">
@@ -21,31 +21,33 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>NIM</th>
+                                        <th>Kode</th>
                                         <th>Nama</th>
-                                        <th>Email</th>
+                                        <th>Stok</th>
+                                        <th>Harga</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        @foreach($guests as $number => $guest)
+                                        @foreach($barang as $number => $brg)
                                         <tr>
                                             <td>{{ $number+1 }}</td>
-                                            <td>{{ $guest->username }}</td>
-                                            <td>{{ $guest->name }}</td>
-                                            <td>{{ $guest->email}}</td>
+                                            <td>{{ $brg->kode_barang }}</td>
+                                            <td>{{ $brg->nama_barang }}</td>
+                                            <td>{{ $brg->stok_barang }}</td>
+                                            <td>{{ $brg->harga_sewa }}</td>
                                             <td>
                                             <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
-                                                <a href="{{ route('guests.edit', $guest ) }}" class="btn btn-circle btn-secondary" >
+                                                <a href="{{ route('barang.edit', $brg ) }}" class="btn btn-circle btn-secondary" >
                                                     <span class="fa fa-pencil"></span>
                                                 </a>
                                             </div>
 
                                             <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
-                                                <form id="formHapus{{$guest->id}}"  action="{{ route('guests.destroy', $guest->id ) }}"  method="POST" >
+                                                <form id="formHapus{{$brg->id}}"  action="{{ route('barang.destroy', $brg->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
-                                                    <button data-id="{{$guest->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
+                                                    <button data-id="{{$brg->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
                                                         <span class="fa fa-trash-o">
                                                     </button>
                                                 </form>
@@ -72,15 +74,22 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="modal-bg">
                             <h1 class="font-light text-muted text-center" >
-                                Form Fungsionaris
+                                Form Input Barang
                             </h1>
                             <h6 class="subtitle m-t-20 text-center">
-                                Masukkan Daftar Fungsionaris HMTI.
+                                Masukkan Daftar Barang Sewa HMTI.
                             </h6>
 
-                            <form class="form-material m-t-40" method="POST" action="{{ route('guests.store') }}" >
+                            <form class="form-material m-t-40" method="POST" action="{{ route('barang.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label>Kode Barang</label>
+                                        <input id="kd_brg" class="form-control" type="text" name="kd_brg" required>
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Nama</label>
@@ -88,28 +97,32 @@
                                     </div>
                                 </div>
 
+                                <div class="col-lg-12">
+                                    <form class="p-r-20">
+                                        <div class="form-group">
+                                            <label class="control-label">Stok</label>
+                                            <input class="vertical-spin" type="text" data-bts-button-down-class="btn btn-secondary btn-outline" data-bts-button-up-class="btn btn-secondary btn-outline" value="" name="stok_brg"> </div>
+                                    </form>
+                                </div>
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Email</label>
-                                        <input id="email" class="form-control" type="email" name="email" required>
+                                        <label>Harga</label>
+                                        <input id="hrg_brg" class="form-control" type="text" name="hrg_brg" required>
                                     </div>
                                 </div>
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Username</label>
-                                        <input id="username" class="form-control" type="text" name="username" required>
+                                        <label>Upload Foto Profile</label>
+                                        <div class="fileinput fileinput-new input-group" data-provides="fileinput">
+                                            <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file">
+                                                <span name="foto_barang" class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
+                                                <input type="hidden">
+                                                <input type="file" name="foto_barang"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input id="password" class="form-control" type="password" name="password" required>
-                                    </div>
-                                </div>
-
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
@@ -132,16 +145,32 @@
 @endsection
 @section('script')
     @parent
+    <script>
+        jQuery(document).ready(function() {
+            //Bootstrap-TouchSpin
+            $(".vertical-spin").TouchSpin({
+                verticalbuttons: true,
+                verticalupclass: 'btn-xs ti-plus',
+                verticaldownclass: 'btn-xs ti-minus'
+            });
+            var vspinTrue = $(".vertical-spin").TouchSpin({
+                verticalbuttons: true
+            });
+            if (vspinTrue) {
+                $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+            }
+        });
+    </script>
     @if(session()->has('delete'))
     <script>
+        $(document).ready(function(){
+            deleteComplete();
+        })
+        function deleteComplete(){
+            swal("Deleted!", "Datamu Sudah Terhapus.", "success")
+        }
 
-            $(document).ready(function(){
-                deleteComplete();
-            })
-            function deleteComplete(){
-                swal("Deleted!", "Datamu Sudah Terhapus.", "success")
-            }
-        </script>
+    </script>
     @endif
 
 @endsection

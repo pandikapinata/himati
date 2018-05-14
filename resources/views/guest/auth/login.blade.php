@@ -13,7 +13,7 @@
                         <h1 class="font-light">Masuk HMTI.</h1>
                         <p>Login Page Guest</p>
 
-                        <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200" method="POST" action="{{ url('/admin/login') }}">
+                        <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200" method="POST" action="{{ url('/guest/login') }}">
                             @csrf
                             <div class="row">
 
