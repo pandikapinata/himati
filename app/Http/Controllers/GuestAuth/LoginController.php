@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    public $redirectTo = '/';
+    public $redirectTo = '/guest/checkAuth';
 
     /**
      * Create a new controller instance.
@@ -60,4 +60,13 @@ class LoginController extends Controller
     {
         return Auth::guard('guest');
     }
+
+    public function loginPost()
+    {
+        if (Auth::attempt(['username'=> $username, 'password'=>$password])){
+            return redirect()->intended();
+        }
+        return back();
+    }
+
 }

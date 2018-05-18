@@ -41,7 +41,6 @@ class GuestController extends Controller
 
         $this->validate($request,[
             'nama' => 'required|max:255',
-            'email' => 'required',
             'username' => 'required|max:30|max:255|unique:guests',
             'password' => 'required|min:6',
         ]);

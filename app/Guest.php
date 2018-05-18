@@ -38,4 +38,8 @@ class Guest extends Authenticatable
     {
         $this->notify(new GuestResetPassword($token));
     }
+
+    public function sewa(){
+        return $this->hasMany('App\Sewa');
+    }
 }

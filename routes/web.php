@@ -13,9 +13,11 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
-Route::get('/penyewaan', 'HomeController@show')->name('berita.show');
+Route::get('/rental', 'RentalController@index')->name('rental.index');
+Route::post('/rental/barang-sewa', 'RentalController@cart')->name('rent.barang');
 
 Route::group(['prefix' => 'guest'], function () {
+  Route::get('/checkAuth', 'ServiceController@checkAuth');
   Route::get('/login', 'GuestAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'GuestAuth\LoginController@login');
   Route::post('/logout', 'GuestAuth\LoginController@logout')->name('logout');
@@ -30,6 +32,9 @@ Route::group(['prefix' => 'guest'], function () {
 
   Route::get('/setting/{id}/edit', 'GuestController@edit')->middleware('auth:guest')->name('setting.edit');
   Route::patch('/setting/{id}', 'GuestController@update')->middleware('auth:guest')->name('setting.update');
+
+
+  Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:guest');
 });
 
 Route::group(['prefix' => 'admin'], function () {

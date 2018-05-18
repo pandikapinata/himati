@@ -750,3 +750,98 @@ Blog homepage 6
   padding-right:7px;
   padding-left:0px;
 }
+
+
+ /*******************
+Icons
+*******************/
+.icon-list-demo div {
+  cursor: pointer;
+  line-height: 35px;
+  white-space: nowrap; }
+  .icon-list-demo div p {
+    margin: 10px 0;
+    padding: 5px 0; }
+  .icon-list-demo div:hover {
+    color: #263238; }
+    .icon-list-demo div:hover i {
+      font-size: 2em; }
+
+.icon-list-demo i {
+  -webkit-transition: all 0.2s;
+  -webkit-transition: font-size .2s;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 15px 0 10px;
+  text-align: left;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  -o-transition: font-size .2s;
+  transition: font-size .2s;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s; }
+
+.icon-list-demo .col-md-4, .icon-list-demo .col-3 {
+  border-radius: 4px; }
+
+  /* no animation */
+
+.icon-list-no-animation div {
+  /* cursor: pointer; */
+  line-height: 35px;
+  white-space: nowrap;
+}
+
+.icon-list-no-animation div p {
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.icon-list-no-animation div:hover {
+  color: #263238;
+}
+
+.icon-list-no-animation div i {
+  font-size: 2em;
+}
+
+.icon-list-no-animation i {
+  -webkit-transition: all 0.2s;
+  -webkit-transition: font-size .2s;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0 15px 0 10px;
+  text-align: left;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  -o-transition: font-size .2s;
+  transition: font-size .2s;
+  vertical-align: middle;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.icon-list-no-animation .col-md-4,
+.icon-list-no-animation .col-3 {
+  border-radius: 4px;
+}
+
+/* .img-fluid {
+  max-width: 100%;
+  height: auto;
+  overflow: auto;
+} */
+.post-sewa{
+  width: 255px;
+  height: 240px;
+  margin: 0 24px 0 0;
+  float: left;
+  overflow: hidden;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  position: relative;
+  }

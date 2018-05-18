@@ -24,6 +24,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/demo.css')}}">
     <!-- Common style CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
+    <!-- Datepicker -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}">
 
 </head>
 
@@ -59,7 +62,7 @@
                                     <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#kegiatan">Kegiatan</a></li>
                                     <li class="nav-item"><a class="nav-link" href="#fungsionaris">Fungsionaris</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                                {{-- <li class="nav-item"><a class="nav-link" href="{{route('rental.index')}}">Sewa</a></li> --}}
                                 </ul>
                                 @auth('guest')
                                 <div class="nav-item dropdown" id="header13">
@@ -87,7 +90,7 @@
                                     </div>
                                 @else
                                 <div class="act-buttons">
-                                    <a href="{{ url('guest/login' ) }}" class="btn btn-outline-style1" >{{ __('Login') }}</a>
+                                    <a href=""  data-toggle="modal" data-target="#login" class="btn btn-outline-style1" >{{ __('Login') }}</a>
                                 </div>
                                 @endauth
                             </div>
@@ -95,6 +98,56 @@
                         <!-- End Header 13 navabar -->
                     </div>
                 </div>
+            </div>
+
+            <div id="login" class="modal fade custom-modal modal2" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content po-relative">
+                        <div class="modal-body p-0 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-10 col-md-7">
+                                    <div class="modal-bg ">
+                                        <img src="/assets/images/logo_icon.png" alt="wrapkit">
+                                        <h2 class="font-light text-muted m-t-20 text-center">Masuk ke HMTI</h2>
+                                        <form class="m-t-30" method="POST" action="{{ url('/guest/login') }}">
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input id="username" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" type="username" placeholder="Username" name="username" value="{{ old('username') }}" required autofocus>
+                                                        @if ($errors->has('username'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('username') }}</strong>
+                                                        </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="form-group">
+                                                        <input id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password" name="password" placeholder="Password" required>
+
+                                                        @if ($errors->has('password'))
+                                                        <span class="invalid-feedback">
+                                                            <strong>{{ $errors->first('password') }}</strong>
+                                                        </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 text-center m-t-20">
+                                                    <button type="submit" class="btn btn-outline-style"><span> Masuk ke HMTI </span></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="close-btn" data-dismiss="modal" aria-hidden="true">×</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
             </div>
             <!-- ============================================================== -->
             <!-- Top header  -->
@@ -193,5 +246,6 @@
 
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB63aSeCGJzKLpE5K2Cwnccs5lELmN55Wg&amp;callback=myMap"></script>
+    @show
 </body>
 </html>

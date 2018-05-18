@@ -2971,3 +2971,45 @@ Footer 1
 .footer1 .f1-bottom-bar {
   padding: 20px 0;
   border-top: 1px solid rgba(120, 130, 140, 0.13); }
+
+
+  /*******************
+shop listing
+*******************/
+
+.shop-listing .shop-hover {
+  position: relative;
+  height:240px;
+  width:255px;
+}
+
+.shop-listing .shop-hover .card-img-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.shop-listing .shop-hover:hover .card-img-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shop-listing .shop-hover .label {
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*******************
+shop table
+*******************/
+
+.shop-table td {
+  padding: 30px 0;
+}
