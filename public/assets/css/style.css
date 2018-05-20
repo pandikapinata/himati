@@ -43,7 +43,6 @@ File: scss
 Preloader
 ********************/
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800");
-
 .preloader {
   width: 100%;
   height: 100%;
@@ -417,6 +416,9 @@ Margin
 html body .m-0 {
   margin: 0px; }
 
+html body .m-l-0 {
+  margin-left: 0px; }
+
 html body .m-l-5 {
   margin-left: 5px; }
 
@@ -643,12 +645,12 @@ Text Colors
   text-fill-color: transparent; }
 
 .text-danger-gradiant {
-  background: #7f5126;
-  background: -webkit-linear-gradient(legacy-direction(to right), #7f5126 0%, #FFBF00 100%);
-  background: -webkit-gradient(linear, left top, right top, from(#7f5126), to(#FFBF00));
-  background: -webkit-linear-gradient(left, #7f5126 0%, #FFBF00 100%);
-  background: -o-linear-gradient(left, #7f5126 0%, #FFBF00 100%);
-  background: linear-gradient(to right, #7f5126 0%, #FFBF00 100%);
+  background: #ff4d7e;
+  background: -webkit-linear-gradient(legacy-direction(to right), #ff4d7e 0%, #ff6a5b 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff4d7e), to(#ff6a5b));
+  background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
+  background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -687,6 +689,10 @@ html body .text-themecolor {
 /*******************
 Background Colors
 *******************/
+.bg-dark {
+  background-color: rgba(0, 0, 0, 0.2) !important;}
+
+
 .bg-primary {
   background-color: #316ce8 !important; }
 
@@ -999,10 +1005,6 @@ Buttons
 
 .btn-md {
   padding: 15px 45px;
-  font-size: 16px; }
-
-.btn-md1 {
-  padding: 15px 60px;
   font-size: 16px; }
 
 .btn-sm {
@@ -1386,52 +1388,6 @@ Buttons
 .btn-outline-light:hover {
   color: #263238 !important; }
 
-/*BUTTON STYLE HMTI*/
-.btn-outline-style {
-  color: #bf843e;
-  background-color: transparent;
-  border-color: #bf843e;
-  -webkit-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
-  transition: 0.2s ease-in; }
-  .btn-outline-style:hover, .btn-outline-style:focus, .btn-outline-style.focus {
-    background: #bf843e;
-    color: #ffffff;
-    border-color: #bf843e; }
-  .btn-outline-style.active, .btn-outline-style:active, .btn-outline-style:focus {
-    background: #5b3111; }
-
-.btn-outline-style1 {
-  color: #ffffff;
-  background-color: transparent;
-  border-color: #bf843e;
-  -webkit-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
-  transition: 0.2s ease-in; }
-  .btn-outline-style1:hover, .btn-outline-style1:focus, .btn-outline-style1.focus {
-    background: #FFBF00;
-    color: #ffffff;
-    border-color: #FFBF00; }
-  .btn-outline-style1.active, .btn-outline-style1:active, .btn-outline-style1:focus {
-    background: #7f5126; }
-
-.btn-style,
-.btn-style.disabled {
-  background: #7f5126;
-  border: 1px solid #7f5126;
-  -webkit-transition: 0.2s ease-in;
-  -o-transition: 0.2s ease-in;
-  transition: 0.2s ease-in; }
-  .btn-style:hover,
-  .btn-style.disabled:hover {
-    background: #bf843e;
-    border: 1px solid #bf843e; }
-  .btn-style.active, .btn-info:active, .btn-info:focus,
-  .btn-style.disabled.active,
-  .btn-style.disabled:active,
-  .btn-style.disabled:focus {
-    background: #bf843e; }
-
 .btn-primary.active.focus,
 .btn-primary.active:focus,
 .btn-primary.active:hover,
@@ -1668,40 +1624,46 @@ Topbar
   -webkit-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
-  width: 100%;
-  position: fixed;
-  z-index: 20;}
+  /* width: 100%;
+  position: fixed; */
+  z-index: 20; }
   .topbar.fixed-header {
     -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
     transition: 0.2s ease-in;
-    background: #7f5126; }
+    background: #7f5126;}
     .topbar.fixed-header .navbar .navbar-brand img {
       height: 50px;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateZ(0) scale(1, 1); }
 
-.topbar1 {
+/*******************
+Topbar
+*******************/
+.topbar-brown {
   padding: 0px;
   -webkit-transition: 0.2s ease-in;
   -o-transition: 0.2s ease-in;
   transition: 0.2s ease-in;
   width: 100%;
   position: fixed;
-  z-index: 20; }
-  .topbar1.fixed-header {
+  z-index: 20;
+  background: #7f5126;}
+  .topbar-brown.fixed-header {
     -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
     transition: 0.2s ease-in;
-    background: #ffffff; }
-    .topbar1.fixed-header .navbar .navbar-brand img {
+    background: #7f5126;}
+    .topbar-brown.fixed-header .navbar .navbar-brand img {
       height: 50px;
       -webkit-backface-visibility: hidden;
-      -webkit-transform: translate(0) scale(1, 1); }
+      -webkit-transform: translateZ(0) scale(1, 1); }
+
+
 
 /*******************
 Header 6
@@ -1712,18 +1674,24 @@ Header 6
 .header6 .navbar-brand {
   line-height: 80px; }
 
+.h6-nav-bar-shrink {
+  padding: 0px;
+  height: 68px;
+}
+
 .h6-nav-bar {
-  padding: 0px; }
-  .h6-nav-bar .navbar-nav .nav-link {
-    padding: 35px 15px;
+  padding: 0px;
+}
+  .h6-nav-bar .navbar-nav .nav-link .mobile-nav-link {
+    padding: 20px 15px;
     color: rgba(255, 255, 255, 0.5); }
-  .h6-nav-bar .navbar-nav .nav-item:hover .nav-link, .h6-nav-bar .navbar-nav .nav-item.active .nav-link {
+  .h6-nav-bar .navbar-nav .nav-item:hover .nav-link .mobile-nav-link, .h6-nav-bar .navbar-nav .nav-item.active .nav-link .mobile-nav-link{
     color: white; }
   .h6-nav-bar .act-buttons .btn {
     margin: 10px 0 10px 10px; }
 
 @media (max-width: 1023px) {
-  .h6-nav-bar .navbar-nav .nav-link {
+  .h6-nav-bar .navbar-nav .nav-link .mobile-nav-link{
     padding: 15px 15px; }
   .h6-nav-bar .act-buttons .btn {
     margin: 10px 0 10px 0px; } }
@@ -1732,7 +1700,9 @@ Header 6
 Main & Page wrapper
 *******************/
 .page-wrapper {
-  padding-top: 148px; }
+  padding-top: 0px; }
+.page-wrapper-breadcumbs {
+  padding-top: 125px; }
 
 #main-wrapper {
   overflow: hidden; }
@@ -2152,6 +2122,150 @@ select.form-control:not([size]):not([multiple]) {
 /*******************
 UI-Elements
 ******************/
+/*BUTTON STYLE HMTI*/
+.btn-outline-style {
+  color: #bf843e;
+  background-color: transparent;
+  border-color: #bf843e;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  .btn-outline-style:hover, .btn-outline-style:focus, .btn-outline-style.focus {
+    background: #bf843e;
+    color: #ffffff;
+    border-color: #bf843e; }
+  .btn-outline-style.active, .btn-outline-style:active, .btn-outline-style:focus {
+    background: #5b3111; }
+
+.btn-outline-style1 {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #bf843e;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  .btn-outline-style1:hover, .btn-outline-style1:focus, .btn-outline-style1.focus {
+    background: #FFBF00;
+    color: #ffffff;
+    border-color: #FFBF00; }
+  .btn-outline-style1.active, .btn-outline-style1:active, .btn-outline-style1:focus {
+    background: #7f5126; }
+
+.btn-style,
+.btn-style.disabled {
+  background: #7f5126;
+  border: 1px solid #7f5126;
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in; }
+  .btn-style:hover,
+  .btn-style.disabled:hover {
+    background: #bf843e;
+    border: 1px solid #bf843e; }
+  .btn-style.active, .btn-info:active, .btn-info:focus,
+  .btn-style.disabled.active,
+  .btn-style.disabled:active,
+  .btn-style.disabled:focus {
+    background: #bf843e; }
+
+.btn-primary.active.focus,
+.btn-primary.active:focus,
+.btn-primary.active:hover,
+.btn-primary.focus:active,
+.btn-primary:active:focus,
+.btn-primary:active:hover,
+.open > .dropdown-toggle.btn-primary.focus,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary:hover,
+.btn-primary.focus,
+.btn-primary:focus {
+  background-color: #6352ce;
+  border: 1px solid #6352ce; }
+
+.btn-success.active.focus,
+.btn-success.active:focus,
+.btn-success.active:hover,
+.btn-success.focus:active,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.open > .dropdown-toggle.btn-success.focus,
+.open > .dropdown-toggle.btn-success:focus,
+.open > .dropdown-toggle.btn-success:hover,
+.btn-success.focus,
+.btn-success:focus {
+  background-color: #1dc8cd;
+  border: 1px solid #1dc8cd; }
+
+.btn-info.active.focus,
+.btn-info.active:focus,
+.btn-info.active:hover,
+.btn-info.focus:active,
+.btn-info:active:focus,
+.btn-info:active:hover,
+.open > .dropdown-toggle.btn-info.focus,
+.open > .dropdown-toggle.btn-info:focus,
+.open > .dropdown-toggle.btn-info:hover,
+.btn-info.focus,
+.btn-info:focus {
+  background-color: #028ee1;
+  border: 1px solid #028ee1; }
+
+.btn-warning.active.focus,
+.btn-warning.active:focus,
+.btn-warning.active:hover,
+.btn-warning.focus:active,
+.btn-warning:active:focus,
+.btn-warning:active:hover,
+.open > .dropdown-toggle.btn-warning.focus,
+.open > .dropdown-toggle.btn-warning:focus,
+.open > .dropdown-toggle.btn-warning:hover,
+.btn-warning.focus,
+.btn-warning:focus {
+  background-color: #e9ab2e;
+  border: 1px solid #e9ab2e; }
+
+.btn-danger.active.focus,
+.btn-danger.active:focus,
+.btn-danger.active:hover,
+.btn-danger.focus:active,
+.btn-danger:active:focus,
+.btn-danger:active:hover,
+.open > .dropdown-toggle.btn-danger.focus,
+.open > .dropdown-toggle.btn-danger:focus,
+.open > .dropdown-toggle.btn-danger:hover,
+.btn-danger.focus,
+.btn-danger:focus {
+  background-color: #e6294b;
+  border: 1px solid #e6294b; }
+
+.btn-inverse:hover,
+.btn-inverse:focus,
+.btn-inverse:active,
+.btn-inverse.active,
+.btn-inverse.focus,
+.btn-inverse:active,
+.btn-inverse:focus,
+.btn-inverse:hover,
+.open > .dropdown-toggle.btn-inverse {
+  background-color: #232a37;
+  border: 1px solid #232a37; }
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red:active,
+.btn-red.active,
+.btn-red.focus,
+.btn-red:active,
+.btn-red:focus,
+.btn-red:hover,
+.open > .dropdown-toggle.btn-red {
+  background-color: #d61f1f;
+  border: 1px solid #d61f1f;
+  color: #ffffff; }
+
+.btn span.btn-devider {
+  display: inline-block;
+  padding-left: 10px; }
 /*******************
 Buttons
 ******************/
@@ -2253,7 +2367,7 @@ Vertical tabs
     border-right: 1px solid rgba(120, 130, 140, 0.13);
     display: table-cell;
     vertical-align: top; }
-    .vtabs .tabs-vertical li .nav-link {
+    .vtabs .tabs-vertical li .nav-link .mobile-nav-link{
       color: #263238;
       margin-bottom: 10px;
       border: 0px;
@@ -2270,6 +2384,13 @@ Vertical tabs
   border: 0px;
   color: #ffffff; }
 
+.tabs-vertical li .mobile-nav-link.active,
+.tabs-vertical li .mobile-nav-link:hover,
+.tabs-vertical li .mobile-nav-link.active:focus {
+  background: #1dc8cd;
+  border: 0px;
+  color: #ffffff; }
+
 /*Custom vertical tab*/
 .customvtab .tabs-vertical li .nav-link.active,
 .customvtab .tabs-vertical li .nav-link:hover,
@@ -2280,18 +2401,27 @@ Vertical tabs
   margin-right: -1px;
   color: #1dc8cd; }
 
+.customvtab .tabs-vertical li .mobile-nav-link.active,
+.customvtab .tabs-vertical li .mobile-nav-link:hover,
+.customvtab .tabs-vertical li .mobile-nav-link:focus {
+  background: #ffffff;
+  border: 0px;
+  border-right: 2px solid #1dc8cd;
+  margin-right: -1px;
+  color: #1dc8cd; }
+
 .tabcontent-border {
   border: 1px solid #ddd;
   border-top: 0px; }
 
-.customtab2 li a.nav-link {
+.customtab2 li a.nav-link .mobile-nav-link{
   border: 0px;
   margin-right: 3px;
   color: #8d97ad; }
-  .customtab2 li a.nav-link.active {
+  .customtab2 li a.nav-link.active .mobile-nav-link.active{
     background: #1dc8cd;
     color: #ffffff; }
-  .customtab2 li a.nav-link:hover {
+  .customtab2 li a.nav-link:hover .mobile-nav-link:hover{
     color: #ffffff;
     background: #1dc8cd; }
 
@@ -2762,15 +2892,26 @@ Overlay headers and thrid dropdown
 common-innerpage-banner
 *******************/
 .banner-innerpage {
-  padding: 150px 0 100px;
+  padding: 250px 0 0px;
   background-size: cover;
-  background-position: center center; }
+  background-position: top center;
+  background-attachment: fixed;
+
+  /* background-repeat: no-repeat; */
+  }
   .banner-innerpage .title {
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 40px;
     line-height: 40px; }
+  .banner-innerpage h3 {
+    color: #ffffff;
+    font-weight: normal;
+    /*font-size: 36px;*/
+    line-height: 50px;
+    /*font-family: "Calafia-Regular";*/
+  }
   .banner-innerpage .subtitle {
     color: #ffffff; }
 
@@ -2786,6 +2927,59 @@ common-innerpage-banner
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
   background: #1dc8cd; }
+
+/*Theme Colors*/
+
+/*bootstrap Color*/
+
+/*Light colors*/
+
+/*Normal Color*/
+
+/*Extra Variable*/
+
+/*Gradiant*/
+
+/*******************
+shop listing
+*******************/
+
+.shop-listing .shop-hover {
+  position: relative;
+  height:240px;
+  width:255px;
+}
+
+.shop-listing .shop-hover .card-img-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.shop-listing .shop-hover:hover .card-img-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shop-listing .shop-hover .label {
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*******************
+shop table
+*******************/
+
+.shop-table td {
+  padding: 30px 0;
+}
 
 /*******************
 Footer 4
@@ -2866,6 +3060,15 @@ File: scss
 /*-- ==============================================================
  Small Desktop & above all (1024px)
  ============================================================== */
+ @media (min-width: 1024px) {
+  .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
+    display: block;
+    margin-top: 0px; }
+  .navbar-nav > .dropdown .dropdown-menu {
+    min-width: 210px;
+    margin-top: 0px; }
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block; } }
 @media (max-width: 1023px) {
   .d-flex {
     display: block !important; }
@@ -2882,6 +3085,7 @@ File: scss
     width: calc(100% - 170px); }
   .po-absolute {
     position: relative; } }
+
 
 /*-- ==============================================================
  Ipad & above all(768px)
@@ -2973,7 +3177,7 @@ Footer 1
   border-top: 1px solid rgba(120, 130, 140, 0.13); }
 
 
-  /*******************
+/*******************
 shop listing
 *******************/
 
