@@ -36,7 +36,7 @@ This is for Header
   .header13 .h13-nav .navbar-nav .nav-item.active .nav-link {
     color: #FFBF00; }
   .header13 .h13-nav .navbar-nav .nav-item:last-child {
-    margin-left: 10px; }
+    margin-right: 10px; }
 
 .header13 .h13-topbar {
   border-bottom: 1px solid rgba(120, 130, 140, 0.13); }
@@ -716,6 +716,7 @@ Blog homepage 6
   padding-left:0px;
 }
 
+<<<<<<< HEAD
 .content-boxed {
   margin: 0 auto;
   /* padding: 30px 30px 1px; */
@@ -845,6 +846,10 @@ border-bottom: 1px solid #eee;
   border-top: 1px solid rgba(120, 130, 140, 0.13); }
 
   /*******************
+=======
+
+ /*******************
+>>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c
 Icons
 *******************/
 .icon-list-demo div {
@@ -877,9 +882,15 @@ Icons
 
 .icon-list-demo .col-md-4, .icon-list-demo .col-3 {
   border-radius: 4px; }
+<<<<<<< HEAD
   
   /* no animation */
   
+=======
+
+  /* no animation */
+
+>>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c
 .icon-list-no-animation div {
   /* cursor: pointer; */
   line-height: 35px;
@@ -936,6 +947,7 @@ Icons
   -moz-border-radius: 3px;
   border-radius: 3px;
   position: relative;
+<<<<<<< HEAD
   }
 
   .b-header {
@@ -1682,3 +1694,6 @@ Icons
       color: #fff;
       display: block; }
   
+=======
+  }
+>>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c

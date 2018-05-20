@@ -118,7 +118,7 @@
                     <div class="col-xl-8 col-lg-8 col-mb-8 col-sm-12 col-xs-12 hidden-sm-down hidden-md-down">
                         <div class="b-menu_top_bar_container topbar">
                             <div class="b-main_menu header13 po-relative">
-                                <div class="container p-r-0">
+                                <div class="container  p-r-0">
                                     <!-- Header 13 navabar -->
                                     <nav class="navbar navbar-expand-lg hover-dropdown h13-nav">
                                         <div class="collapse navbar-collapse" id="header13">
