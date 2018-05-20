@@ -35,21 +35,21 @@
                                             <td>{{ words($activ->desk_kegiatan,5,' ...') }}</td>
                                             <td>{{ $activ->media_kegiatan }}</td>
                                             <td>
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
-                                                <a href="{{ route('kegiatan.edit', $activ ) }}" class=" btn btn-circle btn-secondary" >
-                                                    <span class="fa fa-pencil"></span>
-                                                </a>
-                                            </div>
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                                    <a href="{{ route('kegiatan.edit', $activ ) }}" class=" btn btn-circle btn-secondary" >
+                                                        <span class="fa fa-pencil"></span>
+                                                    </a>
+                                                </div>
 
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
-                                                <form id="sa-warning"  action="{{ route('kegiatan.destroy', $activ->id ) }}"  method="POST" >
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button type="button" class="btn btn-danger btn-circle" >
-                                                        <span class="fa fa-trash-o">
-                                                    </button>
-                                                </form>
-                                            </div>
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                                <form id="formHapus{{$activ->id}}"  action="{{ route('kegiatan.destroy', $activ->id ) }}"  method="POST" >
+                                                        {{ csrf_field() }}
+                                                        {{ method_field('DELETE') }}
+                                                        <button data-id="{{$activ->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
+                                                            <span class="fa fa-trash-o">
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
 
                                         </tr>

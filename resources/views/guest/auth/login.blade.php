@@ -13,7 +13,7 @@
                         <h1 class="font-light">Masuk HMTI.</h1>
                         <p>Login Page Guest</p>
 
-                        <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200" method="POST" action="{{ url('/admin/login') }}">
+                        <form class="m-t-20" data-aos="fade-left" data-aos-duration="1200" method="POST" action="{{ url('/guest/login') }}">
                             @csrf
                             <div class="row">
 
@@ -42,6 +42,7 @@
 
                                 <div class="col-lg-12 d-flex">
                                     <button type="submit" class="btn btn-md1 btn-outline-style"><span> Masuk </span></button>
+                                    <div class="have-ac ml-auto align-self-center">Lupa Password? <a href="{{url('admin/password/reset')}}" class="text-primary"> Klik Disini</a></div>
                                 </div>
                             </div>
                         </form>

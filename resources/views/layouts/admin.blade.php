@@ -18,6 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/styleadmin.css')}}">
     <!-- You can change the theme colors from here -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/default-dark.css')}}">
+
+    <script src="https://cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
@@ -39,7 +41,7 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                          <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="hmti" class="dark-logo" />
+                         <img src="{{asset('assets/images/hmti2.png')}}" alt="hmti" class="dark-logo" />
                          <!-- Light Logo text -->
                          </span> </a>
                 </div>
@@ -76,8 +78,6 @@
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                                    <li role="separator" class="divider"></li>
                                     <li><a href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -102,6 +102,16 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
                         <li>
+                            <a class="waves-effect waves-dark" href="{{ route('guests.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Guest</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('barang.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Barang</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Kegiatan</span>
                             </a>
@@ -109,6 +119,16 @@
                         <li>
                             <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Fungsionaris</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('newsfeed.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">NewsFeeds</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('period.edit') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Setup Periode</span>
                             </a>
                         </li>
                     </ul>
@@ -156,6 +176,8 @@
     <!-- Sweet-Alert  -->
     <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.sweet-alert.custom.js')}}"></script>
+
+    <script src="{{asset('assets/js/jquery.bootstrap-touchspin.js')}}"></script>
     @show
 </body>
 

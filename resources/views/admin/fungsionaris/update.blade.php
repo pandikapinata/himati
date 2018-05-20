@@ -26,7 +26,13 @@
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label>Jabatan</label>
-                        <input id="jabatan" class="form-control" type="text" name="jabatan" value="{{ $funct->jabatan }}" >
+                        <select id="jabatan" name="jabatan" class="form-control" required>
+                                <option value=" " {{$funct->jabatan->nama_jabatan}}>-- Pilih Jabatan --</option>
+                            @foreach( $jabatan as $jabatans )
+                                <?php $selected = ($funct->jabatan->nama_jabatan==$jabatans->nama_jabatan ?"selected":""); ?>
+                                <option value="{{ $jabatans->id }}"{{$selected}}>{{ $jabatans->nama_jabatan }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 

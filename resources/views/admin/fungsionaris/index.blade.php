@@ -33,7 +33,7 @@
                                         <tr>
                                             <td>{{ $number+1 }}</td>
                                             <td>{{ $functs->nama_fungsionaris }}</td>
-                                            <td>{{ $functs->jabatan }}</td>
+                                            <td>{{ $functs->jabatan->nama_jabatan }}</td>
                                             <td>{{ $functs->periode_awal }}-{{$functs->periode_akhir}}</td>
                                             <td>{{ $functs->media_profile }}</td>
                                             <td>
@@ -44,10 +44,10 @@
                                             </div>
 
                                             <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
-                                                <form id="sa-warning"  action="{{ route('fungsionaris.destroy', $functs->id ) }}"  method="POST" >
+                                                <form id="formHapus{{$functs->id}}"  action="{{ route('fungsionaris.destroy', $functs->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
-                                                    <button type="button" class="btn btn-danger btn-circle" >
+                                                    <button data-id="{{$functs->id}}" onclick="deleteData(this)" type="button" class="btn btn-danger btn-circle" >
                                                         <span class="fa fa-trash-o">
                                                     </button>
                                                 </form>
@@ -93,7 +93,12 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label>Jabatan</label>
-                                        <input id="jabatan" class="form-control" type="text" name="jabatan" required>
+                                        <select id="jabatan" name="jabatan" class="form-control" required>
+                                            <option value=" ">-- Pilih Jabatan --</option>
+                                            @foreach( $jabatan as $jabatans )
+                                                <option value="{{ $jabatans->id }}">{{ $jabatans->nama_jabatan }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
 
