@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/bootstrap/dist/css/bootstrap.min.css')}}">
     <!-- This is for the animation CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/aos/dist/aos.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/prism/prism.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}">
     <!-- This page plugin CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/owl.carousel/dist/assets/owl.theme.green.css')}}">
@@ -24,7 +23,12 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/demo.css')}}">
     <!-- Common style CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-
+    <!-- Datepicker -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}">
+    <!--alerts CSS -->
+    <link rel="stylesheet" href="{{asset('assets/css/sweetalert.css')}}"  type="text/css">
+    @show
 </head>
 
 <body>
@@ -55,10 +59,10 @@
                             </button>
                             <div class="collapse navbar-collapse" id="header13">
                                 <ul class="navbar-nav ml-auto" id="top-menu">
-                                    <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#kegiatan">Kegiatan</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#fungsionaris">Fungsionaris</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('utama') }}">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('rent.transaksi') }}">Transaksi</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="{{ route('rent.cart') }}">Cart({{$jml_brg}})</a></li>
+
                                 {{-- <li class="nav-item"><a class="nav-link" href="{{route('rental.index')}}">Sewa</a></li> --}}
                                 </ul>
                                 @auth('guest')
@@ -230,19 +234,11 @@
     <!-- This is for the animation -->
     <script src="{{asset('assets/node_modules/aos/dist/aos.js')}}"></script>
     <!--Custom JavaScript -->
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
     <script src="{{asset('assets/js/custom.min.js')}}"></script>
     <script src="{{asset('assets/js/style.js')}}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
-    <script src="{{asset('assets/node_modules/owl.carousel/dist/owl.carousel.min.js')}}"></script>
-    <script src="{{asset('assets/node_modules/prism/prism.js')}}"></script>
-    <script src="{{asset('assets/js/type.js')}}"></script>
-
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB63aSeCGJzKLpE5K2Cwnccs5lELmN55Wg&amp;callback=myMap"></script>
     @show
 </body>
 </html>

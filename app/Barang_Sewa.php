@@ -8,8 +8,8 @@ class Barang_Sewa extends Model
 {
     public $table = "barang_sewas";
 
-    public function guest(){
-        return $this->belongsTo('App\Guest');
+    public function barang(){
+        return $this->belongsTo('App\Barang');
     }
 
     public function sewa(){

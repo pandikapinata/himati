@@ -18,7 +18,7 @@ class RedirectIfGuest
 	public function handle($request, Closure $next, $guard = 'guest')
 	{
 	    if (Auth::guard($guard)->check()) {
-	        return redirect()->intended();
+	        return redirect('/');
 	    }
 
 	    return $next($request);

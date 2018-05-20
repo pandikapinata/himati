@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('utama');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
 Route::get('/rental', 'RentalController@index')->name('rental.index');
 Route::post('/rental/barang-sewa', 'RentalController@cart')->name('rent.barang');
+Route::get('/rental/cart', 'RentalController@showcart')->name('rent.cart');
+Route::get('/rental/cart/{id}/edit', 'RentalController@edit')->name('rent.cart.edit');
+Route::put('/rental/cart/{id}', 'RentalController@save_cart')->name('rent.cart.save');
+Route::delete('/rental/cart/{id}', 'RentalController@destroy')->name('rent.cart.delete');
+Route::put('/rental/cart/{id}/checkout', 'RentalController@checkOut')->name('cart.checkout');
+Route::get('/rental/cart/checkoutConfirm', 'RentalController@checkOutConfirm')->name('cart.checkout.confirm');
+Route::put('/rental/cart/{id}/checkoutConfirm', 'RentalController@updateStok')->name('cart.updateStok');
+Route::get('/rental/transaksi', 'RentalController@transaksi')->name('rent.transaksi');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/checkAuth', 'ServiceController@checkAuth');
@@ -32,9 +40,6 @@ Route::group(['prefix' => 'guest'], function () {
 
   Route::get('/setting/{id}/edit', 'GuestController@edit')->middleware('auth:guest')->name('setting.edit');
   Route::patch('/setting/{id}', 'GuestController@update')->middleware('auth:guest')->name('setting.update');
-
-
-  Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:guest');
 });
 
 Route::group(['prefix' => 'admin'], function () {

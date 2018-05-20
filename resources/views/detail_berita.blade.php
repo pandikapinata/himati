@@ -31,9 +31,7 @@
                             <h2 class="title-article font-light"><a href="#" class="link">{{$news->judul_berita}}</a></h2>
 
                             <ul class="text-uppercase m-t-10 m-b-20 b-b list-inline font-13 font-medium">
-                                <li><a href="#">John Deo</a></li>
-                                <li><a href="#">NOV 08, 2017 </a></li>
-                                <li><a href="#" class="text-info">NEWS</a></li>
+                            <li>{{$news->created_at->format('l, d F Y H:i')}}</li>
                             </ul>
                             <img src="{{ URL::asset('assets/images/berita/' . $news->foto_berita) }}" alt="wrapkit" class="img-fluid" />
 

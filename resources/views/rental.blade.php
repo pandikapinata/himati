@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.purchase')
 
 @section('content')
 <div class="banner-innerpage" style="background-image:url(/assets/images/banner-bg2.jpg)">
@@ -35,7 +35,7 @@
                             data-product-id="{{$rent->id}}"
                             data-product-price="{{$rent->harga_sewa}}"
                             data-product-name="{{$rent->nama_barang}}"
-                            data-product-qty="0" data-product-hari="0">
+                            data-product-qty="0" >
                                 Add to Cart
                             </button>
                         </div>
@@ -57,27 +57,27 @@
                             <div class="modal-body">
                                 <form  method="POST" action="{{ route('rent.barang') }}">
                                     @csrf
-                                    <input name="brg_id" type="hidden" class="form-control">
+                                    <input name="brg_id" type="hidden" class="form-control" id="id_barang">
                                     <div class="form-group">
                                         <label for="nama_barang" class="control-label">Nama Barang</label>
-                                        <input name="nama" type="text" class="form-control" id="nama_barang">
+                                        <input name="nama" type="text" class="form-control" id="nama_barang" readonly>
                                     </div>
                                     <div class="form-group">
                                         <label for="harga" class="control-label">Harga Sewa</label>
-                                        <input name="harga" type="text" class="form-control" id="harga">
+                                        <input name="harga" type="text" class="form-control" id="harga_sewa" readonly>
                                     </div>
                                     <div class="form-group">
                                         <label for="qty" class="control-label">Qty</label>
-                                        <input name="qty" type="number" min="1" class="form-control" id="qty">
+                                        <input name="qty" type="number" min="1" class="form-control" id="qty"  required>
                                     </div>
                                     <div class="form-group">
                                         <label for="hari" class="control-label">Hari</label>
                                         <div class="input-daterange input-group" id="date-range">
-                                            <input type="text" class="form-control" name="start" />
+                                            <input type="text" class="form-control" name="startdate" required>
                                             <div class="input-group-append">
                                                 <span class="input-group-text bg-info b-0 text-white">TO</span>
                                             </div>
-                                            <input type="text" class="form-control" name="end" />
+                                            <input type="text" class="form-control" name="enddate" required>
                                         </div>
                                         {{-- <input name="hari" type="number" min="1" class="form-control" id="hari"> --}}
                                     </div>
@@ -131,24 +131,26 @@
     <script>
         $(function () {
             $('#mymodal').on('show.bs.modal	', function (e) {
-                var productId = $(e.relatedTarget).data('product-id');
-                var productName = $(e.relatedTarget).data('product-name');
-                var productPrice = $(e.relatedTarget).data('product-price');
-                var productQuantity = $(e.relatedTarget).data('product-qty');
-                var productHari = $(e.relatedTarget).data('product-hari');
+                if(e.target.id=='mymodal'){
+                    var productId = $(e.relatedTarget).data('product-id');
+                    var productName = $(e.relatedTarget).data('product-name');
+                    var productPrice = $(e.relatedTarget).data('product-price');
+                    var productQuantity = $(e.relatedTarget).data('product-qty');
 
-                $('#mymodal input[name=brg_id]').val(productId);
-                $('#mymodal input[name=nama]').val(productName);
-                $('#mymodal input[name=harga]').val(productPrice);
-                $('#mymodal input[name=qty]').val(productQuantity);
-                $('#mymodal input[name=hari]').val(productHari);
+                    $('#id_barang').val(productId);
+                    $('#nama_barang').val(productName);
+                    $('#harga_sewa').val(productPrice);
+                    $('#qty').val(productQuantity);
+
+                }
             });
 
 
         });
 
         jQuery('#date-range').datepicker({
-            toggleActive: true
+            toggleActive: true,
+            format: 'yy-mm-dd'
         });
     </script>
 

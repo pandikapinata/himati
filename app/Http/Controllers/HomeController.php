@@ -8,6 +8,7 @@ use App\Fungsionaris;
 use App\Period;
 use App\Newsfeed;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {

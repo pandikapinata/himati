@@ -95,6 +95,7 @@ class GuestController extends Controller
         $guest = Guest::find($id);
         $guest -> name = $request->input('nama');
         $guest -> email = $request->input('email');
+        $guest -> telp = $request->input('telp');
         $guest -> username = $request->input('username');
         $guest -> password = Hash::make($request->input('password'));
         $guest -> save();

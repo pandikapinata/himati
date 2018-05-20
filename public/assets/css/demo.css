@@ -280,6 +280,33 @@ Feature 5
   .wrap-feature5-box .card-body p {
     margin-bottom: 0px; }
 
+.wrap-feature6-box {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.wrap-feature6-box .card-body {
+  padding: 30px;
+}
+
+.wrap-feature6-box .card-body .linking {
+  color: #ffffff;
+}
+
+.wrap-feature6-box .card-body .linking:hover {
+  color: #263238;
+}
+
+.wrap-feature6-box .card-body p {
+  opacity: 0.8;
+}
+
+.wrap-feature6-box:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 /*******************
 Feature 22
 *******************/
