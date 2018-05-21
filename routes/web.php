@@ -70,4 +70,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
   Route::get('/verif', 'VerifController@index')->middleware('auth:admin')->name('verif.index');
+  Route::get('/verif/{id}', 'VerifController@show')->middleware('auth:admin')->name('verif.show');
+  Route::post('/verif/sentEmail/{id}', 'VerifController@sendEmail')->middleware('auth:admin')->name('verif.approved');
+  Route::post('/verif/decline/{id}', 'VerifController@decline')->middleware('auth:admin')->name('verif.decline');
 });
