@@ -54,7 +54,7 @@ class KegiatanController extends Controller
         if ($image) {
             $filename = $activ->nama_kegiatan . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
             $activ->media_kegiatan = $filename;
-            $image->move(public_path('assets/images'), $filename);
+            $image->move(public_path('assets/images/kegiatan'), $filename);
 
         }
 
@@ -125,7 +125,7 @@ class KegiatanController extends Controller
             $oldFilename = $activ->media_kegiatan;
             Storage::delete($oldFilename);
             $activ->media_kegiatan = $filename;
-            $image->move(public_path('assets/images'), $filename);
+            $image->move(public_path('assets/images/kegiatan'), $filename);
 
         }
         $activ->save();

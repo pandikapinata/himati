@@ -102,6 +102,11 @@
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
                         <li>
+                            <a class="waves-effect waves-dark" href="{{ route('verif.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Verifikasi</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="waves-effect waves-dark" href="{{ route('guests.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Guest</span>
                             </a>

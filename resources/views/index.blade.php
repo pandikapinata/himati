@@ -49,7 +49,7 @@
             <div class="row m-t-40">
                 <!-- Column -->
                 @foreach($news as $number => $new)
-                
+
                 <div class="col-lg-3 col-md-4">
                     <div class="card" data-aos="flip-left" data-aos-duration="1200">
                         <a href="#"><div class="col-md-12 pro-pic" style="background: url('assets/images/berita/{{$new->foto_berita}}')  center center no-repeat; background-size: 100%; border-top-left-radius: calc(.25rem - 1px); border-top-right-radius: calc(.25rem - 1px);"></div> </a>
@@ -60,7 +60,7 @@
                             <div class="preview">
                                 <i class="icon-Alarm-Clock m-l-0"></i><span> OCT 17, 2017</span>
                             </div>
-                        </div> 
+                        </div>
                         <div style="height:70px; overflow:hidden;">
                             <p class="m-t-10">{{ words(strip_tags(preg_replace("/&#?[a-z0-9]+;/i","",($new->isi_berita)))) }}</p>
                         </div>
@@ -93,7 +93,7 @@
                 <div class="col-md-4">
                 <div class="invisible">{{$number+1}}</div>
                     <div class="card" data-aos="flip-left" data-aos-duration="1200">
-                        <a href="#" data-toggle="modal" data-target="#mymodal-{{ $number+1 }}" class="img-ho"><img class="card-img-top" src="{{ URL::asset('assets/images/' . $activ->media_kegiatan) }}" alt="wrappixel kit"/></a>
+                        <a href="#" data-toggle="modal" data-target="#mymodal-{{ $number+1 }}" class="img-ho"><img class="card-img-top" src="{{ URL::asset('assets/images/kegiatan/' . $activ->media_kegiatan) }}" alt="wrappixel kit"/></a>
                             <h5 class="font-medium m-b-0 m-l-15 m-r-15 title">{{$activ->nama_kegiatan}}</h5>
                             <p class="m-b-10 m-l-15 m-r-15 font-14 subtitle">{{words($activ->desk_kegiatan,4)}}</p>
                     </div>
@@ -112,7 +112,7 @@
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 col-md-4 modal-bg-img" style="background-image: url('/assets/images/{{$activ->media_kegiatan}}');">
+                                        <div class="col-lg-6 col-md-4 modal-bg-img" style="background-image: url('/assets/images/kegiatan/{{$activ->media_kegiatan}}');">
                                         </div>
                                     </div>
                                     <a href="#" class="close-btn" data-dismiss="modal" aria-hidden="true">×</a>
@@ -166,7 +166,7 @@
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
                                     <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/fungsionaris/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -200,7 +200,7 @@
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
                                     <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$sb->media_profile}}') center center no-repeat; background-size: 100%;">
+                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/fungsionaris/{{$sb->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -223,72 +223,6 @@
 
                                 @endforeach
 
-                            </div>
-                        </div>
-
-                        <!-- KABID  -->
-                        <div class="tab-pane fade" id="kabid" role="tabpanel" aria-labelledby="kabidkadiv-tab">
-                            <div class="row">
-
-                                @foreach($ketuawakil as $number => $kw)
-
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">{{$kw->nama_fungsionaris}}</h5>
-                                                <h6 class="subtitle">{{$kw->periode_awal}}-{{$kw->periode_akhir}}</h6>
-                                                <p>{{$kw->nama_jabatan}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-
-                        <!-- KADIV  -->
-                        <div class="tab-pane fade" id="kadiv" role="tabpanel" aria-labelledby="kabidkadiv-tab">
-                            <div class="row">
-
-                                @foreach($ketuawakil as $number => $kw)
-
-                                <div class="col-md-4 m-b-30">
-                                    <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
-                                        <div class="col-md-12 pro-pic" style="background: url('assets/images/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
-                                            <div class="card-img-overlay">
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                    <li class="list-inline-item"><a href="#"><i class="fab fa-behance"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="p-t-10">
-                                                <h5 class="title font-medium">{{$kw->nama_fungsionaris}}</h5>
-                                                <h6 class="subtitle">{{$kw->periode_awal}}-{{$kw->periode_akhir}}</h6>
-                                                <p>{{$kw->nama_jabatan}}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Row -->
-                                </div>
-                                @endforeach
                             </div>
                         </div>
                     </div>

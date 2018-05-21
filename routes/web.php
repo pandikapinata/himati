@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/coming-soon', 'HomeController@comingSoon')->name('soon');
 Route::get('/', 'HomeController@index')->name('utama');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
 Route::get('/rental', 'RentalController@index')->name('rental.index');
@@ -23,6 +23,7 @@ Route::put('/rental/cart/{id}/checkout', 'RentalController@checkOut')->name('car
 Route::get('/rental/cart/checkoutConfirm', 'RentalController@checkOutConfirm')->name('cart.checkout.confirm');
 Route::put('/rental/cart/{id}/checkoutConfirm', 'RentalController@updateStok')->name('cart.updateStok');
 Route::get('/rental/transaksi', 'RentalController@transaksi')->name('rent.transaksi');
+Route::put('/rental/transaksi/{id}', 'RentalController@transaksiUpload')->name('transaksiUpload');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/checkAuth', 'ServiceController@checkAuth');
@@ -68,4 +69,5 @@ Route::group(['prefix' => 'admin'], function () {
   Route::resource('guests','GuestController')->middleware('auth:admin');
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
+  Route::get('/verif', 'VerifController@index')->middleware('auth:admin')->name('verif.index');
 });

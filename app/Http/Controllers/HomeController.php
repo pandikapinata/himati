@@ -45,4 +45,9 @@ class HomeController extends Controller
 
         return view('detail_berita',compact('news'));
     }
+
+    public function comingSoon()
+    {
+        return view('coming_soon');
+    }
 }

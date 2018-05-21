@@ -19,7 +19,7 @@ class RentalController extends Controller
         if(auth()->guard('guest')->check()){
             $checkId = Auth::guard('guest')->user()->id;
             $sewa     = Sewa::where('guest_id',$checkId)
-                        ->where('status_sewa',1)->get();
+                        ->where('status_sewa','Jadi')->get();
             //return($sewa);
             if($sewa->isEmpty()){
                 $jml_brg=0;
@@ -41,15 +41,14 @@ class RentalController extends Controller
             $brg_selected=$request->brg_id;
             $checkId = Auth::guard('guest')->user()->id;
             $sewa     = Sewa::where('guest_id',$checkId)
-                        ->where('status_sewa',1)->get();
+                        ->where('status_sewa','Jadi')->get();
 
             if(empty($sewa[0])){
                 $sewa = new Sewa();
                 $sewa -> guest_id = $checkId;
-                $sewa -> kode_sewa = substr(sha1(time()),5);
                 $sewa->save();
                 $sewa     = Sewa::where('guest_id',$checkId)
-                            ->where('status_sewa',1)->get();
+                            ->where('status_sewa','Jadi')->get();
             }
 
             $sewa_id=$sewa[0]->id;
@@ -79,7 +78,7 @@ class RentalController extends Controller
             $barang = Barang::all();
             $checkId = Auth::guard('guest')->user()->id;
             $sewa     = Sewa::where('guest_id',$checkId)
-                        ->where('status_sewa',1)->get();
+                        ->where('status_sewa','Jadi')->get();
             //return($sewa);
             if($sewa->isEmpty()){
                 return redirect('/rental');
@@ -153,6 +152,7 @@ class RentalController extends Controller
     {
         if(auth()->guard('guest')->check()){
             $sewa = Sewa::find($id);
+            $sewa->tgl_pesan = Carbon::now();
             $sewa -> total_bayar=  $request->total_harga;
             $sewa->save();
             return redirect('/rental/cart/checkoutConfirm');
@@ -171,13 +171,13 @@ class RentalController extends Controller
             $checkId = Auth::guard('guest')->user()->id;
 
             $sewa     = Sewa::where('guest_id',$checkId)
-                        ->where('status_sewa',1)->get();
+                        ->where('status_sewa','Jadi')->get();
 
             if($sewa->isEmpty()){
                 return redirect('/rental/cart');
             }
             $checkout = Sewa::with('guest')->with('barang_sewa')
-                        ->where('guest_id',$checkId)->where('status_sewa',1)->get();
+                        ->where('guest_id',$checkId)->where('status_sewa','Jadi')->get();
             //dd($checkout[0]->barang_sewa[0]->start_date);
             // return($checkout[0]->sewa_id);
             $sewa_id=$sewa[0]->id;
@@ -212,20 +212,21 @@ class RentalController extends Controller
         if(auth()->guard('guest')->check()){
             $checkId = Auth::guard('guest')->user()->id;
             $sewa     = Sewa::where('guest_id',$checkId)
-                        ->where('status_sewa',2)->get();
+                        ->where('status_sewa','Pending')->get();
             //return($sewa);
             if($sewa->isEmpty()){
                 $jml_brg=0;
                 return redirect('/rental');
             }else{
-                $sewa_id=$sewa[0]->id;
-                $jml_brg =  Barang_Sewa::where('sewa_id',$sewa_id)->count();
-                return($jml_brg);
+                $jml_brg=0;
+                $total_harga=$sewa[0]->total_bayar;
+                return view('guest.trx',compact('sewa','total_harga','jml_brg'));
             }
-            return view('guest.trx',compact('rents','jml_brg'));
         }
-
-        return view('guest.trx',compact('rents','jml_brg'));
+        else{
+            return redirect('guest/login');
+        }
+        return redirect()->back();
 
     }
 
@@ -233,7 +234,7 @@ class RentalController extends Controller
     {
         if(auth()->guard('guest')->check()){
             $sewa = Sewa::find($id);
-            $sewa -> status_sewa= 2;
+            $sewa -> status_sewa= 'Pending';
             $sewa->save();
             $carts = Barang_Sewa::where('sewa_id',$sewa->id)->get();
             //return($carts);
@@ -250,6 +251,34 @@ class RentalController extends Controller
         return redirect()->back();
 
     }
+
+    public function transaksiUpload(Request $request,$id)
+    {
+        if(auth()->guard('guest')->check()){
+            $checkId = Auth::guard('guest')->user()->name;
+            $sewa = Sewa::find($id);
+
+            $image = $request->file('bukti');
+            //return($image);
+            if ($image) {
+                $filename = $checkId . "_" . time() . '.' . $image->getClientOriginalExtension();
+                $sewa->bukti_pembayaran = $filename;
+                $image->move(public_path('assets/images/berkas_pembayaran'), $filename);
+            }
+            $sewa -> status_sewa= 'Waiting';
+            $sewa -> keterangan = $request->keterangan;
+            $sewa->save();
+
+            return redirect('rental');
+        }
+        else{
+            return redirect('guest/login');
+        }
+        return redirect()->back();
+
+    }
+
+
 
 
 
