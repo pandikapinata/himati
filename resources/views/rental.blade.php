@@ -4,20 +4,20 @@
 <div class="banner-innerpage" style="background-image:url(/assets/images/banner-bg2.jpg)">
     <div class="bg-dark">
         <section class="container content-boxed">
-                <div class="row items-push">
-                    <div class="col-sm-7">
-                        <h3 class="text-white">
-                           Rental              
-                        </h3>
-                    </div>
-                    <div class="col-sm-5 text-right hidden-xs ">
-                        <ol class="breadcrumb push-10-t " style="color:#fff !important;">
-                            <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Beranda</a></li>
-                            <li class="breadcrumb-item active">Rental</li>
-                        </ol>
-                    </div>
+            <div class="row items-push">
+                <div class="col-sm-7">
+                    <h3 class="text-white">
+                        Rental              
+                    </h3>
                 </div>
-            </section>
+                <div class="col-sm-5 text-right hidden-xs ">
+                    <ol class="breadcrumb push-10-t " style="color:#fff !important;">
+                        <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Beranda</a></li>
+                        <li class="breadcrumb-item active">Rental</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 

@@ -1733,7 +1733,7 @@ Fix-width
 Spacer
 *******************/
 .spacer {
-  padding: 90px 0; }
+  padding: 30px 0; }
 
 .mini-spacer {
   padding: 40px 0; }
@@ -3154,69 +3154,3 @@ File: scss
     padding: 15px 15px; }
   .slider1 a {
     font-size: 14px; } }
-<<<<<<< HEAD
-=======
-
-/*******************
-Footer 1
-*******************/
-.footer1 .f1-topbar {
-  border-bottom: 1px dashed rgba(120, 130, 140, 0.13); }
-  .footer1 .f1-topbar .navbar {
-    padding: 0px; }
-    .footer1 .f1-topbar .navbar .navbar-nav .nav-item .nav-link {
-      color: #8d97ad;
-      display: block;
-      padding: 15px 13px; }
-    .footer1 .f1-topbar .navbar .navbar-nav .nav-item:hover .nav-link, .footer1 .f1-topbar .navbar .navbar-nav .nav-item.active .nav-link {
-      color: #316ce8; }
-
-.footer1 .f1-middle {
-  padding: 40px  0; }
-
-.footer1 .f1-bottom-bar {
-  padding: 20px 0;
-  border-top: 1px solid rgba(120, 130, 140, 0.13); }
-
-
-  /*******************
-shop listing
-*******************/
-
-.shop-listing .shop-hover {
-  position: relative;
-  height:240px;
-  width:255px;
-}
-
-.shop-listing .shop-hover .card-img-overlay {
-  display: none;
-  background: rgba(255, 255, 255, 0.5);
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.shop-listing .shop-hover:hover .card-img-overlay {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.shop-listing .shop-hover .label {
-  padding: 5px 10px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-/*******************
-shop table
-*******************/
-
-.shop-table td {
-  padding: 30px 0;
-}
->>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c

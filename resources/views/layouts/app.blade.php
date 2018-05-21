@@ -73,7 +73,7 @@
                         <a class="nav-link" href="#kontak"><span class="top">Kontak</span></a>
                     </li>
                 <li class="nav-item has-sub dropdown-wrapper from-bottom">
-                    <a class="nav-link" href="rental"><span class="top">Sewa</span></a>
+                    <a class="nav-link" href="/rental"><span class="top">Sewa</span></a>
                 </li>
                 @auth('guest')
                 <div class="nav-item dropdown" id="header13">
