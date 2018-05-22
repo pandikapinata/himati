@@ -60,7 +60,7 @@
                 @endphp
                 <tr>
                     <td>
-                        <img src="{{ URL::asset('assets/images/barang/' . $brg_sewa->barang->foto_barang) }}" width="200" alt="wrapkit" />
+                        <img src="{{ URL::asset('assets/images/barang/' . $brg_sewa->barang->foto_barang) }}" width="200" alt="hmti" />
                     </td>
                     <td class="text-left" style="padding:15px">
                         <input name="sewa_id" type="hidden" class="form-control" value="{{$brg_sewa->sewa_id}}">

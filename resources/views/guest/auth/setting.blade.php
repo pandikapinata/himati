@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.secondary')
 
 @section('content')
 <div class="banner-innerpage" style="background-image:url(/assets/images/banner-bg2.jpg)">
@@ -13,6 +13,7 @@
         </div>
     </div>
 </div>
+
 <div class="row m-t-30 m-b-40 justify-content-center">
     <div class="col-md-6">
         <div class="card card-body">
@@ -43,18 +44,14 @@
                             <input id="email" class="form-control" type="email" name="email" placeholder="Enter email" value="{{$guests->email}}">
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">New Password</label>
-                            <input  id="password" class="form-control" type="password" name="password" placeholder="Password">
-                        </div>
-
-
                         <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
 
                     </form>
                 </div>
             </div>
         </div>
+
+
     </div>
 </div>
 @endsection

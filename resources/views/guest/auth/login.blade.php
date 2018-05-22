@@ -41,8 +41,8 @@
                                 </div>
 
                                 <div class="col-lg-12 d-flex">
-                                    <button type="submit" class="btn btn-md1 btn-outline-style"><span> Masuk </span></button>
-                                    <div class="have-ac ml-auto align-self-center">Lupa Password? <a href="{{url('admin/password/reset')}}" class="text-primary"> Klik Disini</a></div>
+                                    <button type="submit" class="btn btn-md btn-outline-style"><span> Masuk </span></button>
+                                    <div class="have-ac ml-auto align-self-center">Tidak memiliki akun? <a href="{{url('guest/register')}}" class="text-primary"> Daftar Sekarang!</a></div>
                                 </div>
                             </div>
                         </form>

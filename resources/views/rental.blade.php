@@ -7,7 +7,7 @@
             <div class="row items-push">
                 <div class="col-sm-7">
                     <h3 class="text-white">
-                        Rental              
+                        Rental
                     </h3>
                 </div>
                 <div class="col-sm-5 text-right hidden-xs ">
@@ -35,7 +35,7 @@
                     <div class="invisible">{{$number+1}}</div>
                     <div class="card shop-hover">
                         <div class="post-sewa">
-                           <img src="assets/images/barang/ht.jpg" alt="wrapkit" class="img-fluid" />
+                           <img src="assets/images/barang/ht.jpg" alt="hmti" class="img-fluid" />
                         </div>
 
                         <div class="card-img-overlay align-items-center">

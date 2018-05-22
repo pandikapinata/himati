@@ -42,6 +42,9 @@ Route::group(['prefix' => 'guest'], function () {
 
   Route::get('/setting/{id}/edit', 'GuestController@edit')->middleware('auth:guest')->name('setting.edit');
   Route::patch('/setting/{id}', 'GuestController@update')->middleware('auth:guest')->name('setting.update');
+
+  Route::get('/setting/password/reset', 'GuestController@passResetForm')->middleware('auth:guest')->name('pass.resetForm');
+  Route::post('/setting/password/reset', 'GuestController@passReset')->middleware('auth:guest')->name('pass.reset');
 });
 
 Route::group(['prefix' => 'admin'], function () {

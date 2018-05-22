@@ -13,14 +13,16 @@
                             <!-- Column -->
                             <div class="col-lg-7 col-md-6 align-self-center text-center" data-aos="fade-up" data-aos-duration="1200">
                             <h1 class="title typewrite" data-type='["HMTI","Kabinet","{{$kabinet}}"]'>&nbsp;</h1>
-                                <h4 class="subtitle font-light">Himpunan Mahasiswa Teknologi Informasi<br/>Universitas Udayana</h4>
+                                <h4 class="subtitle">Himpunan Mahasiswa Teknologi Informasi<br/>Universitas Udayana</h4>
+                                <a class="btn btn-rounded btn-outline-warning font-16 m-t-30" href="">Oprec</a>
+                                <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
                             </div>
                             <!-- Column -->
                         </div>
                         </div>
                     </div>
                     <div class="overlay"></div>
-                    <!-- Slide Background --><img src="assets/images/sliders/slide1.jpg" alt="We are Digital Agency" class="slide-image" />
+                    <img src="assets/images/sliders/slide2.jpg" class="slide-image" />
 
                 </div>
                 <!-- End of Slide -->
@@ -29,9 +31,6 @@
         <!-- End Slider -->
     </section>
     <!-- ============================================================== -->
-    <!-- End Static Slider 10  -->
-    <!-- ============================================================== -->
-   <!-- ============================================================== -->
     <!-- Berita  -->
     <!-- ============================================================== -->
     <div class="blog-home2 spacer team2" id="berita">
@@ -58,7 +57,7 @@
                         </div>
                         <div class="d-flex no-block font-13 icon-list-demo" >
                             <div class="preview">
-                                <i class="icon-Alarm-Clock m-l-0"></i><span> OCT 17, 2017</span>
+                                <i class="icon-Alarm-Clock m-l-0"></i><span class="font-medium">{{$new->created_at->format('l, d F Y')}}</span>
                             </div>
                         </div>
                         <div style="height:70px; overflow:hidden;">
@@ -68,6 +67,11 @@
                     </div>
                 </div>
                 @endforeach
+            </div>
+            <div class="row justify-content-center">
+                <div class="text-center">
+                    <a class="btn btn-rounded btn-outline-info font-16 m-t-30" href="{{ route('list.berita') }}">View More</a>
+                </div>
             </div>
         </div>
     </div>

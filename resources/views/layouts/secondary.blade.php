@@ -60,9 +60,8 @@
             </ul>
             <ul class="navbar-nav ml-auto categories"  id="mobile-top-menu">
                 <li class="nav-item"><a class="nav-link" href="{{ route('utama') }}"><span class="top">Home</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('rental.index') }}"><span class="top">Rental</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('rent.transaksi') }}"><span class="top">Transaksi</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('rent.cart') }}"><span class="top">({{$jml_brg}})</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('list.berita') }}"><span class="top">Berita</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#"><span class="top">Fungsionaris</span></a></li>
                 @auth('guest')
                 <div class="nav-item dropdown" id="header13">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -77,6 +76,7 @@
                             <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
                                 {{ __('Change Password') }}
                             </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -115,9 +115,8 @@
                                         <div class="collapse navbar-collapse" id="header13">
                                             <ul class="navbar-nav ml-auto" id="top-menu">
                                                 <li class="nav-item"><a class="nav-link" href="{{ route('utama') }}">Home</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('rental.index') }}">Rental</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('rent.transaksi') }}">Transaksi</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('rent.cart') }}">Cart({{$jml_brg}})</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('list.berita') }}">Berita</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#">Fungsionaris</a></li>
                                             </ul>
                                             @auth('guest')
                                             <div class="nav-item dropdown" id="header13">
@@ -207,9 +206,8 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 d-flex m-t-20">
-                                                <button type="submit" class="btn btn-md btn-outline-style"><span> Masuk </span></button>
-                                                <div class="have-ac ml-auto align-self-center"><a href="{{url('guest/register')}}" class="text-primary "> Daftar Sekarang!</a></div>
+                                            <div class="col-lg-12 text-center m-t-20">
+                                                <button type="submit" class="btn btn-outline-style"><span> Masuk ke HMTI </span></button>
                                             </div>
                                         </div>
                                     </form>

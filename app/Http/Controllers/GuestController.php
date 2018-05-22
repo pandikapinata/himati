@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Guest;
 use Illuminate\Support\Facades\Hash;
+use Auth;
 
 class GuestController extends Controller
 {
@@ -97,7 +98,6 @@ class GuestController extends Controller
         $guest -> email = $request->input('email');
         $guest -> telp = $request->input('telp');
         $guest -> username = $request->input('username');
-        $guest -> password = Hash::make($request->input('password'));
         $guest -> save();
 
         return redirect()->route('setting.edit', $guest->id );
@@ -116,4 +116,31 @@ class GuestController extends Controller
 
         return redirect('/admin/guests');
     }
+
+    public function passReset(Request $request)
+    {
+        if (!(Hash::check($request->get('current-password'), Auth::guard('guest')->user()->password))) {
+            // The passwords matches
+            return redirect()->back()->with("error","Your current password does not matches with the password you provided. Please try again.");
+        }
+
+        if(strcmp($request->get('current-password'), $request->get('new-password')) == 0){
+            //Current password and new password are same
+            return redirect()->back()->with("error","New Password cannot be same as your current password. Please choose a different password.");
+        }
+        $validatedData = $request->validate([
+            'current-password' => 'required',
+            'new-password' => 'required|string|min:6|confirmed',
+        ]);
+        //Change Password
+        $user = Auth::guard('guest')->user();
+        $user->password = bcrypt($request->get('new-password'));
+        $user->save();
+        return redirect()->back()->with("success","Password changed successfully !");
+    }
+
+    public function passResetForm(){
+        return view('guest.auth.resetform');
+    }
+
 }

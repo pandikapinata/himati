@@ -46,7 +46,7 @@
         <!-- Top header  -->
         <!-- ============================================================== -->
         <div class="b-main_menu-wrapper hidden-lg-up">
-            <ul class="mobile-top"> 
+            <ul class="mobile-top">
                 <li class="search">
                     <div class="search-holder-mobile">
                         <input type="text" name="search-mobile" value="" placeholder="Search" class="form-control">
@@ -54,7 +54,7 @@
                     </div>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto categories"  id="mobile-top-menu"> 
+            <ul class="navbar-nav ml-auto categories"  id="mobile-top-menu">
                 <li class="nav-item has-sub dropdown-wrapper from-bottom">
                     <a class="nav-link js-scroll-trigger" href="#beranda"><span class="top">Beranda</span></a>
                 </li>
@@ -84,6 +84,10 @@
                                 {{ __('Setting') }}
                             </a>
 
+                            <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
+                                {{ __('Change Password') }}
+                            </a>
+
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
@@ -101,17 +105,17 @@
                 <div class="act-buttons">
                     <a href=""  data-toggle="modal" data-target="#login" class="btn btn-outline-style1" >{{ __('Login') }}</a>
                 </div>
-                @endauth 
-            </ul> 
-        </div>   
+                @endauth
+            </ul>
+        </div>
         <div class="b-header b-header_main">
             <div class="container">
                 <div class="clearfix row">
                     <div class="col-10 col-xl-4 col-lg-4 col-mb-4 col-sm-4 col-xs-8">
                         <div class="b-logo text-sm-left text-lg-left text-xl-left">
-                            <a class="d-inline-block" href="#"><img src="{{ URL::asset('assets/images/header1.png') }}" class="img-fluid d-block" alt="HMTI" /></a>                        
+                            <a class="d-inline-block" href="#"><img src="{{ URL::asset('assets/images/header1.png') }}" class="img-fluid d-block" alt="HMTI" /></a>
                         </div>
-                        
+
                     </div>
                     <div class="col-xl-8 col-lg-8 col-mb-8 col-sm-12 col-xs-12 hidden-sm-down hidden-md-down">
                         <div class="b-menu_top_bar_container topbar">
@@ -126,30 +130,33 @@
                                                 <li class="nav-item"><a class="nav-link" href="#kegiatan">Kegiatan</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="#fungsionaris">Fungsionaris</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="rental">Sewa</a></li>
                                             </ul>
                                             @auth('guest')
                                             <div class="nav-item dropdown" id="header13">
                                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::guard('guest')->user()->name }}
                                                     </a>
-            
+
                                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <a class="dropdown-item" href="{{ route('setting.edit', Auth::guard('guest')->user()->id) }}">
                                                             {{ __('Setting') }}
                                                         </a>
-            
+
+                                                        <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
+                                                            {{ __('Change Password') }}
+                                                        </a>
+
                                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
                                                             {{ __('Logout') }}
                                                         </a>
-            
+
                                                         <form id="logout-form" action="{{ url('guest/logout') }}" method="POST" style="display: none;">
                                                             @csrf
                                                         </form>
-            
-            
+
+
                                                     </div>
                                                 </div>
                                             @else
@@ -164,13 +171,13 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="hidden-lg-up col-2 col-xl-2 col-lg-2 col-mb-2 col-sm-8 col-xs-6">
                         <div class="b-header_right">
                             <div class="hidden-lg-up">
                                 <ul class="pl-0 mb-0 list-unstyled">
                                     <i class="icon-menu icons ti-menu" id="ti-menu"></i>
-                                </ul>   
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -185,7 +192,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-10 col-md-7">
                                 <div class="modal-bg ">
-                                    <img src="/assets/images/logo_icon.png" alt="wrapkit">
+                                    <img src="/assets/images/logo_icon.png" alt="hmti">
                                     <h2 class="font-light text-muted m-t-20 text-center">Masuk ke HMTI</h2>
                                     <form class="m-t-30" method="POST" action="{{ url('/guest/login') }}">
                                         @csrf
@@ -334,7 +341,7 @@
     <script src="{{asset('assets/node_modules/prism/prism.js')}}"></script>
     <script src="{{asset('assets/js/type.js')}}"></script>
     <script src="{{asset('assets/js/portfolio.js')}}"></script>
-    
+
 
 
     <script async defer

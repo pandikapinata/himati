@@ -41,17 +41,19 @@ class HomeController extends Controller
 
     public function show($id)
     {
+        $news_sidebar = Newsfeed::latest()->get();
         $news = Newsfeed::find($id);
 
-        return view('detail_berita',compact('news'));
+        return view('detail_berita',compact('news','news_sidebar'));
     }
 
     public function listBerita()
     {
-        $news = Newsfeed::latest()->get();
-        return view('list_berita', compact('news'));
+        $news_sidebar = Newsfeed::latest()->get();
+        $news = Newsfeed::latest()->paginate(1);
+        return view('list_berita', compact('news','news_sidebar'));
     }
-    
+
     public function commingSoon()
     {
         return view('coming_soon');
