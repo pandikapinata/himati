@@ -245,6 +245,33 @@ Feature 5
   .wrap-feature5-box .card-body p {
     margin-bottom: 0px; }
 
+.wrap-feature6-box {
+  -webkit-transition: 0.2s ease-in;
+  -o-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.wrap-feature6-box .card-body {
+  padding: 30px;
+}
+
+.wrap-feature6-box .card-body .linking {
+  color: #ffffff;
+}
+
+.wrap-feature6-box .card-body .linking:hover {
+  color: #263238;
+}
+
+.wrap-feature6-box .card-body p {
+  opacity: 0.8;
+}
+
+.wrap-feature6-box:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 /*******************
 Feature 22
 *******************/
@@ -716,7 +743,6 @@ Blog homepage 6
   padding-left:0px;
 }
 
-<<<<<<< HEAD
 .content-boxed {
   margin: 0 auto;
   /* padding: 30px 30px 1px; */
@@ -846,10 +872,6 @@ border-bottom: 1px solid #eee;
   border-top: 1px solid rgba(120, 130, 140, 0.13); }
 
   /*******************
-=======
-
- /*******************
->>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c
 Icons
 *******************/
 .icon-list-demo div {
@@ -882,15 +904,9 @@ Icons
 
 .icon-list-demo .col-md-4, .icon-list-demo .col-3 {
   border-radius: 4px; }
-<<<<<<< HEAD
   
   /* no animation */
   
-=======
-
-  /* no animation */
-
->>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c
 .icon-list-no-animation div {
   /* cursor: pointer; */
   line-height: 35px;
@@ -947,8 +963,148 @@ Icons
   -moz-border-radius: 3px;
   border-radius: 3px;
   position: relative;
-<<<<<<< HEAD
   }
+
+/*
+Template Name: Wrapkit
+Author: wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*Gradiant*/
+/*******************
+Portfolio 1
+*******************/
+.img-ho {
+  overflow: hidden; }
+  .img-ho img {
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in; }
+    .img-ho img:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+
+/*******************
+Portfolio2
+*******************/
+.filterby a {
+  padding: 10px;
+  font-weight: 400;
+  color: #8d97ad; }
+  .filterby a:hover {
+    color: #316ce8; }
+  .filterby a:first-child {
+    padding-left: 0px; }
+
+.hidden {
+  display: none; }
+
+@media (max-width: 767px) {
+  .filterby a {
+    padding: 10px 5px; } }
+
+.portfolio-box {
+  margin-top: 40px; }
+  .portfolio-box .filter .overlay-box {
+    margin-bottom: 30px;
+    position: relative; }
+    .portfolio-box .filter .overlay-box .img-ho {
+      overflow: hidden;
+      display: block; }
+      .portfolio-box .filter .overlay-box .img-ho img {
+        -webkit-transition: 0.1s ease-in;
+        -o-transition: 0.1s ease-in;
+        transition: 0.1s ease-in; }
+      .portfolio-box .filter .overlay-box .img-ho:hover img {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
+    .portfolio-box .filter .overlay-box .port-text {
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s; }
+      .portfolio-box .filter .overlay-box .port-text > div {
+        padding: 20px 0 10px 0; }
+      .portfolio-box .filter .overlay-box .port-text h5 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 0px; }
+      .portfolio-box .filter .overlay-box .port-text span {
+        color: #8d97ad;
+        font-size: 14px; }
+
+.like-dislike {
+  padding: 0px !important; }
+  .like-dislike .text-active {
+    display: none; }
+  .like-dislike.active .text {
+    display: none; }
+  .like-dislike.active .text-active {
+    display: inline-block; }
+
+/*******************
+Portfolio4
+*******************/
+.portfolio4 .portfolio-box4 {
+  margin-top: 60px; }
+  .portfolio4 .portfolio-box4 .filter .overlay-box {
+    margin-bottom: 30px;
+    position: relative; }
+    .portfolio4 .portfolio-box4 .filter .overlay-box .overlay {
+      position: absolute;
+      background: rgba(29, 200, 205, 0.9);
+      -webkit-transition: 0.3s;
+      -o-transition: 0.3s;
+      transition: 0.3s;
+      height: 0px;
+      width: 100%;
+      display: none;
+      padding-top: 30%; }
+      .portfolio4 .portfolio-box4 .filter .overlay-box .overlay .port-text {
+        -webkit-transition: 0.3s;
+        -o-transition: 0.3s;
+        transition: 0.3s;
+        position: absolute;
+        top: 0px;
+        width: 0px;
+        text-align: center; }
+        .portfolio4 .portfolio-box4 .filter .overlay-box .overlay .port-text h5 {
+          color: #ffffff;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 0px; }
+        .portfolio4 .portfolio-box4 .filter .overlay-box .overlay .port-text span {
+          color: #ffffff;
+          font-size: 14px; }
+    .portfolio4 .portfolio-box4 .filter .overlay-box:hover .overlay {
+      display: block;
+      top: 0px;
+      height: 100%; }
+      .portfolio4 .portfolio-box4 .filter .overlay-box:hover .overlay .port-text {
+        top: 43%;
+        width: 100%; }
+
+/*******************
+projects
+*******************/
+.img-ho {
+  overflow: hidden; }
+  .img-ho img {
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in; }
+    .img-ho img:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+
 
   .b-header {
     padding: 0px;
@@ -1694,6 +1850,3 @@ Icons
       color: #fff;
       display: block; }
   
-=======
-  }
->>>>>>> 5b5e99b426360640cb42a3f1121761e81240269c

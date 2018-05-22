@@ -18,15 +18,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/prism/prism.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css')}}">
     <!-- This page plugin CSS -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/magnific-popup/dist/magnific-popup.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/node_modules/owl.carousel/dist/assets/owl.theme.green.css')}}">
     <!-- This css we made it from our predefine componenet
     we just copy that css and paste here you can also do that -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/demo.css')}}">
     <!-- Common style CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
-    <!-- Datepicker -->
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}">
 
 </head>
 
@@ -331,9 +329,12 @@
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
+    <script src="{{asset('assets/node_modules/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
     <script src="{{asset('assets/node_modules/owl.carousel/dist/owl.carousel.min.js')}}"></script>
     <script src="{{asset('assets/node_modules/prism/prism.js')}}"></script>
     <script src="{{asset('assets/js/type.js')}}"></script>
+    <script src="{{asset('assets/js/portfolio.js')}}"></script>
+    
 
 
     <script async defer

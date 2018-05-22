@@ -9,6 +9,7 @@
   js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.0&appId=971477629686903&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="banner-innerpage" style="background-image:url(/assets/images/banner-bg2.jpg)">
     <div class="bg-dark">
         <section class="container content-boxed">
@@ -38,11 +39,19 @@
                             <h2 class="title-article font-light"><a href="#" class="link">{{$news->judul_berita}}</a></h2>
 
                             <ul class="text-uppercase m-t-10 m-b-20 b-b list-inline font-13 font-medium">
-                                <li><a href="#">John Deo</a></li>
-                                <li><a href="#">NOV 08, 2017 </a></li>
-                                <li><a href="#" class="text-info">NEWS</a></li>
+                            <li>{{$news->created_at->format('l, d F Y H:i')}}</li>
                             </ul>
-                            <img src="{{ URL::asset('assets/images/berita/' . $news->foto_berita) }}" alt="wrapkit" class="img-fluid" />
+                            <div class="row popup-gallery">
+                                <!-- Column -->
+                                <div class="col-md-12 text-center">
+                                    <div class="card">
+                                        <a href="{{ URL::asset('../assets/images/berita/' . $news->foto_berita) }}" class="img-ho" title="{{$news->judul_berita}}" author="aa">
+                                            <img class="card-img-top" style="max-height: 600px; width: auto; max-width: 100%;" src="{{ URL::asset('../assets/images/berita/' . $news->foto_berita) }}" alt="wrappixel kit" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <img src="{{ URL::asset('assets/images/berita/' . $news->foto_berita) }}" alt="wrapkit" class="img-fluid" /> --}}
 
                             <p class="m-t-30 m-b-30">
                                 {!! $news->isi_berita !!}

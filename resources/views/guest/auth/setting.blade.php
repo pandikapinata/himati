@@ -34,6 +34,11 @@
                         </div>
 
                         <div class="form-group">
+                            <label for="exampleInputEmail1">Telp</label>
+                            <input id="telp" class="form-control" type="text" name="telp" placeholder="Enter Telp" value="{{$guests->telp}}">
+                        </div>
+
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
                             <input id="email" class="form-control" type="email" name="email" placeholder="Enter email" value="{{$guests->email}}">
                         </div>

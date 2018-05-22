@@ -8,6 +8,7 @@ use App\Fungsionaris;
 use App\Period;
 use App\Newsfeed;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -43,5 +44,11 @@ class HomeController extends Controller
         $news = Newsfeed::find($id);
 
         return view('detail_berita',compact('news'));
+    }
+
+    public function listBerita()
+    {
+        $news = Newsfeed::latest()->get();
+        return view('list_berita', compact('news'));
     }
 }

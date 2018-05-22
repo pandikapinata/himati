@@ -13,7 +13,7 @@ File: scss
  *	4. Banners
  *	5. Footers
  *	6. app
- *	7. Widgets 
+ *	7. Widgets
  *	8. Custom Templates
  */
 /*
@@ -203,8 +203,8 @@ File: scss
 /*Normal Color*/
 /*Extra Variable*/
 /*Gradiant*/
-/******************* 
-This is the font import from the google api 
+/*******************
+This is the font import from the google api
 *******************/
 @font-face {
   font-family: 'Calafia-Regular';
@@ -212,8 +212,8 @@ This is the font import from the google api
   font-weight: normal;
   font-style: normal; }
 
-/******************* 
-Global Styles 
+/*******************
+Global Styles
 *******************/
 * {
   outline: none; }
@@ -362,6 +362,9 @@ html body .p-l-0 {
 html body .p-l-10 {
   padding-left: 10px; }
 
+html body .p-l-15 {
+  padding-left: 15px; }
+
 html body .p-l-20 {
   padding-left: 20px; }
 
@@ -457,6 +460,9 @@ html body .m-r-40 {
 
 html body .m-t-0 {
   margin-top: 0px; }
+
+html body .m-t-1 {
+  margin-top: 1px; }
 
 html body .m-t-5 {
   margin-top: 5px; }
@@ -1616,7 +1622,7 @@ Author: wrappixel
 Email: niravjoshi87@gmail.com
 File: scss
 */
-/******************* 
+/*******************
 Topbar
 *******************/
 .topbar {
@@ -1632,14 +1638,14 @@ Topbar
     box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;  
+    transition: 0.2s ease-in;
     background: #7f5126;}
     .topbar.fixed-header .navbar .navbar-brand img {
       height: 50px;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateZ(0) scale(1, 1); }
 
-/******************* 
+/*******************
 Topbar
 *******************/
 .topbar-brown {
@@ -1649,20 +1655,20 @@ Topbar
   transition: 0.2s ease-in;
   width: 100%;
   position: fixed;
-  z-index: 20; 
+  z-index: 20;
   background: #7f5126;}
   .topbar-brown.fixed-header {
     -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
     -webkit-transition: 0.2s ease-in;
     -o-transition: 0.2s ease-in;
-    transition: 0.2s ease-in;  
+    transition: 0.2s ease-in;
     background: #7f5126;}
     .topbar-brown.fixed-header .navbar .navbar-brand img {
       height: 50px;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translateZ(0) scale(1, 1); }
-       
+
 
 
 /*******************
@@ -1675,12 +1681,12 @@ Header 6
   line-height: 80px; }
 
 .h6-nav-bar-shrink {
-  padding: 0px; 
+  padding: 0px;
   height: 68px;
 }
 
 .h6-nav-bar {
-  padding: 0px; 
+  padding: 0px;
 }
   .h6-nav-bar .navbar-nav .nav-link .mobile-nav-link {
     padding: 20px 15px;
@@ -1696,7 +1702,7 @@ Header 6
   .h6-nav-bar .act-buttons .btn {
     margin: 10px 0 10px 0px; } }
 
-/******************* 
+/*******************
 Main & Page wrapper
 *******************/
 .page-wrapper {
@@ -1707,20 +1713,20 @@ Main & Page wrapper
 #main-wrapper {
   overflow: hidden; }
 
-/******************* 
+/*******************
 container fluid
 *******************/
 .container-fluid {
   padding: 0px; }
 
-/******************* 
+/*******************
 footer
 *******************/
 .footer {
   padding: 20px 0;
   text-align: center; }
 
-/******************* 
+/*******************
 Fix-width
 *******************/
 .fix-width {
@@ -1729,7 +1735,7 @@ Fix-width
   margin: 0 auto;
   padding: 0 15px; }
 
-/******************* 
+/*******************
 Spacer
 *******************/
 .spacer {
@@ -1738,20 +1744,20 @@ Spacer
 .mini-spacer {
   padding: 40px 0; }
 
-/******************* 
+/*******************
 Title
 *******************/
 .title {
   margin: 20px 0 15px; }
 
-/******************* 
+/*******************
 Subtitle
 *******************/
 .subtitle {
   color: #8d97ad;
   line-height: 24px; }
 
-/******************* 
+/*******************
 card
 *******************/
 .card {
@@ -1765,7 +1771,7 @@ card
   border: 1px solid rgba(120, 130, 140, 0.13);
   margin-bottom: 30px; }
 
-/******************* 
+/*******************
 Icon space
 *******************/
 .icon-space {
@@ -1784,7 +1790,7 @@ Icon space
     .linking:hover i {
       margin-left: 15px; }
 
-/******************* 
+/*******************
 Listing
 *******************/
 .list-block {
@@ -1807,7 +1813,7 @@ Listing
     border-bottom: 1px solid rgba(120, 130, 140, 0.13);
     padding: 15px 0; }
 
-/******************* 
+/*******************
 Listing
 *******************/
 .img-inline {
@@ -1820,14 +1826,14 @@ Listing
       display: inline-block;
       vertical-align: top; }
 
-/******************* 
+/*******************
 Image shadow
 *******************/
 .img-shadow {
   -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.3);
   box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.3); }
 
-/******************* 
+/*******************
 Image shadow
 *******************/
 .icon-round {
@@ -1842,7 +1848,7 @@ Image shadow
   -ms-flex-negative: 0;
   flex-shrink: 0; }
 
-/******************* 
+/*******************
 up section
 *******************/
 .up {
@@ -1856,26 +1862,26 @@ up section
   z-index: 100;
   visibility: hidden; }
 
-/******************* 
+/*******************
 both space
 *******************/
 .both-space {
   margin: 80px 0; }
 
-/******************* 
+/*******************
 Side text content
 *******************/
 .side-content {
   padding: 40px 60px; }
 
-/******************* 
+/*******************
 background cover
 *******************/
 .bg-cover {
   background-size: cover;
   min-height: 200px; }
 
-/******************* 
+/*******************
 Owl carousel
 *******************/
 .owl-carousel {
@@ -1891,7 +1897,7 @@ Owl carousel
   .owl-carousel .owl-nav.disabled {
     display: none; }
 
-/******************* 
+/*******************
 Max width
 *******************/
 .max-300 {
@@ -1906,7 +1912,7 @@ Max width
 .max-600 {
   max-width: 600px; }
 
-/******************* 
+/*******************
 line sticks
 *******************/
 .stick-bottom {
@@ -1920,7 +1926,7 @@ line sticks
     left: 0px;
     display: inline-block; }
 
-/******************* 
+/*******************
 position
 *******************/
 .po-absolute {
@@ -2554,7 +2560,7 @@ Timeline page
 .timeline-body > p + p {
   margin-top: 5px; }
 
-/*============================================================== 
+/*==============================================================
  Ui-bootstrap
  ============================================================== */
 ul.list-icons {
@@ -2611,7 +2617,7 @@ html body .accordion .card {
   #accordion4 .card.active .card-header a {
     color: #ffffff; }
 
-/*===================== 
+/*=====================
 Breadcrumb
 =====================*/
 .bc-colored .breadcrumb-item,
@@ -2676,7 +2682,7 @@ Breadcrumb
   background: #1dc8cd;
   border-color: #1dc8cd; }
 
-/*============================================================== 
+/*==============================================================
  Cards page
  ============================================================== */
 .card-columns .card {
@@ -2896,7 +2902,7 @@ common-innerpage-banner
   background-size: cover;
   background-position: top center;
   background-attachment: fixed;
- 
+
   /* background-repeat: no-repeat; */
   }
   .banner-innerpage .title {
@@ -3051,14 +3057,14 @@ Author: wrapkit
 Email: niravjoshi87@gmail.com
 File: scss
 */
-/*============================================================== 
- For Laptop & above all (1650px) 
+/*==============================================================
+ For Laptop & above all (1650px)
  ============================================================== */
-/*============================================================== 
- For Laptop & above all (1370px) 
+/*==============================================================
+ For Laptop & above all (1370px)
  ============================================================== */
-/*-- ============================================================== 
- Small Desktop & above all (1024px) 
+/*-- ==============================================================
+ Small Desktop & above all (1024px)
  ============================================================== */
  @media (min-width: 1024px) {
   .hover-dropdown .navbar-nav > .dropdown:hover > .dropdown-menu {
@@ -3087,11 +3093,11 @@ File: scss
     position: relative; } }
 
 
-/*-- ============================================================== 
- Ipad & above all(768px) 
+/*-- ==============================================================
+ Ipad & above all(768px)
  ============================================================== */
-/*-- ============================================================== 
- Phone and below ipad(767px) 
+/*-- ==============================================================
+ Phone and below ipad(767px)
  ============================================================== */
 @media (max-width: 767px) {
   /*This is for the Global*/
@@ -3154,3 +3160,66 @@ File: scss
     padding: 15px 15px; }
   .slider1 a {
     font-size: 14px; } }
+
+/*******************
+Footer 1
+*******************/
+.footer1 .f1-topbar {
+  border-bottom: 1px dashed rgba(120, 130, 140, 0.13); }
+  .footer1 .f1-topbar .navbar {
+    padding: 0px; }
+    .footer1 .f1-topbar .navbar .navbar-nav .nav-item .nav-link {
+      color: #8d97ad;
+      display: block;
+      padding: 15px 13px; }
+    .footer1 .f1-topbar .navbar .navbar-nav .nav-item:hover .nav-link, .footer1 .f1-topbar .navbar .navbar-nav .nav-item.active .nav-link {
+      color: #316ce8; }
+
+.footer1 .f1-middle {
+  padding: 40px  0; }
+
+.footer1 .f1-bottom-bar {
+  padding: 20px 0;
+  border-top: 1px solid rgba(120, 130, 140, 0.13); }
+
+
+/*******************
+shop listing
+*******************/
+
+.shop-listing .shop-hover {
+  position: relative;
+  height:240px;
+  width:255px;
+}
+
+.shop-listing .shop-hover .card-img-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.shop-listing .shop-hover:hover .card-img-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.shop-listing .shop-hover .label {
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*******************
+shop table
+*******************/
+
+.shop-table td {
+  padding: 30px 0;
+}
