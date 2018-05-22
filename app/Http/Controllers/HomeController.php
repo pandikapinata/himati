@@ -51,4 +51,9 @@ class HomeController extends Controller
         $news = Newsfeed::latest()->get();
         return view('list_berita', compact('news'));
     }
+    
+    public function commingSoon()
+    {
+        return view('coming_soon');
+    }
 }

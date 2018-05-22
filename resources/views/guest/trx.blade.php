@@ -17,18 +17,18 @@
     <div class="row m-t-30">
         <!-- column  -->
         <div class="col-lg-5">
-            <form class="m-t-40">
+            <form class="m-t-40" method="POST" action="{{route('transaksiUpload', $sewa[0]->id)}}" enctype="multipart/form-data">
+                @csrf
+                {{ method_field('PUT') }}
                 <h6 class="m-b-20 font-medium">UPLOAD BUKTI PEMBAYARAN</h6>
-
-
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Upload Bukti Pembayaran</label>
-                        <input id="telp" class="form-control" type="file" name="telp" placeholder="Enter Telp" value="">
+                        <label>Upload Bukti Pembayaran</label>
+                        <input id="bukti_pembayaran" class="form-control" type="file" name="bukti" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input id="email" class="form-control" type="email" name="email" placeholder="Enter email" value="">
+                        <label>Keterangan</label>
+                        <textarea id="keterangan" class="form-control" rows="5" name="keterangan" required></textarea>
                     </div>
 
                 <button type="submit" class="btn btn-info btn-md m-t-20 ">Confirm</button>
@@ -39,14 +39,12 @@
             <div class="card bg-info-gradiant text-white" data-aos="fade-down" data-aos-duration="1200">
                 <div class="card-body">
                     <h6 class="font-medium text-white">Notification</h6>
-                    <p class="m-t-20">Lorem ipsum dolor sit amet, consecte tuam porttitor, nunc et fringilla.
+                <p class="m-t-20">Silahkan melakukan pembayaran dengan transfer ke Bank .... sejumlah <b>Rp. {{$total_harga}}</b> ke No.
+                        Rekening <b>9019201290 a.n. Wayan.</b> Batas pembayaran ... hari dari tanggal penyewaan.
                     </p>
-                </div>
-            </div>
-            <div class="card bg-danger-gradiant text-white" data-aos="fade-left" data-aos-duration="1200">
-                <div class="card-body">
-                    <h6 class="font-medium text-white">Powerful Techniques</h6>
-                    <p class="m-t-20">Lorem ipsum dolor sit amet, consecte tuam porttitor, nunc et fringilla.</p>
+                    <p class="m-t-20">
+                        Jika sudah melakukan transfer, silahkan hubungi admin <b>089121212</b>
+                    </p>
                 </div>
             </div>
         </div>

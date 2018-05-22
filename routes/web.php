@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/coming-soon', 'HomeController@comingSoon')->name('soon');
 Route::get('/', 'HomeController@index')->name('utama');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
 Route::get('/rental', 'RentalController@index')->name('rental.index');
@@ -24,6 +24,7 @@ Route::get('/rental/cart/checkoutConfirm', 'RentalController@checkOutConfirm')->
 Route::put('/rental/cart/{id}/checkoutConfirm', 'RentalController@updateStok')->name('cart.updateStok');
 Route::get('/rental/transaksi', 'RentalController@transaksi')->name('rent.transaksi');
 Route::get('/list-berita', 'HomeController@listBerita')->name('list.berita');
+Route::put('/rental/transaksi/{id}', 'RentalController@transaksiUpload')->name('transaksiUpload');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/checkAuth', 'ServiceController@checkAuth');
@@ -69,4 +70,8 @@ Route::group(['prefix' => 'admin'], function () {
   Route::resource('guests','GuestController')->middleware('auth:admin');
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
+  Route::get('/verif', 'VerifController@index')->middleware('auth:admin')->name('verif.index');
+  Route::get('/verif/{id}', 'VerifController@show')->middleware('auth:admin')->name('verif.show');
+  Route::post('/verif/sentEmail/{id}', 'VerifController@sendEmail')->middleware('auth:admin')->name('verif.approved');
+  Route::post('/verif/decline/{id}', 'VerifController@decline')->middleware('auth:admin')->name('verif.decline');
 });

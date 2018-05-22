@@ -57,7 +57,7 @@ class FungsionarisController extends Controller
         if ($image) {
             $filename = $funct->nama_fungsionaris . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
             $funct->media_profile = $filename;
-            $image->move(public_path('assets/images'), $filename);
+            $image->move(public_path('assets/images/fungsionaris'), $filename);
         }
 
         $funct->save();
@@ -119,7 +119,7 @@ class FungsionarisController extends Controller
             $oldFilename = $funct->media_profile;
             Storage::delete($oldFilename);
             $funct->media_profile = $filename;
-            $image->move(public_path('assets/images'), $filename);
+            $image->move(public_path('assets/images/fungsionaris'), $filename);
         }
 
         $funct->save();
