@@ -122,6 +122,16 @@
                             </a>
                         </li>
                         <li>
+                            <a class="waves-effect waves-dark" href="{{ route('master-sie.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Master Sie</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('oprec.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Open Requirement</span>
+                            </a>
+                        </li>
+                        <li>
                             <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Fungsionaris</span>
                             </a>

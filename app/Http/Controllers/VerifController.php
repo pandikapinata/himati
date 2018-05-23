@@ -61,7 +61,6 @@ class VerifController extends Controller
         }
         $verif -> status_sewa= 'Approved';
         $verif ->save();
-
         try{
             Mail::send('admin.mail.invoice', ['name' => $verif->guest->name, 'total_harga' =>$total_harga,
             'id' => $verif->id,'tgl_pesan' => $verif->tgl_pesan, 'vrf' => $verif->barang_sewa],
@@ -69,7 +68,7 @@ class VerifController extends Controller
             {
                 $message->subject('Invoice Penyewaan Barang HMTI');
                 $message->from('donotreply@hmti.com', 'HMTI');
-                $message->to($verif->guest->email);
+                $message->to([$verif->guest->email,'pandikapinata@student.unud.ac.id']);
             });
             return redirect('/admin/verif')->with('message','Berhasil Kirim Email');
         }
@@ -90,6 +89,21 @@ class VerifController extends Controller
             $brg->stok_barang=$brg->stok_barang+$cart->qty;
             $brg->save();
         }
-        return redirect('/admin/verif')->with('message','Berhasil Decline');
+
+        try{
+            Mail::send('admin.mail.decline', ['name' => $verif->guest->name,
+            'id' => $verif->id,'tgl_pesan' => $verif->tgl_pesan],
+            function ($message) use ($verif)
+            {
+                $message->subject('Invoice Penyewaan Barang HMTI');
+                $message->from('donotreply@hmti.com', 'HMTI');
+                $message->to($verif->guest->email);
+            });
+            return redirect('/admin/verif')->with('message','Berhasil Kirim Email');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
+        // return redirect('/admin/verif')->with('message','Berhasil Decline');
     }
 }

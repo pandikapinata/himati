@@ -130,18 +130,27 @@ class RentalController extends Controller
 
     public function save_cart(Request $request, $id)
     {
-        //return("TAI");
-        //id = $request->id;
         $item = Barang_Sewa::find($id);
-        $item -> qty = $request->qty;
-        $item -> start_date=  $request->start_date;
-        $item -> end_date=  $request->end_date;
-        $item->save();
+        $brg_selected=$item->barang_id;
+        $stok   = Barang::where('id',$brg_selected)->first();
+        //return($stok->stok_barang);
+        if($request->qty>$stok->stok_barang){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }else{
+            //return("TAI");
+            //id = $request->id;
+            $item -> qty = $request->qty;
+            $item -> start_date=  $request->start_date;
+            $item -> end_date=  $request->end_date;
+            $item->save();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Cart Updated'
-        ]);
+            return response()->json([
+                'success' => true,
+                'message' => 'Cart Updated'
+            ]);
+
+        }
+
     }
 
     public function destroy($id)
