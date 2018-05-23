@@ -25,6 +25,10 @@ Route::put('/rental/cart/{id}/checkoutConfirm', 'RentalController@updateStok')->
 Route::get('/rental/transaksi', 'RentalController@transaksi')->name('rent.transaksi');
 Route::get('/list-berita', 'HomeController@listBerita')->name('list.berita');
 Route::put('/rental/transaksi/{id}', 'RentalController@transaksiUpload')->name('transaksiUpload');
+//oprec
+Route::get('/open-requirement/index', 'HomeController@show')->name('berita.show');
+Route::get('/open-requirement/{berita}', 'HomeController@show')->name('oprec.form');
+
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/checkAuth', 'ServiceController@checkAuth');
@@ -71,6 +75,9 @@ Route::group(['prefix' => 'admin'], function () {
   Route::resource('fungsionaris','FungsionarisController')->middleware('auth:admin');
   Route::resource('newsfeed','NewsfeedController')->middleware('auth:admin');
   Route::resource('guests','GuestController')->middleware('auth:admin');
+  Route::resource('master-sie','SieController')->middleware('auth:admin');
+  Route::resource('oprec','OprecController')->middleware('auth:admin');
+
   Route::get('/period', 'PeriodController@period')->middleware('auth:admin')->name('period.edit');
   Route::patch('/period/{id}', 'PeriodController@update')->middleware('auth:admin')->name('period.update');
   Route::get('/verif', 'VerifController@index')->middleware('auth:admin')->name('verif.index');

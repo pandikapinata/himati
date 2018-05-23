@@ -50,7 +50,7 @@
                     </div>
                     <div class="card">
                         <h6><a href="#" class="link">{{$rent->nama_barang}}</a></h6>
-                        <!-- <h6 class="subtitle">by Nike</h6> -->
+                        <h6 class="subtitle">Stok Tersedia :{{$rent->stok_barang}}</h6>
                         <h5 class="font-medium m-b-30">IDR {{$rent->harga_sewa}}</h5>
                     </div>
                 </div>
@@ -103,36 +103,12 @@
                 <!-- column  -->
             </div>
         </div>
-        <!-- column  -->
-        {{-- <div class="col-lg-3">
-            <!-- widget  -->
-            <div class="m-b-40">
-                <div class="d-flex no-block font-13 icon-list-no-animation" >
-                    <div class="preview">
-                        <h5 class="title m-b-10"><i class="icon-Shopping-Cart m-l-0"></i><span>Keranjang Sewa</span></h5>
-                    </div>
-                </div>
-                <table class="table table_summary" id="append1">
-
-                </table>
-                <table class="table table_summary">
-                    <tbody>
-                    <tr>
-                        <td class="total">
-                            <span class="pull-right btext font-medium" id="total">TOTAL</span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <!-- widget  -->
-        </div> --}}
-        <!-- column  -->
     </div>
 </div>
 @endsection
 @section('script')
     @parent
+    <script src="{{asset('assets/js/sweetalert.min.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
@@ -161,5 +137,19 @@
             format: 'yy-mm-dd'
         });
     </script>
+
+@if(session()->has('delete'))
+    <script>
+
+            $(document).ready(function(){
+                deleteComplete();
+            })
+            function deleteComplete(){
+                swal("Stok Tidak Cukup", " ", "error")
+            }
+
+
+    </script>
+@endif
 
 @endsection

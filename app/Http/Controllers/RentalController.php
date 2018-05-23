@@ -40,9 +40,14 @@ class RentalController extends Controller
         if(auth()->guard('guest')->check()){
             $brg_selected=$request->brg_id;
             $checkId = Auth::guard('guest')->user()->id;
-            $sewa     = Sewa::where('guest_id',$checkId)
+            $sewa    = Sewa::where('guest_id',$checkId)
                         ->where('status_sewa','Jadi')->get();
-
+            $stok   = Barang::where('id',$brg_selected)->first();
+            //return($stok->stok_barang);
+            if($request->qty>$stok->stok_barang){
+                session()->flash('delete', 'Sukses Menghapus Data Kegiatan');
+                return redirect('/rental');
+            }
             if(empty($sewa[0])){
                 $sewa = new Sewa();
                 $sewa -> guest_id = $checkId;
@@ -125,18 +130,27 @@ class RentalController extends Controller
 
     public function save_cart(Request $request, $id)
     {
-        //return("TAI");
-        //id = $request->id;
         $item = Barang_Sewa::find($id);
-        $item -> qty = $request->qty;
-        $item -> start_date=  $request->start_date;
-        $item -> end_date=  $request->end_date;
-        $item->save();
+        $brg_selected=$item->barang_id;
+        $stok   = Barang::where('id',$brg_selected)->first();
+        //return($stok->stok_barang);
+        if($request->qty>$stok->stok_barang){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }else{
+            //return("TAI");
+            //id = $request->id;
+            $item -> qty = $request->qty;
+            $item -> start_date=  $request->start_date;
+            $item -> end_date=  $request->end_date;
+            $item->save();
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Cart Updated'
-        ]);
+            return response()->json([
+                'success' => true,
+                'message' => 'Cart Updated'
+            ]);
+
+        }
+
     }
 
     public function destroy($id)

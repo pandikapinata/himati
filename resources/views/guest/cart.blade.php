@@ -189,7 +189,7 @@
                     },
                     error : function(data){
                         swal({
-                            title: 'Oops...',
+                            title: 'Stok Tidak Cukup',
                             text: data.message,
                             type: 'error',
                             timer: '1500'
@@ -242,5 +242,18 @@
             format: 'yy-mm-dd'
         });
     </script>
+    @if(session()->has('delete'))
+    <script>
+
+            $(document).ready(function(){
+                deleteComplete();
+            })
+            function deleteComplete(){
+                swal("Stok Tidak Cukup", " ", "error")
+            }
+
+
+    </script>
+    @endif
 
 @endsection
