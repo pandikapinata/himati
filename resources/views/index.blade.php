@@ -14,8 +14,17 @@
                             <div class="col-lg-7 col-md-6 align-self-center text-center" data-aos="fade-up" data-aos-duration="1200">
                             <h1 class="title typewrite" data-type='["HMTI","Kabinet","{{$kabinet}}"]'>&nbsp;</h1>
                                 <h4 class="subtitle">Himpunan Mahasiswa Teknologi Informasi<br/>Universitas Udayana</h4>
-                                <a class="btn btn-rounded btn-outline-warning font-16 m-t-30" href="">Oprec</a>
-                                <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
+                                @auth('guest')
+
+                                    @if (Auth::guard('guest')->user()->priv_id == 1)
+                                        <a class="btn btn-rounded btn-outline-warning font-16 m-t-30" href="">Oprec</a>
+                                        <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
+                                    @elseif (Auth::guard('guest')->user()->priv_id == 2) 
+                                        <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
+                                    @endif
+                                @else
+                                    <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>                                    
+                                @endauth
                             </div>
                             <!-- Column -->
                         </div>
@@ -51,19 +60,19 @@
 
                 <div class="col-lg-3 col-md-4">
                     <div class="card" data-aos="flip-left" data-aos-duration="1200">
-                        <a href="#"><div class="col-md-12 pro-pic" style="background: url('assets/images/berita/{{$new->foto_berita}}')  center center no-repeat; background-size: 100%; border-top-left-radius: calc(.25rem - 1px); border-top-right-radius: calc(.25rem - 1px);"></div> </a>
+                        <a href="{{ route('berita.show', $new ) }}"><div class="col-md-12 pro-pic" style="background: url('assets/images/berita/{{$new->foto_berita}}')  center center no-repeat; background-size: 100%; border-top-left-radius: calc(.25rem - 1px); border-top-right-radius: calc(.25rem - 1px);"></div> </a>
                         <div style="height:75px; overflow:hidden;">
                             <h5 class="font-medium m-t-30"><a href="{{ route('berita.show', $new ) }}" class="link">{{$new->judul_berita}}</a></h5>
                         </div>
                         <div class="d-flex no-block font-13 icon-list-demo" >
                             <div class="preview">
-                                <i class="icon-Alarm-Clock m-l-0"></i><span class="font-medium">{{$new->created_at->format('l, d F Y')}}</span>
+                                <i class="ti-time m-l-0"></i><span class="font-medium">{{$new->created_at->format('l, d F Y')}}</span>
                             </div>
                         </div>
                         <div style="height:70px; overflow:hidden;">
                             <p class="m-t-10">{{ words(strip_tags(preg_replace("/&#?[a-z0-9]+;/i","",($new->isi_berita)))) }}</p>
                         </div>
-                        <a data-toggle="collapse" href="#" class="linking text-danger-gradiant m-t-10">Selengkapnya <i class="ti-arrow-right"></i></a>
+                        <a href="{{ route('berita.show', $new ) }}" class="linking text-brown-gradiant m-t-10">Selengkapnya <i class="ti-arrow-right"></i></a>
                     </div>
                 </div>
                 @endforeach
@@ -97,9 +106,9 @@
                 <div class="col-md-4">
                 <div class="invisible">{{$number+1}}</div>
                     <div class="card" data-aos="flip-left" data-aos-duration="1200">
-                        <a href="#" data-toggle="modal" data-target="#mymodal-{{ $number+1 }}" class="img-ho"><img class="card-img-top" src="{{ URL::asset('assets/images/kegiatan/' . $activ->media_kegiatan) }}" alt="wrappixel kit"/></a>
-                            <h5 class="font-medium m-b-0 m-l-15 m-r-15 title">{{$activ->nama_kegiatan}}</h5>
-                            <p class="m-b-10 m-l-15 m-r-15 font-14 subtitle">{{words($activ->desk_kegiatan,4)}}</p>
+                        <a href="#" data-toggle="modal" data-target="#mymodal-{{ $number+1 }}" class="img-ho img-height-220"><img class="card-img-top" src="{{ URL::asset('assets/images/kegiatan/' . $activ->media_kegiatan) }}" alt="wrappixel kit"/></a>
+                            <h5 class="font-medium m-b-0 m-l-15 m-r-15 title judul-overflow-2brs">{{$activ->nama_kegiatan}}</h5>
+                            <p class="m-b-10 m-l-15 m-r-15 font-14 subtitle deskripsi-overflow-2brs">{{words($activ->desk_kegiatan,4)}}</p>
                     </div>
                 </div>
 

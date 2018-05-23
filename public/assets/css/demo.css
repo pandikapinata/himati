@@ -965,6 +965,23 @@ Icons
   position: relative;
   }
 
+  .img-height-220{
+    max-height: 220px;
+    width: auto;
+    max-width: 100%;
+    height: 220px;
+  }
+
+  .judul-overflow-2brs{
+    height:50px; 
+    overflow:hidden;
+  }
+
+  .deskripsi-overflow-2brs{
+    height:50px; 
+    overflow:hidden;
+  }
+
   .b-header {
     padding: 0px;
     -webkit-transition: 0.2s ease-in;

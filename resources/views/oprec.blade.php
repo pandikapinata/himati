@@ -13,7 +13,7 @@
                 <div class="col-sm-5 text-right hidden-xs ">
                     <ol class="breadcrumb push-10-t " style="color:#fff !important;">
                         <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Beranda</a></li>
-                        <li class="breadcrumb-item active">Rental</li>
+                        <li class="breadcrumb-item active">List Open Requirement</li>
                     </ol>
                 </div>
             </div>

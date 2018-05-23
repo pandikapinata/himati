@@ -238,7 +238,7 @@ a:focus {
 a.link {
   color: #3e4555; }
   a.link:hover, a.link:focus {
-    color: #1dc8cd; }
+    color: #7f5126 ; }
 
 a.white-link {
   color: #ffffff; }
@@ -657,6 +657,18 @@ Text Colors
   background: -webkit-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
   background: -o-linear-gradient(left, #ff4d7e 0%, #ff6a5b 100%);
   background: linear-gradient(to right, #ff4d7e 0%, #ff6a5b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent; }
+
+.text-brown-gradiant {
+  background: #7f5126;
+  background: -webkit-linear-gradient(legacy-direction(to right), #7f5126 0%, #a36b36 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#7f5126), to(#a36b36));
+  background: -webkit-linear-gradient(left, #7f5126 0%, #a36b36 100%);
+  background: -o-linear-gradient(left, #7f5126 0%, #a36b36 100%);
+  background: linear-gradient(to right, #7f5126 0%, #a36b36 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -3195,7 +3207,7 @@ shop listing
 
 .shop-listing .shop-hover .card-img-overlay {
   display: none;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(127, 81, 38, 0.5);
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;

@@ -298,11 +298,13 @@
     <script src="{{asset('assets/node_modules/popper/dist/popper.min.js')}}"></script>
     <script src="{{asset('assets/node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('assets/node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/magnific-popup/dist/jquery.magnific-popup.min.js')}}"></script>
     <!-- This is for the animation -->
     <script src="{{asset('assets/node_modules/aos/dist/aos.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('assets/js/custom.min.js')}}"></script>
     <script src="{{asset('assets/js/style.js')}}"></script>
+    <script src="{{asset('assets/js/portfolio.js')}}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->

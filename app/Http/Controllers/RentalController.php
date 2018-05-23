@@ -40,9 +40,14 @@ class RentalController extends Controller
         if(auth()->guard('guest')->check()){
             $brg_selected=$request->brg_id;
             $checkId = Auth::guard('guest')->user()->id;
-            $sewa     = Sewa::where('guest_id',$checkId)
+            $sewa    = Sewa::where('guest_id',$checkId)
                         ->where('status_sewa','Jadi')->get();
-
+            $stok   = Barang::where('id',$brg_selected)->first();
+            //return($stok->stok_barang);
+            if($request->qty>$stok->stok_barang){
+                session()->flash('delete', 'Sukses Menghapus Data Kegiatan');
+                return redirect('/rental');
+            }
             if(empty($sewa[0])){
                 $sewa = new Sewa();
                 $sewa -> guest_id = $checkId;
