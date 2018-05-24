@@ -81,7 +81,7 @@ class OprecController extends Controller
             $oldFilename = $oprecs->media_kegiatan;
             Storage::delete($oldFilename);
             $oprecs->media_kegiatan = $filename;
-            $image->move(public_path('assets/images/kegiatan'), $filename);
+            $image->move(public_path('assets/images/oprec'), $filename);
 
         }
         $oprecs->save();

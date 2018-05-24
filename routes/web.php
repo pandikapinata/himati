@@ -26,9 +26,10 @@ Route::get('/rental/transaksi', 'RentalController@transaksi')->name('rent.transa
 Route::get('/list-berita', 'HomeController@listBerita')->name('list.berita');
 Route::put('/rental/transaksi/{id}', 'RentalController@transaksiUpload')->name('transaksiUpload');
 //oprec
-Route::get('/open-requirement/index', 'HomeController@show')->name('berita.show');
-Route::get('/open-requirement/{berita}', 'HomeController@show')->name('oprec.form');
-
+Route::get('/open-requirement/index', 'HomeController@showOprec')->name('openReq.show');
+Route::get('/open-requirement/{berita}', 'HomeController@show')->name('openReq.form');
+//fungsio
+Route::get('/list-fungsionaris', 'HomeController@showFungsionaris')->name('list.fungsionaris');
 
 Route::group(['prefix' => 'guest'], function () {
   Route::get('/checkAuth', 'ServiceController@checkAuth');

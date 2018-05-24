@@ -3000,6 +3000,47 @@ shop table
 }
 
 /*******************
+oprec card
+*******************/
+.oprec-card {
+  border: 0px;
+  margin-bottom: 0px; }
+  .oprec-card.oprec-card-shadow {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1); }
+
+/*******************
+oprec listing
+*******************/
+
+.oprec-listing .oprec-hover {
+  position: relative;
+}
+
+.oprec-listing .oprec-hover .card-img-overlay {
+  display: none;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.oprec-listing .oprec-hover:hover .card-img-overlay {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.oprec-listing .oprec-hover .label {
+  padding: 5px 10px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/*******************
 Footer 4
 *******************/
 .footer4 .f4-bottom-bar {

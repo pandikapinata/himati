@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Kegiatan;
 use App\Fungsionaris;
+use App\Jabatan;
 use App\Period;
 use App\Newsfeed;
+use App\Oprec;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -57,5 +59,16 @@ class HomeController extends Controller
     public function comingSoon()
     {
         return view('coming_soon');
+    }
+    public function showOprec()
+    {
+        $oprecs = Oprec::all();
+        return view('oprec', compact('oprecs'));
+    }
+    public function showFungsionaris()
+    {
+       
+        $fungsionariss = Fungsionaris::with('Jabatan')->get();
+        return view('list_fungsionaris', compact('fungsionariss'));
     }
 }
