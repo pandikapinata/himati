@@ -17,13 +17,13 @@
                                 @auth('guest')
 
                                     @if (Auth::guard('guest')->user()->priv_id == 1)
-                                        <a class="btn btn-rounded btn-outline-warning font-16 m-t-30" href="">Oprec</a>
+                                        <a class="btn btn-rounded btn-outline-warning font-16 m-t-30" href="{{ route('openReq.show') }}">Oprec</a>
                                         <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
-                                    @elseif (Auth::guard('guest')->user()->priv_id == 2) 
+                                    @elseif (Auth::guard('guest')->user()->priv_id == 2)
                                         <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
                                     @endif
                                 @else
-                                    <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>                                    
+                                    <a class="btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('rental.index') }}">Sewa</a>
                                 @endauth
                             </div>
                             <!-- Column -->

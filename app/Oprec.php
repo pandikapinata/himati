@@ -9,4 +9,8 @@ class Oprec extends Model
     public function oprec_sie(){
         return $this->hasMany('App\Oprec_sie');
     }
+
+    public function pendaftaran(){
+        return $this->hasMany('App\Pendaftaran');
+    }
 }

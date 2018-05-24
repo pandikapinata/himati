@@ -11,6 +11,8 @@ use App\Newsfeed;
 use App\Oprec;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Auth;
+use App\Guest;
 
 class HomeController extends Controller
 {
@@ -60,14 +62,10 @@ class HomeController extends Controller
     {
         return view('coming_soon');
     }
-    public function showOprec()
-    {
-        $oprecs = Oprec::all();
-        return view('oprec', compact('oprecs'));
-    }
+
     public function showFungsionaris()
     {
-       
+
         $fungsionariss = Fungsionaris::with('Jabatan')->get();
         return view('list_fungsionaris', compact('fungsionariss'));
     }

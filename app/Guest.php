@@ -42,4 +42,8 @@ class Guest extends Authenticatable
     public function sewa(){
         return $this->hasMany('App\Sewa');
     }
+
+    public function pendaftaran(){
+        return $this->hasMany('App\Pendaftaran');
+    }
 }
