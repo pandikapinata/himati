@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @section('head')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -20,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/default-dark.css')}}">
 
     <script src="https://cdn.ckeditor.com/4.9.2/full/ckeditor.js"></script>
+    @show
 </head>
 
 <body class="fix-header card-no-border fix-sidebar">
@@ -129,6 +131,11 @@
                         <li>
                             <a class="waves-effect waves-dark" href="{{ route('oprec.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
                                 <span class="hide-menu">Open Requirement</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="waves-effect waves-dark" href="{{ route('pendaftar.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                                <span class="hide-menu">Pendaftar Oprec</span>
                             </a>
                         </li>
                         <li>

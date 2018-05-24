@@ -8,13 +8,13 @@
             <div class="row items-push">
                 <div class="col-sm-7">
                     <h3 class="text-white">
-                        List Berita
+                        List Fungsionaris
                     </h3>
                 </div>
                 <div class="col-sm-5 text-right hidden-xs ">
                     <ol class="breadcrumb push-10-t " style="color:#fff !important;">
                         <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Beranda</a></li>
-                        <li class="breadcrumb-item active">List Berita</li>
+                        <li class="breadcrumb-item active">List Fungsionaris</li>
                     </ol>
                 </div>
             </div>
@@ -28,15 +28,15 @@
                         <div class="col-lg-9 p-r-30">
                             <!-- Row  -->
                             <!-- Column -->
-                            @foreach($fungsionariss as $number => $new)
+                            @foreach($fungsionariss as $number => $funct)
                                 <div class="row list-berita d-flex b-b p-b-10 m-t-10 m-b-20 no-block no-gutter">
-                                    <div class="col-md-2"><img src="{{ URL::asset('assets/images/fungsionaris/' . $new->media_profile) }}" alt="hmti" class="img-responsive" style="width:auto; height:auto; max-height:200px; max-width:200px"></div>
+                                    <div class="col-md-2"><img src="{{ URL::asset('assets/images/fungsionaris/' . $funct->media_profile) }}" alt="hmti" class="img-responsive" style="width:auto; height:auto; max-height:200px; max-width:200px"></div>
                                     <div class="col-md-9" style="padding-left: 15px;">
-                                        <h5 class="font-medium p-l-15">{{$new->nama_fungsionaris}}</a></h5>
-                                        <span class="font-medium p-l-15">Jabatan {{$new->jabatan_id->nama_jabatan}}</span>
+                                        <h5 class="font-medium p-l-15">{{$funct->nama_fungsionaris}}</a></h5>
+                                        <span class="font-medium p-l-15">Jabatan {{$funct->jabatan->nama_jabatan}}</span>
                                         <div class="d-flex no-block font-13 icon-list-demo p-l-15">
                                             <div class="preview">
-                                                <i class="icon-Calendar-4 m-l-0"></i><span>Periode {{$new->periode_awal}}-{{$new->periode_akhir}}</span>
+                                                <i class="icon-Calendar-4 m-l-0"></i><span>Periode {{$funct->periode_awal}}-{{$funct->periode_akhir}}</span>
                                             </div>
                                         </div>
                                         {{-- <div style="height:80px; overflow:hidden;" class="m-b-10 p-l-15">
@@ -47,11 +47,11 @@
                             <!-- Column -->
                             @endforeach
                             <!-- column  -->
-                            {{-- <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <ul class="pagination justify-content-center">
-                                    {!! $->links();!!}
+                                    {!! $fungsionariss->links();!!}
                                 </ul>
-                            </div> --}}
+                            </div>
                         </div>
                         {{-- <div class="col-lg-3">
                             <!-- widget  -->

@@ -8,6 +8,11 @@ use App\Sie;
 use Illuminate\Support\Facades\Input;
 use App\Oprec_sie;
 use Storage;
+use Auth;
+use App\Guest;
+use DB;
+use App\Pendaftaran;
+use PDF;
 
 class OprecController extends Controller
 {
@@ -72,7 +77,7 @@ class OprecController extends Controller
             'nama' => 'required|max:255',
         ]);
 
-        $oprecs = Oprec::find($id);
+        $oprecs = Oprec::with('oprec_sie')->find($id);
         $oprecs -> nama_kegiatan = $request->nama;
 
         $image = $request->file('foto_kegiatan');
@@ -85,17 +90,19 @@ class OprecController extends Controller
 
         }
         $oprecs->save();
+        foreach($oprecs->oprec_sie as  $oprec){
+            $oprec->delete();
+        }
 
         $oprec     = Oprec::where('nama_kegiatan',$request->nama)->first();
         //return($oprec);
-        $i = 0;
+        //$i = 0;
         $checks=Input::get('cek');
         foreach ($checks as $list) {
             $oprec_sie = new Oprec_sie();
             $oprec_sie->oprec_id = $oprec->id;
             $oprec_sie->sie_id = $list;
             $oprec_sie->save();
-            $i++;
         }
 
         session()->flash('message', 'Sukses Mengupdate Sie Kegiatan, '.$request->nama);
@@ -114,4 +121,77 @@ class OprecController extends Controller
         session()->flash('delete', 'Sukses Menghapus Data Berita');
         return redirect('/admin/oprec');
     }
+
+    public function showOprec()
+    {
+        // SELECT oprecs.`id` FROM oprecs
+        // WHERE oprecs.`id` NOT IN(SELECT pendaftarans.`oprec_id` FROM pendaftarans
+        // WHERE pendaftarans.`guest_id`=4)
+
+        $checkId = Auth::guard('guest')->user()->id;
+        // return($checkId);
+        $oprecs = Oprec::with('oprec_sie')->whereNotIn('id', function($q) use($checkId){
+                $q->select('oprec_id')->from('pendaftarans')->where('guest_id',$checkId);
+               // return($q);
+        })->get();
+
+        //return($result);
+        return view('oprec', compact('oprecs','guest'));
+    }
+
+    public function regisForm($id)
+    {
+        $checkId = Auth::guard('guest')->user()->id;
+        $guest = Guest::where('id',$checkId)->first();
+        //$oprecs = Oprec::with('oprec_sie')->find($id);
+        $oprecss = DB::table('oprecs')->select('oprec_id','nama_kegiatan','nama_sie','sies.id')
+            ->join('oprec_sies', 'oprecs.id', '=', 'oprec_sies.oprec_id')
+            ->join('sies', 'oprec_sies.sie_id', '=', 'sies.id')->where('oprec_id','=',$id)
+            ->get();
+        //return $oprecs;
+        return response()->json(['oprecs' => $oprecss, 'guest' => $guest]);
+    }
+
+    public function registrasi(Request $request)
+    {
+        $pendaftaran = new Pendaftaran();
+        $pendaftaran -> oprec_id = $request->oprec_id;
+        $pendaftaran -> guest_id = $request->guest_id;
+        $pendaftaran -> sie_pilihan = $request->sie;
+        $pendaftaran -> no_telp = $request->telp;
+        $pendaftaran -> user_line = $request->id_line;
+        $pendaftaran -> alasan = $request->alasan;
+        $pendaftaran -> save();
+        return redirect('/open-requirement/index');
+    }
+
+    public function pendaftar()
+    {
+        $jml_pendaftar=0;
+        $oprecs = Oprec::all();
+        $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
+        ->groupBy('oprec_id')->get();
+
+        return view('admin.pendaftar.index',compact('oprecs','jml_pendaftar'));
+    }
+
+    public function detailPendaftar($id)
+    {
+        $jml_pendaftar=0;
+        $oprecs = Oprec::with('pendaftaran')->find($id);
+
+        //return($oprecs);
+        // $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
+        // ->groupBy('oprec_id')->get();
+        return view('admin.pendaftar.list',compact('oprecs'));
+    }
+
+    public function detailPendaftarPDF()
+    {
+        $data=['Pandika'];
+        $pdf = PDF::loadView('admin.pendaftar.list_export', $data);
+        return $pdf->download('invoice.pdf');
+    }
+
+
 }
