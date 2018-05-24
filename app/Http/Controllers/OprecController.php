@@ -12,6 +12,7 @@ use Auth;
 use App\Guest;
 use DB;
 use App\Pendaftaran;
+use PDF;
 
 class OprecController extends Controller
 {
@@ -178,11 +179,18 @@ class OprecController extends Controller
     {
         $jml_pendaftar=0;
         $oprecs = Oprec::with('pendaftaran')->find($id);
+
         //return($oprecs);
         // $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
         // ->groupBy('oprec_id')->get();
-
         return view('admin.pendaftar.list',compact('oprecs'));
+    }
+
+    public function detailPendaftarPDF()
+    {
+        $data=['Pandika'];
+        $pdf = PDF::loadView('admin.pendaftar.list_export', $data);
+        return $pdf->download('invoice.pdf');
     }
 
 

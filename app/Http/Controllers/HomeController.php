@@ -65,8 +65,11 @@ class HomeController extends Controller
 
     public function showFungsionaris()
     {
-
-        $fungsionariss = Fungsionaris::with('Jabatan')->get();
+        $period = Period::find(1);
+        $period_awal=$period->period_awal;
+        $period_akhir=$period->period_akhir;
+        $fungsionariss = Fungsionaris::with('jabatan')->where('periode_awal',$period_awal)
+        ->where('periode_akhir',$period_akhir)->orderBy('jabatan_id', 'asc')->paginate(10);
         return view('list_fungsionaris', compact('fungsionariss'));
     }
 }

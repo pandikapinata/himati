@@ -89,4 +89,5 @@ Route::group(['prefix' => 'admin'], function () {
 
   Route::get('/pendaftar/index', 'OprecController@pendaftar')->name('pendaftar.index');
   Route::get('/pendaftar/index/{id}/detail-list', 'OprecController@detailPendaftar')->name('pendaftar.detail');
+  Route::get('/pendaftar/index/export', 'OprecController@detailPendaftarPDF')->name('pendaftar.pdf');
 });
