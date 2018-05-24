@@ -138,6 +138,12 @@ slide 4
   .slider4 .btn-secondary:hover {
     color: #263238 !important; }
 
+.slider4 .title-60px {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 60px;
+  margin-top: 45px; }
+
 .slider4 .title {
   color: #ffffff;
   font-weight: 700;
@@ -146,6 +152,23 @@ slide 4
 .slider4 .subtitle {
   color: #ffffff;
   line-height: 30px; }
+
+.linking-blue {
+  color: #188ef4; }
+  .linking-blue i {
+    font-size: 14px;
+    margin-left: 10px;
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in; }
+  .linking-blue:hover {
+    color: #ffffff; }
+    .linking-blue:hover i {
+      margin-left: 15px; }
+
+a.gold{
+  color:#FFBF00;
+}
 
 @media (max-width: 768px) {
   .slider4 h1 {
@@ -965,22 +988,45 @@ Icons
   position: relative;
   }
 
-  .img-height-220{
-    max-height: 220px;
-    width: auto;
-    max-width: 100%;
-    height: 220px;
-  }
+.img-height-220{
+  max-height: 220px;
+  width: auto;
+  max-width: 100%;
+  height: 220px;
+}
 
-  .judul-overflow-2brs{
-    height:50px; 
-    overflow:hidden;
-  }
+.judul-overflow-2brs{
+  height:50px; 
+  overflow:hidden;
+}
 
-  .deskripsi-overflow-2brs{
-    height:50px; 
-    overflow:hidden;
-  }
+.deskripsi-overflow-2brs{
+  height:50px; 
+  overflow:hidden;
+}
+
+.timer {
+  margin-top: 50px;
+}
+
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 160px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
 
   .b-header {
     padding: 0px;

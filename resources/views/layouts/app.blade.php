@@ -75,32 +75,32 @@
                 </li>
                 @auth('guest')
                 <div class="nav-item dropdown" id="header13">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::guard('guest')->user()->name }}
+                    <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre="" style="color: #FFBF00;">
+                        {{ Auth::guard('guest')->user()->name }}
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('setting.edit', Auth::guard('guest')->user()->id) }}">
+                            {{ __('Setting') }}
                         </a>
 
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('setting.edit', Auth::guard('guest')->user()->id) }}">
-                                {{ __('Setting') }}
-                            </a>
+                        <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
+                            {{ __('Change Password') }}
+                        </a>
 
-                            <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
-                                {{ __('Change Password') }}
-                            </a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
 
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ url('guest/logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
+                        <form id="logout-form" action="{{ url('guest/logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
 
 
-                        </div>
                     </div>
+                </div>
                 @else
                 <div class="act-buttons">
                     <a href=""  data-toggle="modal" data-target="#login" class="btn btn-outline-style1" >{{ __('Login') }}</a>
@@ -132,8 +132,8 @@
                                                 <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
                                             </ul>
                                             @auth('guest')
-                                            <div class="nav-item dropdown" id="header13">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                <div class="gold nav-item dropdown" id="header13">
+                                                    <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::guard('guest')->user()->name }}
                                                     </a>
 

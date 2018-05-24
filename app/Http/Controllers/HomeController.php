@@ -72,4 +72,8 @@ class HomeController extends Controller
         ->where('periode_akhir',$period_akhir)->orderBy('jabatan_id', 'asc')->paginate(10);
         return view('list_fungsionaris', compact('fungsionariss'));
     }
+    public function notFound()
+    {
+        return view('404_not_found');
+    }
 }

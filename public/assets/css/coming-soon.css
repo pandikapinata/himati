@@ -1,0 +1,207 @@
+/*
+    Author          : Mohamed Alaa Abas
+    Author URI      : https://themeforest.net/user/m_alaa/portfolio
+    Author Facebook : https://www.facebook.com/SoftTheme-413907182303490/
+    Author Email    : mohamedalaaabas93@gmail.com .
+**/
+*{
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*--------------------------------------------
+              Body And Scroll Design
+---------------------------------------------*/
+body{        
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;    
+    line-height: 1.4;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;        
+    font-weight: 300;
+    color: #fff;
+    
+}
+/************************
+   ** Start Framework ** 
+ ***********************/
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+    font-size: 3em;
+    text-transform: uppercase;
+    color: #e6e6e6;
+    padding: 25px;
+    font-weight: 200;
+    margin: 0;
+    padding-top: 0;
+    letter-spacing: 1px;
+}
+h2:before{
+    content: attr(data-text);
+    position: absolute;
+    white-space: nowrap;
+    color: #673AB7;
+    width: 16%;    
+    overflow: hidden;
+}
+a, a:hover, a:focus{
+    color: #333;
+}
+p{
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 300;
+    padding-top: 0;
+    line-height: 30px;
+    color: #6e6e6e;
+}
+
+/***********************
+******* homePage ******
+***********************/
+.home-page.main-page{
+    background-color: rgba(0, 0, 0, 0.61);
+    background-image: url(https://images.unsplash.com/photo-1474161123556-8ee8b81e931d?ixlib=rb-0.3.5&amp;s=8310721b2ee7d6e944faef0904ba9526&amp;auto=format&amp;fit=crop&amp;w=750&amp;q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+.home-page{
+    position: relative;    
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.home-page .social-media{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+}
+.home-page .social-media li{
+    display: inline-block;
+    padding: 0 10px;
+}
+.home-page .social-media li a{
+    color: #8b8b8b;
+}
+.home-page .copy-right{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 14px;
+    margin: 0;
+    color: #8b8b8b;
+}
+/***********************
+******* homePage ******
+***********************/
+
+a, a:hover, a:focus {
+    color: #42bfc2;
+    text-decoration: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+
+/***** Coming Soon *****/
+.coming-soon {
+    margin: 0 auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 35px;            
+}
+
+.safehosting-bg {    
+    height: 100%;
+    border-radius: 4px;
+    display: table;
+    width: 100%;
+}
+.safehosting-bg .container{
+    padding: 0;
+    width: 100%;
+    display: table-cell;
+    height: 100%;
+    margin: 0;
+    vertical-align: middle;
+}
+.coming-soon h2{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 54px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+.coming-soon h2:after{
+    content: "";
+    position: absolute;
+    border: 1px solid #fff;
+    padding-right: 105px;
+    bottom: 0;
+    transform: translate(-207px,0px);
+}
+.coming-soon p {    
+    padding: 0;
+    font-size: 17px;
+    line-height: 26px;
+    color: #fff;
+}
+.coming-soon .contant-prag{
+    margin: 60px 300px;
+    margin-bottom: 46px;
+}
+.coming-soon .contant-btn{
+    margin-bottom: 20px;
+}
+.coming-soon .aboutUsbtn{
+    padding: 15px 30px;
+    border-radius: 3px;
+    letter-spacing: .8px;
+    text-decoration: none;
+    cursor: pointer;
+    background: transparent;
+    box-shadow: 0px 1px 10px #adadad;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+}
+.timer {
+    margin-top: 50px;
+}
+
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 160px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
+
+
+
