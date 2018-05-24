@@ -63,8 +63,8 @@
                 <li class="nav-item"><a class="nav-link" href="{{ route('list.berita') }}"><span class="top">Berita</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="#"><span class="top">Fungsionaris</span></a></li>
                 @auth('guest')
-                <div class="nav-item dropdown" id="header13">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <div class="gold nav-item dropdown" id="header13">
+                        <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::guard('guest')->user()->name }}
                         </a>
 

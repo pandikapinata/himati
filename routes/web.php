@@ -11,6 +11,7 @@
 |
 */
 Route::get('/coming-soon', 'HomeController@comingSoon')->name('soon');
+Route::get('/404-not-found', 'HomeController@notFound')->name('404');
 Route::get('/', 'HomeController@index')->name('utama');
 Route::get('/berita/{berita}', 'HomeController@show')->name('berita.show');
 Route::get('/rental', 'RentalController@index')->name('rental.index');

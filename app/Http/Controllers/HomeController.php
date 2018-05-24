@@ -71,4 +71,8 @@ class HomeController extends Controller
         $fungsionariss = Fungsionaris::with('Jabatan')->get();
         return view('list_fungsionaris', compact('fungsionariss'));
     }
+    public function notFound()
+    {
+        return view('404_not_found');
+    }
 }

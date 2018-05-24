@@ -120,8 +120,8 @@
                                                 <li class="nav-item"><a class="nav-link" href="{{ route('rent.cart') }}">Cart({{$jml_brg}})</a></li>
                                             </ul>
                                             @auth('guest')
-                                            <div class="nav-item dropdown" id="header13">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <div class="gold nav-item dropdown" id="header13">
+                                                    <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::guard('guest')->user()->name }}
                                                     </a>
 
