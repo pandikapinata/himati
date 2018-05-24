@@ -124,22 +124,18 @@
                                                     <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::guard('guest')->user()->name }}
                                                     </a>
-
                                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <a class="dropdown-item" href="{{ route('setting.edit', Auth::guard('guest')->user()->id) }}">
                                                             {{ __('Setting') }}
                                                         </a>
-
                                                         <a class="dropdown-item" href="{{ route('pass.resetForm') }}">
                                                             {{ __('Change Password') }}
                                                         </a>
-
                                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                                             onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
                                                             {{ __('Logout') }}
                                                         </a>
-
                                                         <form id="logout-form" action="{{ url('guest/logout') }}" method="POST" style="display: none;">
                                                             @csrf
                                                         </form>
