@@ -30,7 +30,7 @@
             <div class="col-md-3">
                 <div class="card card-shadow" data-aos="flip-left" data-aos-duration="1200">
                     <div class="oprec-card oprec-hover text-center">
-                        <a href="#" class="img-ho text-center"><img class="card-img-top" src="{{ URL::asset('assets/images/oprec/' . $oprec->media_kegiatan) }}" alt="wrappixel kit" style="height: 330px;width: auto;"/></a>
+                        <a href="#" class="img-ho text-center"><img class="card-img-top img-height-260" src="{{ URL::asset('assets/images/oprec/' . $oprec->media_kegiatan) }}" alt="wrappixel kit" style="height: 330px;width: auto;"/></a>
                         <div class="card-img-overlay align-items-center">
                             <button class="btn btn-md btn-info-gradiant" onclick="regisForm({{$oprec->id}})">
                                 Daftar

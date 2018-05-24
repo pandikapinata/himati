@@ -995,6 +995,13 @@ Icons
   height: 220px;
 }
 
+.img-height-260 {
+	max-height: 260px;
+	width: auto;
+	max-width: 100%;
+	height: 260px;
+}
+
 .judul-overflow-2brs{
   height:50px; 
   overflow:hidden;
