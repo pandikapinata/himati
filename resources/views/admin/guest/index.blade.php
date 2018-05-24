@@ -24,6 +24,7 @@
                                         <th>NIM</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Priviligge</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -34,6 +35,11 @@
                                             <td>{{ $guest->username }}</td>
                                             <td>{{ $guest->name }}</td>
                                             <td>{{ $guest->email}}</td>
+                                            @if($guest->priv_id==1)
+                                            <td>Mahasiswa</td>
+                                            @elseif($guest->priv_id==2)
+                                            <td>Penyewa</td>
+                                            @endif
                                             <td>
                                             <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
                                                 <a href="{{ route('guests.edit', $guest ) }}" class="btn btn-circle btn-secondary" >

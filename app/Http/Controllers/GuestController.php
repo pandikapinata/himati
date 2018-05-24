@@ -52,6 +52,7 @@ class GuestController extends Controller
         $guest -> email = $request->input('email');
         $guest -> username = $request->input('username');
         $guest -> password = Hash::make($request->input('password'));
+        $guest -> priv_id = 1;
         $guest -> save();
 
         session()->flash('message', 'Sukses Memasukkan Barang, '.$request->nama);
