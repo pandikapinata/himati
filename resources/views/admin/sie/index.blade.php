@@ -31,13 +31,13 @@
                                             <td>{{ $number+1 }}</td>
                                             <td>{{ $sie->nama_sie }}</td>
                                             <td>
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Sie" >
                                                     <a href="{{ route('master-sie.edit', $sie ) }}" class=" btn btn-circle btn-secondary" >
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
                                                 </div>
 
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Sie">
                                                 <form id="formHapus{{$sie->id}}"  action="{{ route('master-sie.destroy', $sie->id ) }}"  method="POST" >
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}
@@ -67,7 +67,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="modal-bg">
                             <h1 class="font-light text-muted text-center" >
-                                Form Kegiatan
+                                Form Sie Kegiatan
                             </h1>
                             <h6 class="subtitle m-t-20 text-center">
                                 Masukkan Daftar Nama Sie.

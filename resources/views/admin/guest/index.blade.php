@@ -46,7 +46,7 @@
                                                     <span class="fa fa-pencil"></span>
                                                 </a>
                                             </div> --}}
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Mahasiswa">
                                                 <form id="formHapus{{$guest->id}}"  action="{{ route('guests.destroy', $guest->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
@@ -77,10 +77,10 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="modal-bg">
                             <h1 class="font-light text-muted text-center" >
-                                Form Fungsionaris
+                                Form Mahasiswa
                             </h1>
                             <h6 class="subtitle m-t-20 text-center">
-                                Masukkan Daftar Fungsionaris HMTI.
+                                Masukkan Daftar Mahasiswa TI.
                             </h6>
 
                             <form class="form-material m-t-40" method="POST" action="{{ route('guests.store') }}" >
@@ -103,7 +103,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>Username</label>
+                                        <label>NIM</label>
                                         <input id="username" class="form-control" type="text" name="username" required>
                                     </div>
                                 </div>

@@ -37,13 +37,13 @@
                                             <td>{{ $brg->stok_barang }}</td>
                                             <td>{{ $brg->harga_sewa }}</td>
                                             <td>
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                            <div class="inblock" data-toggle="tooltip" title="Edit Barang" >
                                                 <a href="{{ route('barang.edit', $brg ) }}" class="btn btn-circle btn-secondary" >
                                                     <span class="fa fa-pencil"></span>
                                                 </a>
                                             </div>
 
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                            <div class="inblock" data-toggle="tooltip" title="Hapus Barang">
                                                 <form id="formHapus{{$brg->id}}"  action="{{ route('barang.destroy', $brg->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
@@ -114,13 +114,14 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <label>Upload Foto Profile</label>
+                                        <label>Upload Foto Barang</label>
                                         <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                             <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file">
                                                 <span name="foto_barang" class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
                                                 <input type="hidden">
                                                 <input type="file" name="foto_barang"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                         </div>
+                                        <small class="text-danger">Maks. Ukuran File 2MB</small>
                                     </div>
                                 </div>
 

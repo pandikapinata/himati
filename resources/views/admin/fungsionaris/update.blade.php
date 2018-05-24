@@ -6,10 +6,10 @@
 		<div class="card">
 			<div class="card-body">
                 <h2 class="font-light text-muted text-center" >
-                    Form Edit Kegiatan HMTI
+                    Form Edit Fungsionaris HMTI
                 </h2>
                 <h6 class="subtitle m-t-20 text-center">
-                    Masukkan Revisi Kegiatan HMTI
+                    Masukkan Revisi Fungsionaris HMTI
                 </h6>
                 <form class="form-material m-t-40" action="{{ route('fungsionaris.update', $funct) }}" method="POST" enctype="multipart/form-data">
 	            <div class="modal-body">
@@ -59,6 +59,7 @@
                                 <input type="hidden">
                                 <input type="file" name="media_profile"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>
+                        <small class="text-danger">Maks. Ukuran File 2MB</small>
                     </div>
                 </div>
 

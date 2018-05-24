@@ -219,8 +219,10 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 text-center m-t-20">
-                                                <button type="submit" class="btn btn-outline-style"><span> Masuk ke HMTI </span></button>
+
+                                            <div class="col-lg-12 d-flex m-t-20">
+                                                <button type="submit" class="btn btn-md btn-outline-style"><span> Masuk </span></button>
+                                                <div class="have-ac ml-auto align-self-center"><a href="{{url('guest/register')}}" class="text-primary "> Daftar Sekarang!</a></div>
                                             </div>
                                         </div>
                                     </form>
@@ -253,8 +255,7 @@
                         <!-- Column -->
                         <div class="col-lg-3 col-md-6">
                             <a href="#"><img src="assets/images/logo-300.png" alt="TI" /></a>
-                            <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience.</p>
-                            <p>our amazing features list and also our customer services is great.</p>
+                            <p class="m-t-20">Himpunan Teknologi Informasi, Fakultas Teknik, Universitas Udayana</p>
                         </div>
                         <!-- Column -->
                         <!-- Column -->

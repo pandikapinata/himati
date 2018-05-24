@@ -7,8 +7,8 @@
         <div class="row justify-content-center ">
             <!-- Column -->
             <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
-                <h1 class="title">Blog Detail Page</h1>
-                <h6 class="subtitle op-8">We are Small Team of Creative People working together</h6> </div>
+                <h1 class="title">Checkout</h1>
+                <h6 class="subtitle op-8">Checkout barangan sewa anda</h6> </div>
             <!-- Column -->
         </div>
     </div>
@@ -20,21 +20,21 @@
             <form class="m-t-40" method="POST" id="form-cart" action="{{route('cart.updateStok', $checkout[0]->id)}}">
                 @csrf
                 {{ method_field('PUT') }}
-                <h6 class="m-b-20 font-medium">SHIPPING INFORMATION</h6>
+                <h6 class="m-b-20 font-medium">GUEST INFORMATION</h6>
                     @foreach($checkout as $number => $checkouts)
                     <div class="form-group">
                         <label for="exampleInputEmail1">Display Name</label>
-                        <input id="nama" type="text" class="form-control" name="nama" placeholder="Enter Username" value="{{$checkouts->guest->name}}">
+                        <input id="nama" type="text" class="form-control" name="nama" placeholder="Enter Username" value="{{$checkouts->guest->name}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Telp</label>
-                        <input id="telp" class="form-control" type="text" name="telp" placeholder="Enter Telp" value="{{$checkouts->guest->telp}}">
+                        <input id="telp" class="form-control" type="text" name="telp" placeholder="Enter Telp" value="{{$checkouts->guest->telp}}" required>
                     </div>
 
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
-                        <input id="email" class="form-control" type="email" name="email" placeholder="Enter email" value="{{$checkouts->guest->email}}">
+                        <input id="email" class="form-control" type="email" name="email" placeholder="Enter email" value="{{$checkouts->guest->email}}" required>
                     </div>
                     @endforeach
 

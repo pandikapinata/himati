@@ -103,53 +103,57 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">MENU</li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="icon-notebook"></i><span class="hide-menu">Master Data</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li>
+                                    <a class="waves-effect waves-dark" href="{{ route('guests.index') }}" aria-expanded="false"><i class="icon-user"></i>
+                                        <span class="hide-menu">Guest</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect waves-dark" href="{{ route('barang.index') }}" aria-expanded="false"><i class="ti-shopping-cart"></i>
+                                        <span class="hide-menu">Barang</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="icon-directions"></i>
+                                        <span class="hide-menu">Kegiatan</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect waves-dark" href="{{ route('master-sie.index') }}" aria-expanded="false"><i class="ti-files"></i>
+                                        <span class="hide-menu">Master Sie</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="icon-people"></i>
+                                        <span class="hide-menu">Fungsionaris</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('verif.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('verif.index') }}" aria-expanded="false"><i class="ti-check-box"></i>
                                 <span class="hide-menu">Verifikasi</span>
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('guests.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Guest</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="{{ route('barang.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Barang</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="{{ route('kegiatan.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Kegiatan</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="{{ route('master-sie.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Master Sie</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="{{ route('oprec.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('oprec.index') }}" aria-expanded="false"><i class="ti-calendar"></i>
                                 <span class="hide-menu">Open Requirement</span>
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('pendaftar.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('pendaftar.index') }}" aria-expanded="false"><i class="fa fa-users"></i>
                                 <span class="hide-menu">Pendaftar Oprec</span>
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('fungsionaris.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
-                                <span class="hide-menu">Fungsionaris</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="waves-effect waves-dark" href="{{ route('newsfeed.index') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('newsfeed.index') }}" aria-expanded="false"><i class="icon-feed"></i>
                                 <span class="hide-menu">NewsFeeds</span>
                             </a>
                         </li>
                         <li>
-                            <a class="waves-effect waves-dark" href="{{ route('period.edit') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i>
+                            <a class="waves-effect waves-dark" href="{{ route('period.edit') }}" aria-expanded="false"><i class="icon-calender"></i>
                                 <span class="hide-menu">Setup Periode</span>
                             </a>
                         </li>

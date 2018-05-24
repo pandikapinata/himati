@@ -118,25 +118,31 @@ class OprecController extends Controller
         }
         $oprecs->delete();
 
-        session()->flash('delete', 'Sukses Menghapus Data Berita');
+        session()->flash('delete', 'Sukses Menghapus Data Oprec');
         return redirect('/admin/oprec');
     }
 
     public function showOprec()
     {
-        // SELECT oprecs.`id` FROM oprecs
-        // WHERE oprecs.`id` NOT IN(SELECT pendaftarans.`oprec_id` FROM pendaftarans
-        // WHERE pendaftarans.`guest_id`=4)
+        if(auth()->guard('guest')->check()){
+            $user_log = Guest::all()->where('id', Auth::guard('guest')->user()->id)->first();
+            if( $user_log->priv_id == 1 ){
+                $checkId = Auth::guard('guest')->user()->id;
+                // return($checkId);
+                $oprecs = Oprec::with('oprec_sie')->whereNotIn('id', function($q) use($checkId){
+                        $q->select('oprec_id')->from('pendaftarans')->where('guest_id',$checkId);
+                    // return($q);
+                })->get();
 
-        $checkId = Auth::guard('guest')->user()->id;
-        // return($checkId);
-        $oprecs = Oprec::with('oprec_sie')->whereNotIn('id', function($q) use($checkId){
-                $q->select('oprec_id')->from('pendaftarans')->where('guest_id',$checkId);
-               // return($q);
-        })->get();
+                //return($result);
+                return view('oprec', compact('oprecs','guest'));
+            }else if( $user_log->priv_id == 2 ){
+                return view('404_not_found');
+            }
+        }else{
+    		return redirect('guest/login');
+    	}
 
-        //return($result);
-        return view('oprec', compact('oprecs','guest'));
     }
 
     public function regisForm($id)
@@ -169,10 +175,7 @@ class OprecController extends Controller
     {
         $jml_pendaftar=0;
         $oprecs = Oprec::all();
-        $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
-        ->groupBy('oprec_id')->get();
-
-        //return ($jml_pendaftar);
+        //return ($oprecs);
 
         return view('admin.pendaftar.index',compact('oprecs','jml_pendaftar'));
     }

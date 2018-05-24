@@ -61,7 +61,7 @@
             <ul class="navbar-nav ml-auto categories"  id="mobile-top-menu">
                 <li class="nav-item"><a class="nav-link" href="{{ route('utama') }}"><span class="top">Home</span></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('list.berita') }}"><span class="top">Berita</span></a></li>
-                <li class="nav-item"><a class="nav-link" href="#"><span class="top">Fungsionaris</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('list.fungsionaris') }}"><span class="top">Fungsionaris</span></a></li>
                 @auth('guest')
                 <div class="gold nav-item dropdown" id="header13">
                         <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -116,11 +116,11 @@
                                             <ul class="navbar-nav ml-auto" id="top-menu">
                                                 <li class="nav-item"><a class="nav-link" href="{{ route('utama') }}">Home</a></li>
                                                 <li class="nav-item"><a class="nav-link" href="{{ route('list.berita') }}">Berita</a></li>
-                                                <li class="nav-item"><a class="nav-link" href="#">Fungsionaris</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('list.fungsionaris') }}">Fungsionaris</a></li>
                                             </ul>
                                             @auth('guest')
-                                            <div class="nav-item dropdown" id="header13">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <div class="gold nav-item dropdown" id="header13">
+                                                    <a id="navbarDropdown" class="gold nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                         {{ Auth::guard('guest')->user()->name }}
                                                     </a>
 
@@ -206,8 +206,9 @@
                                                     @endif
                                                 </div>
                                             </div>
-                                            <div class="col-lg-12 text-center m-t-20">
-                                                <button type="submit" class="btn btn-outline-style"><span> Masuk ke HMTI </span></button>
+                                            <div class="col-lg-12 d-flex m-t-20">
+                                                <button type="submit" class="btn btn-md btn-outline-style"><span> Masuk </span></button>
+                                                <div class="have-ac ml-auto align-self-center"><a href="{{url('guest/register')}}" class="text-primary "> Daftar Sekarang!</a></div>
                                             </div>
                                         </div>
                                     </form>

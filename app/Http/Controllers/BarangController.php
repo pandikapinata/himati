@@ -45,7 +45,7 @@ class BarangController extends Controller
             'hrg_brg' => 'required',
             'stok_brg' => 'required',
         ]);
-        dd($request->all());
+        //dd($request->all());
         $brg = new Barang();
         $brg -> nama_barang = $request->nama;
         $brg -> kode_barang = $request->kd_brg;
@@ -54,7 +54,7 @@ class BarangController extends Controller
 
         $image = $request->file('foto_barang');
         if ($image) {
-            $filename = $funct->nama_fungsionaris . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
+            $filename = $brg->nama_barang . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
             $brg->foto_barang = $filename;
             $image->move(public_path('assets/images/barang'), $filename);
         }
@@ -113,7 +113,7 @@ class BarangController extends Controller
 
         $image = $request->file('foto_barang');
         if ($image) {
-            $filename = $funct->nama_fungsionaris . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
+            $filename = $brg->nama_fungsionaris . "_" . date('m-d-Y', time()) . '.' . $image->getClientOriginalExtension();
             $brg->foto_barang = $filename;
             $image->move(public_path('assets/images/barang'), $filename);
         }

@@ -3,16 +3,12 @@
 
 @section('content')
 <div class="row">
+<input type="hidden" id="oprec_nama" value="{{$oprecs->nama_kegiatan}}">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
                 <div class="row">
-                    <h4 class="card-title col-lg-11">Tabel Verif Sewa HMTI </h4>
-                    {{-- <div class="inblock">
-                        <a href="{{ route('pendaftar.pdf') }}" class=" btn btn-success" >
-                            <span>Export</span>
-                        </a>
-                    </div> --}}
+                    <h4 class="card-title col-lg-11">Tabel Pendaftar Oprec HMTI </h4>
                 </div>
                 @if(session()->has('message'))
                 <div class="alert alert-success" role="alert">
@@ -61,11 +57,17 @@
 <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
 <script>
 $(document).ready(function() {
+    //var Id = $(e.relatedTarget).data('id');
     $('#example').DataTable( {
         dom: 'Bfrtip',
-        buttons: [
-            'csv', 'excel','pdf'
-        ]
+        buttons: [{
+            extend: 'pdfHtml5',
+            // title: function () {
+            //     return $('#oprec-nama').val();
+            //     alert();
+            // },
+            title: 'Kegiatan ' + '\n' + $("#oprec_nama").val(),
+        }]
     } );
 } );
 </script>

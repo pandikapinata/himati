@@ -44,6 +44,7 @@
                             </span>
                             <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                         </div>
+                        <small class="text-danger">Maks. Ukuran File 2MB</small>
                     </div>
                 </div>
 

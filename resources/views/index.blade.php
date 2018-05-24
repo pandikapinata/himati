@@ -142,15 +142,12 @@
     <!-- ============================================================== -->
     <!-- End Kegiatan -->
     <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- Team 2  -->
-    <!-- ============================================================== -->
     <div class="spacer team2" id="fungsionaris">
         <div class="container">
             <div class="row justify-content-center m-b-30">
                 <div class="col-md-7 text-center">
                     <h2 class="title">Fungsionaris</h2>
-                    <h6 class="subtitle">You can relay on our amazing features list and also our customer services will be great experience for you without doubt and in no-time</h6>
+                    <h6 class="subtitle">Daftar Fungsionaris Inti HMTI</h6>
                 </div>
             </div>
             <div class="row m-t-40 wrap-feature45-box">
@@ -243,16 +240,7 @@
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Team 2  -->
-    <!-- ============================================================== -->
 </div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-<!-- ============================================================== -->
-<!-- ============================================================== -->
-<!--location map & Kontak--> <!-- footer  -->
-<!-- ============================================================== -->
 
 <div class="map" id="kontak">
     <div id="map"></div>

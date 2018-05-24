@@ -16,7 +16,6 @@
                             <h1 class="title-60px typewrite">404 Not Found</h1>
                                 <h4 class="subtitle">Himpunan Mahasiswa Teknologi Informasi<br/>Universitas Udayana</h4>
                                 <a class="linking-blue btn btn-rounded btn-outline-info font-16 m-t-30 m-l-20" href="{{ route('utama') }}">Kembali Ke HMTI <i class="ti-arrow-right"></i></a>
-                                
                             </div>
                             <!-- Column -->
                         </div>

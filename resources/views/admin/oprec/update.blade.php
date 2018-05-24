@@ -6,10 +6,10 @@
 		<div class="card">
 			<div class="card-body">
                 <h2 class="font-light text-muted text-center" >
-                    Form Edit Periode HMTI
+                    Form Edit Open Requirement HMTI
                 </h2>
                 <h6 class="subtitle m-t-20 text-center">
-                    Masukkan Periode HMTI
+                    Masukkan Open Requirement HMTI
                 </h6>
                 <form class="form-material m-t-40" method="POST" action="{{ route('oprec.update', $oprecs) }}" enctype="multipart/form-data">
                 @csrf
@@ -43,6 +43,7 @@
                                     <input type="hidden">
                                     <input type="file" name="foto_kegiatan"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                             </div>
+                            <small class="text-danger">Maks. Ukuran File 2MB</small>
                         </div>
                     </div>
 

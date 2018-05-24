@@ -11,7 +11,7 @@
                     Daftar Sie
                 </h2>
                 @foreach($oprecs->oprec_sie as $number => $oprec)
-                <h4 class="font-light text-muted text-center" >
+                <h4 class="text-muted text-center" >
                     {{ $oprec->sie->nama_sie}}
                 </h4>
                 @endforeach

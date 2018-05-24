@@ -35,13 +35,13 @@
                                             <td>{{ words($activ->desk_kegiatan,5,' ...') }}</td>
                                             <td>{{ $activ->media_kegiatan }}</td>
                                             <td>
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Kegiatan" >
                                                     <a href="{{ route('kegiatan.edit', $activ ) }}" class=" btn btn-circle btn-secondary" >
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
                                                 </div>
 
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Kegiatan">
                                                 <form id="formHapus{{$activ->id}}"  action="{{ route('kegiatan.destroy', $activ->id ) }}"  method="POST" >
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}

@@ -8,7 +8,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Tabel Verif Sewa HMTI </h4>
+                <h4 class="card-title">Tabel Open Reuirement HMTI </h4>
                 @if(session()->has('message'))
                 <div class="alert alert-success" role="alert">
                     {{ session()->get('message') }}
@@ -31,7 +31,7 @@
                                         <td>{{ $oprec->nama_kegiatan }}</td>
                                         <td>{{ $oprec->media_kegiatan }}</td>
                                         <td>
-                                        <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                        <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Oprec" >
                                             <a href="{{ route('oprec.edit', $oprec ) }}" class=" btn btn-circle btn-secondary" >
                                                 <span class="fa fa-pencil"></span>
                                             </a>
@@ -42,7 +42,7 @@
                                             </a>
                                         </div>
 
-                                        <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                        <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Oprec">
                                             <form id="formHapus{{$oprec->id}}"  action="{{ route('oprec.destroy', $oprec->id ) }}"  method="POST" >
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
@@ -71,10 +71,10 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="modal-bg">
                             <h1 class="font-light text-muted text-center" >
-                                Form Kegiatan
+                                Form Open Requirement
                             </h1>
                             <h6 class="subtitle m-t-20 text-center">
-                                Masukkan Daftar Kegiatan HMTI yang baru.
+                                Masukkan Daftar Open Requirement HMTI yang baru.
                             </h6>
 
                             <form class="form-material m-t-40" method="POST" action="{{ route('oprec.store') }}" enctype="multipart/form-data">
@@ -107,6 +107,7 @@
                                                 <input type="hidden">
                                                 <input type="file" name="foto_kegiatan"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                         </div>
+                                        <small class="text-danger">Maks. Ukuran File 2MB</small>
                                     </div>
                                 </div>
 

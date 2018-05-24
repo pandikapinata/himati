@@ -7,8 +7,8 @@
         <div class="row justify-content-center ">
             <!-- Column -->
             <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
-                <h1 class="title">Blog Detail Page</h1>
-                <h6 class="subtitle op-8">We are Small Team of Creative People working together</h6> </div>
+                <h1 class="title">Bukti Pembayaran</h1>
+                <h6 class="subtitle op-8">Silahkan upload Bukti Pembayaran anda</h6> </div>
             <!-- Column -->
         </div>
     </div>
@@ -25,6 +25,7 @@
                         <label>Upload Bukti Pembayaran</label>
                         <input id="bukti_pembayaran" class="form-control" type="file" name="bukti" required>
                     </div>
+                    <small class="text-danger">Maks. Ukuran File 2MB</small>
 
                     <div class="form-group">
                         <label>Keterangan</label>

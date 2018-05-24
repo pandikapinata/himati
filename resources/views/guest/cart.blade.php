@@ -7,8 +7,8 @@
         <div class="row justify-content-center ">
             <!-- Column -->
             <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
-                <h1 class="title">Blog Detail Page</h1>
-                <h6 class="subtitle op-8">We are Small Team of Creative People working together</h6> </div>
+                <h1 class="title">Kerajang Sewa</h1>
+                <h6 class="subtitle op-8">Daftar Keranjang Sewa</h6> </div>
             <!-- Column -->
         </div>
     </div>

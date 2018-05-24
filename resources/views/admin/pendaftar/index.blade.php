@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Tabel Verif Sewa HMTI </h4>
+                <h4 class="card-title">Tabel Pendaftar Kegiatan HMTI </h4>
                 @if(session()->has('message'))
                 <div class="alert alert-success" role="alert">
                     {{ session()->get('message') }}
@@ -26,11 +26,7 @@
                                     <tr>
                                         <td>{{ $number+1 }}</td>
                                         <td>{{ $oprec->nama_kegiatan }}</td>
-                                        @if(!isset($jml_pendaftar[$number]->num))
-                                        <td>0</td>
-                                        @else
-                                        <td>{{$jml_pendaftar[$number]->num}}</td>
-                                        @endif
+                                        <td>{{ $oprec->pendaftaran->count()}}</td>
                                         <td>
                                         <div class="inblock" >
                                             <a href="{{ route('pendaftar.detail', $oprec ) }}" class="btn btn-circle btn-secondary" >
@@ -38,7 +34,6 @@
                                             </a>
                                         </div>
                                         </td>
-
                                     </tr>
                                     @endforeach
                             </tbody>

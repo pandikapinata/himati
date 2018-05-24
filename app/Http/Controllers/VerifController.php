@@ -70,7 +70,7 @@ class VerifController extends Controller
                 $message->from('donotreply@hmti.com', 'HMTI');
                 $message->to([$verif->guest->email,'pandikapinata@student.unud.ac.id']);
             });
-            return redirect('/admin/verif')->with('message','Berhasil Kirim Email');
+            return redirect('/admin/verif')->with('message','Berhasil Kirim Email ke, '. $verif->guest->name);
         }
         catch (Exception $e){
             return response (['status' => false,'errors' => $e->getMessage()]);
@@ -99,7 +99,7 @@ class VerifController extends Controller
                 $message->from('donotreply@hmti.com', 'HMTI');
                 $message->to($verif->guest->email);
             });
-            return redirect('/admin/verif')->with('message','Berhasil Kirim Email');
+            return redirect('/admin/verif')->with('message','Berhasil Kirim Email ke, '. $verif->guest->name);
         }
         catch (Exception $e){
             return response (['status' => false,'errors' => $e->getMessage()]);

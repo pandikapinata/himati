@@ -37,13 +37,13 @@
                                             <td>{{ $functs->periode_awal }}-{{$functs->periode_akhir}}</td>
                                             <td>{{ $functs->media_profile }}</td>
                                             <td>
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Fungsionaris" >
                                                 <a href="{{ route('fungsionaris.edit', $functs ) }}" class="btn btn-circle btn-secondary" >
                                                     <span class="fa fa-pencil"></span>
                                                 </a>
                                             </div>
 
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Fungsionaris">
                                                 <form id="formHapus{{$functs->id}}"  action="{{ route('fungsionaris.destroy', $functs->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
@@ -125,6 +125,7 @@
                                                 <input type="hidden">
                                                 <input type="file" name="media_profile"> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
                                         </div>
+                                        <small class="text-danger">Maks. Ukuran File 2MB</small>
                                     </div>
                                 </div>
 

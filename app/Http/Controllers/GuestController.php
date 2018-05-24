@@ -55,7 +55,7 @@ class GuestController extends Controller
         $guest -> priv_id = 1;
         $guest -> save();
 
-        session()->flash('message', 'Sukses Memasukkan Barang, '.$request->nama);
+        session()->flash('message', 'Sukses Mendaftarkan Mahasiswa, '.$request->nama);
         return redirect('/admin/guests');
     }
 

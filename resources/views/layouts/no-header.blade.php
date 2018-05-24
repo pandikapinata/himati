@@ -42,80 +42,7 @@
             @yield('content')
 
         </div>
-        <!-- ============================================================== -->
-        <!-- footer -->
-        <!-- ============================================================== -->
-        <div class="footer1 font-14">
-            <div class="f1-topbar"></div>
-            <!-- Row  -->
-            <div class="f1-middle">
-                <div class="container">
-                    <div class="row">
-                        <!-- Column -->
-                        <div class="col-lg-3 col-md-6">
-                            <a href="#"><img src="assets/images/logo-300.png" alt="TI" /></a>
-                            <p class="m-t-20">You can relay on our amazing features list and also our customer services will be great experience.</p>
-                            <p>our amazing features list and also our customer services is great.</p>
-                        </div>
-                        <!-- Column -->
-                        <!-- Column -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="d-flex no-block m-b-10 m-t-20">
-                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Location-2"></i></div>
-                                <div class="info">
-                                    <span class="font-medium text-dark db m-t-5">Alamat</span><br/>
-                                    <p>Jl. Kampus Udayana Bukit Jimbaran, Jimbaran,<br/>
-                                        Kuta Sel., Kabupaten Badung,<br/>
-                                        Bali 80361</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Column -->
-                        <!-- Column -->
-                        <div class="col-lg-3 col-md-12 ">
-                            <div class="d-flex no-block m-b-10 m-t-20">
-                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Phone-2"></i></div>
-                                <div class="info">
-                                    <span class="font-medium text-dark db m-t-5">Telepon</span><br/>
-                                    <p>(0361) 701806 </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12 ">
-                            <div class="d-flex no-block m-b-10 m-t-20">
-                                <div class="display-7 m-r-20 align-self-top"><i class="icon-Mail"></i></div>
-                                <div class="info">
-                                    <span class="font-medium text-dark db m-t-5">Email</span><br/>
-                                    <p><a href="mailto:it@unud.ac.id">it@unud.ac.id</a> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Row  -->
-            <div class="f1-bottom-bar">
-                <div class="container">
-                <div class="d-flex">
-                    <div class="m-t-10 m-b-10">© 2018. Himpunan Mahasiswa Teknologi Informasi | <a href="https://it.unud.ac.id/" class="p-10 p-l-0">Teknologi Informasi</a>.</div>
-                    <div class="links ml-auto m-t-10 m-b-10">
-                        <a href="#" class="link p-10"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-pinterest"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-instagram"></i></a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End footer -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Back to top -->
-        <!-- ============================================================== -->
-        <a class="bt-top btn btn-circle btn-lg btn-style" href="#top"><i class="ti-arrow-up"></i></a>
+
 
     </div>
 
@@ -142,11 +69,6 @@
     <script src="{{asset('assets/node_modules/prism/prism.js')}}"></script>
     <script src="{{asset('assets/js/type.js')}}"></script>
     <script src="{{asset('assets/js/portfolio.js')}}"></script>
-
-
-
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB63aSeCGJzKLpE5K2Cwnccs5lELmN55Wg&amp;callback=myMap"></script>
     @show
 </body>
 </html>

@@ -12,7 +12,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Tabel Kegiatan HMTI </h4>
+                    <h4 class="card-title">Tabel Berita HMTI </h4>
 
                     @if(session()->has('message'))
 					<div class="alert alert-success" role="alert">
@@ -37,19 +37,19 @@
                                             <td>{{ $newsfeed->judul_berita }}</td>
                                             <td>{{ $newsfeed->foto_berita }}</td>
                                             <td>
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Berita" >
                                                     <a href="{{ route('newsfeed.edit', $newsfeed ) }}" class=" btn btn-circle btn-secondary" >
                                                         <span class="fa fa-pencil"></span>
                                                     </a>
                                                 </div>
 
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Lihat Berita" >
                                                     <a href="{{ route('newsfeed.show', $newsfeed ) }}" class=" btn btn-circle btn-secondary" >
                                                         <span class="fa fa-eye"></span>
                                                     </a>
                                                 </div>
 
-                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
+                                                <div class="inblock" data-toggle="tooltip" data-placement="top" title="Hapus Berita">
                                                 <form id="formHapus{{$newsfeed->id}}"  action="{{ route('newsfeed.destroy', $newsfeed->id ) }}"  method="POST" >
                                                         {{ csrf_field() }}
                                                         {{ method_field('DELETE') }}

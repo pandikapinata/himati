@@ -6,10 +6,10 @@
 		<div class="card">
 			<div class="card-body">
                 <h2 class="font-light text-muted text-center" >
-                    Form Edit Kegiatan HMTI
+                    Form Edit Sie Kegiatan HMTI
                 </h2>
                 <h6 class="subtitle m-t-20 text-center">
-                    Masukkan Revisi Kegiatan HMTI
+                    Masukkan Revisi Sie Kegiatan HMTI
                 </h6>
                 <form class="form-material m-t-40" action="{{ route('master-sie.update', $sie) }}" method="POST" enctype="multipart/form-data">
 	            <div class="modal-body">
