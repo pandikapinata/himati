@@ -26,7 +26,11 @@
                                     <tr>
                                         <td>{{ $number+1 }}</td>
                                         <td>{{ $oprec->nama_kegiatan }}</td>
-                                        <td></td>
+                                        @if(!isset($jml_pendaftar[$number]->num))
+                                        <td>0</td>
+                                        @else
+                                        <td>{{$jml_pendaftar[$number]->num}}</td>
+                                        @endif
                                         <td>
                                         <div class="inblock" >
                                             <a href="{{ route('pendaftar.detail', $oprec ) }}" class="btn btn-circle btn-secondary" >

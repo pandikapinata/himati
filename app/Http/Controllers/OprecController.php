@@ -172,6 +172,8 @@ class OprecController extends Controller
         $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
         ->groupBy('oprec_id')->get();
 
+        //return ($jml_pendaftar);
+
         return view('admin.pendaftar.index',compact('oprecs','jml_pendaftar'));
     }
 
@@ -179,8 +181,8 @@ class OprecController extends Controller
     {
         $jml_pendaftar=0;
         $oprecs = Oprec::with('pendaftaran')->find($id);
-
-        //return($oprecs);
+        $nama=$oprecs->nama_kegiatan;
+        //return($nama);
         // $jml_pendaftar=DB::table('pendaftarans')->select(DB::raw('pendaftarans.`oprec_id`,COUNT(pendaftarans.`guest_id`) as num'))
         // ->groupBy('oprec_id')->get();
         return view('admin.pendaftar.list',compact('oprecs'));

@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('title', 'Kegiatan ' . $oprecs->nama_kegiatan)
 
 @section('content')
 <div class="row">
