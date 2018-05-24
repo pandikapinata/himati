@@ -175,7 +175,7 @@
 
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
                                         <div class="col-md-12 pro-pic" style="background: url('assets/images/fungsionaris/{{$kw->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
@@ -209,7 +209,7 @@
 
                                 <div class="col-md-4 m-b-30">
                                     <!-- Row -->
-                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-right" data-aos-duration="1200">
+                                    <div class="row no-gutters aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
                                         <div class="col-md-12 pro-pic" style="background: url('assets/images/fungsionaris/{{$sb->media_profile}}') center center no-repeat; background-size: 100%;">
                                             <div class="card-img-overlay">
                                                 <ul class="list-inline">
@@ -232,7 +232,12 @@
                                 </div>
 
                                 @endforeach
-
+                                
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="text-center">
+                                <a class="btn btn-rounded btn-outline-info font-16 m-t-30" href="{{ route('list.fungsionaris') }}">View More</a>
                             </div>
                         </div>
                     </div>

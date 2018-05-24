@@ -30,7 +30,7 @@
                             <!-- Column -->
                             @foreach($fungsionariss as $number => $funct)
                                 <div class="row list-berita d-flex b-b p-b-10 m-t-10 m-b-20 no-block no-gutter">
-                                    <div class="col-md-2"><img src="{{ URL::asset('assets/images/fungsionaris/' . $funct->media_profile) }}" alt="hmti" class="img-responsive" style="width:auto; height:auto; max-height:200px; max-width:200px"></div>
+                                    <div class="col-md-2"><img src="{{ URL::asset('assets/images/fungsionaris/' . $funct->media_profile) }}" alt="hmti" class="img-responsive" style="width:auto; height:auto; max-height:200px; max-width:160px;"></div>
                                     <div class="col-md-9" style="padding-left: 15px;">
                                         <h5 class="font-medium p-l-15">{{$funct->nama_fungsionaris}}</a></h5>
                                         <span class="font-medium p-l-15">Jabatan {{$funct->jabatan->nama_jabatan}}</span>

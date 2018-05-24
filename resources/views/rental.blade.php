@@ -35,7 +35,7 @@
                     <div class="invisible">{{$number+1}}</div>
                     <div class="card shop-hover">
                         <div class="post-sewa">
-                           <img src="assets/images/barang/ht.jpg" alt="hmti" class="img-fluid" />
+                           <img src="{{ URL::asset('assets/images/barang/' . $rent->foto_barang) }}" alt="hmti" class="img-fluid" />
                         </div>
 
                         <div class="card-img-overlay align-items-center">
