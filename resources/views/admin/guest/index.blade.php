@@ -41,12 +41,11 @@
                                             <td>Penyewa</td>
                                             @endif
                                             <td>
-                                            <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
+                                            {{-- <div class="inblock" data-toggle="tooltip" data-placement="top" title="Edit Dosen" >
                                                 <a href="{{ route('guests.edit', $guest ) }}" class="btn btn-circle btn-secondary" >
                                                     <span class="fa fa-pencil"></span>
                                                 </a>
-                                            </div>
-
+                                            </div> --}}
                                             <div class="inblock" data-toggle="tooltip" data-placement="top" title="Nonaktifkan Dosen">
                                                 <form id="formHapus{{$guest->id}}"  action="{{ route('guests.destroy', $guest->id ) }}"  method="POST" >
                                                     {{ csrf_field() }}
