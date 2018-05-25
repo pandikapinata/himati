@@ -13,6 +13,7 @@ use App\Guest;
 use DB;
 use App\Pendaftaran;
 use PDF;
+use Mail;
 
 class OprecController extends Controller
 {
@@ -160,6 +161,7 @@ class OprecController extends Controller
 
     public function registrasi(Request $request)
     {
+
         $pendaftaran = new Pendaftaran();
         $pendaftaran -> oprec_id = $request->oprec_id;
         $pendaftaran -> guest_id = $request->guest_id;
@@ -168,6 +170,27 @@ class OprecController extends Controller
         $pendaftaran -> user_line = $request->id_line;
         $pendaftaran -> alasan = $request->alasan;
         $pendaftaran -> save();
+
+        $checkId = Auth::guard('guest')->user()->id;
+        $regis = Pendaftaran::with('oprec')->with('guest')->where('guest_id',$checkId)->first();
+        //return($regis);
+
+        try{
+            Mail::send('admin.mail.oprec', ['nama_kegiatan' => $regis->oprec->nama_kegiatan,
+           'name' => $regis->guest->name, 'sie' => $regis->sie_pilihan],
+            function ($message) use ($regis)
+            {
+                $message->subject('Notif Open Requirement Kegiatan HMTI');
+                $message->from('donotreply@hmti.com', 'HMTI');
+                $message->to($regis->guest->email);
+            });
+            return redirect('/open-requirement/index');
+        }
+        catch (Exception $e){
+            return response (['status' => false,'errors' => $e->getMessage()]);
+        }
+
+
         return redirect('/open-requirement/index');
     }
 

@@ -9,6 +9,7 @@ use App\Sewa;
 use App\Barang_Sewa;
 use Auth;
 use Carbon\Carbon;
+use Mail;
 
 class RentalController extends Controller
 {
@@ -282,6 +283,32 @@ class RentalController extends Controller
             $sewa -> status_sewa= 'Waiting';
             $sewa -> keterangan = $request->keterangan;
             $sewa->save();
+
+            $verif = Sewa::with('guest')->with('barang_sewa')->find($id);
+            try{
+                Mail::send('admin.mail.waiting', ['name' => $verif->guest->name,
+                'id' => $verif->id,'tgl_pesan' => $verif->tgl_pesan],
+                function ($message) use ($verif)
+                {
+                    $message->subject('Notifikasi Penyewaan Barang HMTI');
+                    $message->from('donotreply@hmti.com', 'HMTI');
+                    $message->to($verif->guest->email);
+                });
+
+                Mail::send('admin.mail.adminnotif', ['name' => $verif->guest->name,
+                'id' => $verif->id,'tgl_pesan' => $verif->tgl_pesan],
+                function ($message) use ($verif)
+                {
+                    $message->subject('Notifikasi Penyewaan Barang HMTI');
+                    $message->from('donotreply@hmti.com', 'HMTI');
+                    $message->to('pandikapinata@student.unud.ac.id');
+                });
+
+                return redirect('rental')->with('message','Berhasil Kirim Email ke, '. $verif->guest->name);
+            }
+            catch (Exception $e){
+                return response (['status' => false,'errors' => $e->getMessage()]);
+            }
 
             return redirect('rental');
         }
