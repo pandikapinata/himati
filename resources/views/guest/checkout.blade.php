@@ -2,15 +2,23 @@
 
 @section('content')
 <div class="banner-innerpage" style="background-image:url(/assets/images/banner-bg2.jpg)">
-    <div class="container">
-        <!-- Row  -->
-        <div class="row justify-content-center ">
-            <!-- Column -->
-            <div class="col-md-6 align-self-center text-center" data-aos="fade-down" data-aos-duration="1200">
-                <h1 class="title">Checkout</h1>
-                <h6 class="subtitle op-8">Checkout barangan sewa anda</h6> </div>
-            <!-- Column -->
-        </div>
+    <div class="bg-dark">
+        <section class="container content-boxed">
+            <div class="row items-push">
+                <div class="col-sm-7">
+                    <h3 class="text-white">
+                        Checkout
+                    </h3>
+                </div>
+                <div class="col-sm-5 text-right hidden-xs ">
+                    <ol class="breadcrumb push-10-t " style="color:#fff !important;">
+                        <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Beranda</a></li>
+                        <li class="breadcrumb-item"><a href="/" class="link-effect" style="color:#fff !important;">Kerajang Sewa</a></li>
+                        <li class="breadcrumb-item active">Checkout</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
     </div>
 </div>
 <div class="container m-b-30">

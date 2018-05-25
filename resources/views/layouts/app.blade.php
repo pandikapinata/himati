@@ -297,13 +297,12 @@
             <div class="f1-bottom-bar">
                 <div class="container">
                 <div class="d-flex">
-                    <div class="m-t-10 m-b-10">© 2018. Himpunan Mahasiswa Teknologi Informasi | <a href="https://it.unud.ac.id/" class="p-10 p-l-0">Teknologi Informasi</a>.</div>
+                    <div class="m-t-10 m-b-10">© 2018. Himpunan Mahasiswa Teknologi Informasi | <a href="https://it.unud.ac.id/" target="_blank" class="p-10 p-l-0">Teknologi Informasi</a>.</div>
                     <div class="links ml-auto m-t-10 m-b-10">
-                        <a href="#" class="link p-10"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-linkedin"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-pinterest"></i></a>
-                        <a href="#" class="link p-10"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/it.unud/" target="_blank" class="link p-10"><i class="fa fa-facebook"></i></a>
+                        <a href="https://twitter.com/HMTIUdayana" target="_blank" class="link p-10"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/hmtiudayana/" target="_blank" class="link p-10"><i class="fa fa-instagram"></i></a>
+                        <a href="https://line.me/R/ti/p/%40jki6864s" target="_blank" class="link p-10"><i class="fab fa-line"></i></i></a>
                     </div>
                 </div>
                 </div>
