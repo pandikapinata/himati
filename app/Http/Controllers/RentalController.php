@@ -9,6 +9,7 @@ use App\Sewa;
 use App\Barang_Sewa;
 use Auth;
 use Carbon\Carbon;
+use Mail;
 
 class RentalController extends Controller
 {
